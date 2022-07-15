@@ -17,7 +17,7 @@
 
 .modal-film {
     min-width: 280px;
-    min-height: 440px;
+    min-height: 240px;
     background-color: #FFFFFF;
 
     position: absolute;
@@ -35,7 +35,31 @@
     font-family: 'Roboto';
     font-weight: 500;
     font-size: 20px;
-    line-height: 23px;
+    line-height: 1.15;
 
     color: #000000;
+}
+
+.modal-film__list-info {
+    font-family: 'Roboto';
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 1.33;
+    color: #8C8C8C;
+}
+
+.modal-film__list-info-backend {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 1.33;
+    color: #000000;
+}
+
+.modal-film__title-about {
+    font-family: 'Roboto';
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 1.33;
 }
