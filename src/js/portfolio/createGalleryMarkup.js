@@ -1,4 +1,4 @@
-import { parsedGenres } from './saveGenres';
+import { parsedGenres } from './localStorage';
 export { createMurkup };
 
 function createMurkup({
@@ -14,7 +14,7 @@ function createMurkup({
     original_title = original_name;
   }
 
-  return `<a href="" class="movie-link"><img src=https://image.tmdb.org/t/p/w500${backdrop_path} width="280" height="400" alt="">
+  return `<a href="" class="movie-link"><img src=https://image.tmdb.org/t/p/w500${backdrop_path} width="280" height="400" loading='lazy' alt="">
 		<h3 class="movie-title">${original_title}</h3>
 		<p class="movie-genres">${Object.values(
       makeGenresArrayMarkup({ genre_ids })
@@ -26,17 +26,20 @@ function createMurkup({
 function makeGenresArrayMarkup({ genre_ids }) {
   const genresArray = [];
 
+
+  // !!!!!!!!!!!!!!!!!!!!!!!!Ошибка при пустом локал сторидж
   for (id of genre_ids) {
     // если название пустое -- пропускаем
     if (parsedGenres[id] === null || parsedGenres[id] === undefined) {
       continue;
-    }
+    };
 
+    
     // если массив 2+ жанров -- пишем 'Other'
     if (genresArray.length === 2) {
       genresArray.push('Other');
       break;
-    }
+    };
     genresArray.push(parsedGenres[id]);
   }
   return genresArray;

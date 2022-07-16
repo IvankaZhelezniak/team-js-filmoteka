@@ -1,4 +1,4 @@
-export { parsedGenres};
+export { parsedGenres, saveToLocalStorageFindedFilms};
 
 const parsedGenres = parseGenres();
 
@@ -35,3 +35,8 @@ function parseGenres() {
   return parseGanres;
 }
 
+// =====================================Find Films
+
+function saveToLocalStorageFindedFilms(films) {
+  localStorage.setItem('findFilms', JSON.stringify(films.results));
+}
