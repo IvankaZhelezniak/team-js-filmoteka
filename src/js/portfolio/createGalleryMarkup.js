@@ -45,7 +45,8 @@ function makeReleaseDate({ release_date, first_air_date }) {
   // в некоторых нет даты релиза, используют дату первого полета
   if (release_date) {
     return release_date.slice(0, 4);
-  } else {
+  } else if(first_air_date) {
     return first_air_date.slice(0, 4);
   }
+  return '';
 }
