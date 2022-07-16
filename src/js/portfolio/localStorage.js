@@ -1,6 +1,11 @@
-export { parsedGenres, saveToLocalStorageFindedFilms};
+export {
+  parsedGenres,
+  parsedFindedFilmsFromLS,
+  saveToLocalStorageFindedFilms,
+};
 
 const parsedGenres = parseGenres();
+const parsedFindedFilmsFromLS = parseFindedFilms();
 
 // Посылает запрос за id всех жанров
 function fetchGenresList() {
@@ -29,9 +34,8 @@ function saveGenres() {
 // Парсит жанры из локал сторидж
 function parseGenres() {
   saveGenres();
-
-  const value = localStorage.getItem("genres");
-  const parseGanres =JSON.parse(value);
+  const value = localStorage.getItem('genres');
+  const parseGanres = JSON.parse(value);
   return parseGanres;
 }
 
@@ -39,4 +43,10 @@ function parseGenres() {
 
 function saveToLocalStorageFindedFilms(films) {
   localStorage.setItem('findFilms', JSON.stringify(films.results));
+}
+
+function parseFindedFilms() {
+  const value = localStorage.getItem('findFilms');
+  const parsedFindedFilmsFromLS = JSON.parse(value);
+  return parsedFindedFilmsFromLS;
 }
