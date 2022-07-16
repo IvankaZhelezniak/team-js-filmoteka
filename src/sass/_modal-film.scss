@@ -1,0 +1,156 @@
+.backdrop-film {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    background-color: rgba($color: #000000, $alpha: 0.25);
+}
+
+.backdrop-film.is-hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.modal-film {
+    min-width: 280px;
+    min-height: 240px;
+    background-color: #FFFFFF;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+} 
+
+.modal-film__image {
+    width: 240px;
+    height: 357px;
+    border-radius: 5px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 45px;
+    margin-bottom: 20px;
+}
+
+.modal-film__title {
+    font-family: 'Roboto';
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 1.15;
+    margin-bottom: 20px;
+
+    color: #000000;
+}
+
+.modal-film__list-info {
+    font-family: 'Roboto';
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 1.33;
+    color: #8C8C8C;
+}
+
+.modal-film__list-info-backend {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 1.33;
+    color: #000000;
+    margin-left: 39px;
+}
+
+.modal-film__title-about {
+    font-family: 'Roboto';
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 1.33;
+    margin-bottom: 8px;
+}
+
+.modal-film__title-about-text {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 1.66;
+    margin-bottom: 20px;
+}
+
+.modal-film__info-box {
+    width: 240px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.modal-film__info-container {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.modal-film__list-info-item:not(:first-child) {
+    margin-top: 10px;
+    
+}
+.modal-film__votes {
+    text-align: center;
+    display: inline-block;
+    border-radius: 5px;
+    background-color: #FF6B01;
+    width: 36px;
+    height: 16px;
+    color: #FFFFFF;
+}
+
+.modal-film__votes.votes-second {
+    color: #000000;
+    background-color: #F7F7F7;
+}
+
+
+// BUTTONS
+
+.modal-film__button-list {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 40px;
+}
+
+.modal-film__btn {
+    width: 110px;
+    height: 44px;
+
+    background: #FF6B01;
+    border-radius: 5px;
+
+
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 1.33;
+
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.modal-film__btn a {
+    color: #FFFFFF;
+    font-family: 'Roboto';
+}
+
+.btn-wrap-word {
+    display: block;
+    text-align: center;
+}
+
+.modal-film__btn.second-button {
+    border: 1px solid black;
+    background-color: #FFFFFF;
+}
+.modal-film__btn.second-button a {
+    color: #000000;
+    font-family: 'Roboto';
+}
