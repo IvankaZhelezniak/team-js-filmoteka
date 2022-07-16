@@ -1,10 +1,10 @@
+// backdrop
 .backdrop-film {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-
     background-color: rgba($color: #000000, $alpha: 0.25);
 }
 
@@ -13,34 +13,62 @@
     pointer-events: none;
 }
 
+// modal window
 .modal-film {
+    @media screen and(max-width:767px) {
+        top: 20px;
+    }
+    @media screen and (min-width: 768px) {
+        display: flex;
+        width: 704px;
+        padding-top: 40px;
+        margin-top: 219px;
+    }
+    @media screen and (min-width: 1280px) {
+        margin-top: 150px;
+    }
+
     min-width: 280px;
     min-height: 240px;
-    background-color: #FFFFFF;
-
     position: absolute;
-    top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
-} 
+    transform: translate(-50%);
+    border-radius: 5px;
+    background-color: #FFFFFF;
+}
 
 .modal-film__image {
+    @media screen and (min-width: 768px) {
+        margin-top: 0;
+        margin-left: 36px;
+        margin-right: 68px;
+        width: 264px;
+        height: 373px;
+    }
+    @media screen and (min-width: 1280px) {
+        margin-left: 12px;
+        margin-right: 16px;
+        margin-bottom: 40px;
+        width: 375px;
+        height: 478px;
+    }
+    margin-top: 48px;
+    margin-bottom: 20px;
     width: 240px;
     height: 357px;
     border-radius: 5px;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 45px;
-    margin-bottom: 20px;
+    object-fit: cover;
 }
 
 .modal-film__title {
+    margin-bottom: 20px;
+
     font-family: 'Roboto';
     font-weight: 500;
     font-size: 20px;
     line-height: 1.15;
-    margin-bottom: 20px;
-
     color: #000000;
 }
 
@@ -53,13 +81,13 @@
 }
 
 .modal-film__list-info-backend {
+    margin-left: 39px;
+
     font-family: 'Roboto';
-    font-style: normal;
     font-weight: 500;
     font-size: 12px;
     line-height: 1.33;
     color: #000000;
-    margin-left: 39px;
 }
 
 .modal-film__title-about {
@@ -71,15 +99,22 @@
 }
 
 .modal-film__title-about-text {
+    margin-bottom: 20px;
     font-family: 'Roboto';
-    font-style: normal;
     font-weight: 500;
     font-size: 12px;
     line-height: 1.66;
-    margin-bottom: 20px;
 }
 
 .modal-film__info-box {
+    @media screen and (min-width:768px) {
+        width: 264px;
+        margin: 0;
+    }
+    @media screen and (min-width: 1280px) {
+        width: 391px;
+        margin-right: 12px;
+    }
     width: 240px;
     margin-left: auto;
     margin-right: auto;
@@ -98,9 +133,11 @@
     display: inline-block;
     border-radius: 5px;
     background-color: #FF6B01;
-    width: 36px;
-    height: 16px;
+    min-width: 36px;
+    // height: 16px;
     color: #FFFFFF;
+    line-height: 14px;
+    padding: 1px 0;
 }
 
 .modal-film__votes.votes-second {
@@ -112,45 +149,84 @@
 // BUTTONS
 
 .modal-film__button-list {
+    @media screen and (min-width: 1280px) {
+        margin-left: 8px;
+        justify-content: flex-start;
+    }
     display: flex;
     justify-content: space-between;
     margin-bottom: 40px;
 }
 
 .modal-film__btn {
+    @media screen and (min-width: 768px) {
+        width: 125px;        
+    }
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
     width: 110px;
     height: 44px;
 
     background: #FF6B01;
     border-radius: 5px;
 
-
     font-weight: 500;
     font-size: 12px;
     line-height: 1.33;
-
-    
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    
 }
 
 .modal-film__btn a {
+    
     color: #FFFFFF;
     font-family: 'Roboto';
 }
 
 .btn-wrap-word {
-    display: block;
-    text-align: center;
+    @media screen and (max-width: 767px) {
+        display: block;
+        text-align: center;
+    }
 }
 
 .modal-film__btn.second-button {
-    border: 1px solid black;
+    @media screen and (min-width: 1280px) {
+        margin-left: 15px;
+    }
+    border: 1px solid #000000;
     background-color: #FFFFFF;
 }
 .modal-film__btn.second-button a {
     color: #000000;
     font-family: 'Roboto';
 }
+
+// Close button
+
+.modal-film__btn-close {
+    display: flex;
+    align-items: center;
+
+    padding: 0;
+    position: absolute;
+    right: 8px;
+    top: 8px;
+    background: #ffffff;
+    border: none;
+    cursor: pointer;
+    // background-color: #FF6B01;
+
+}
+
+.modal-film__btn-close:focus {
+    background-color: #FF6B01;
+    border-radius: 35%;
+    outline: none;
+}
+
+ .modal-film__btn-close:hover {
+    background-color: #FF6B01;
+    border-radius: 35%;
+ }
+
