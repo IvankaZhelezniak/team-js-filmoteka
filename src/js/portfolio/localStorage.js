@@ -1,8 +1,4 @@
-export {
-  parsedGenres,
-  parsedFindedFilmsFromLS,
-  saveToLocalStorageFindedFilms,
-};
+export { parsedGenres, parsedFindedFilmsFromLS, saveToLocalStorageFindedFilms };
 
 const parsedGenres = parseGenres();
 const parsedFindedFilmsFromLS = parseFindedFilms();
@@ -35,7 +31,15 @@ function saveGenres() {
 function parseGenres() {
   saveGenres();
   const value = localStorage.getItem('genres');
-  const parseGanres = JSON.parse(value);
+
+  try {
+    const parseGanres = JSON.parse(value);
+  } catch (error) {
+    console.log(error);
+    if (error.name === 'SyntaxError') {
+      console.log('Ошибка парса JSON');
+    }
+  }
   return parseGanres;
 }
 
@@ -47,6 +51,14 @@ function saveToLocalStorageFindedFilms(films) {
 
 function parseFindedFilms() {
   const value = localStorage.getItem('findFilms');
-  const parsedFindedFilmsFromLS = JSON.parse(value);
+
+  try {
+    const parsedFindedFilmsFromLS = JSON.parse(value);
+  } catch (error) {
+    if (error.name === 'SyntaxError') {
+      console.log('Ошибка парса JSON');
+    }
+  }
+
   return parsedFindedFilmsFromLS;
 }
