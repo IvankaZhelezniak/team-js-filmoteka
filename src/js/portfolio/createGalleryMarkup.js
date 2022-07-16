@@ -1,3 +1,4 @@
+import { parsedGenres } from './saveGenres';
 export { createMurkup };
 
 function createMurkup({
@@ -15,30 +16,30 @@ function createMurkup({
 
   return `<a href="" class="movie-link"><img src=https://image.tmdb.org/t/p/w500${backdrop_path} width="280" height="400" alt="">
 		<h3 class="movie-title">${original_title}</h3>
-		<p class="movie-genres">${Object.values(makeGenresArray({ genre_ids })).join(
-      ', '
-    )} | ${makeReleaseDate({ release_date, first_air_date })}</p>
+		<p class="movie-genres">${Object.values(
+      makeGenresArrayMarkup({ genre_ids })
+    ).join(', ')} | ${makeReleaseDate({ release_date, first_air_date })}</p>
 	  </a>`;
 }
 
-function makeGenresArray({ genre_ids }) {
-  // жанры с бэка приходят как числа, переводим их в строки и записываем в массив. если фильм имеет больше 2х жанров - other
-  const ganres = [];
-  let value = '';
+// Получает id возвращает массив с названиями жанров
+function makeGenresArrayMarkup({ genre_ids }) {
+  const genresArray = [];
 
   for (id of genre_ids) {
-    value = localStorage.getItem(id);
-
-    if (value === null || value === undefined) {
+    // если название пустое -- пропускаем
+    if (parsedGenres[id] === null || parsedGenres[id] === undefined) {
       continue;
     }
-    if (ganres.length === 2) {
-      ganres.push('Other');
+
+    // если массив 2+ жанров -- пишем 'Other'
+    if (genresArray.length === 2) {
+      genresArray.push('Other');
       break;
     }
-    ganres.push(JSON.parse(value));
+    genresArray.push(parsedGenres[id]);
   }
-  return ganres;
+  return genresArray;
 }
 
 function makeReleaseDate({ release_date, first_air_date }) {
