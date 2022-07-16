@@ -15,32 +15,44 @@ function createMurkup({
     original_title = original_name;
   }
 
-  return `<li class="gallery__item" data-id=${id}><a href="" class="gallery__link"><img src=https://image.tmdb.org/t/p/w500${backdrop_path} width="280" height="400" loading='lazy' alt="">
-		<h3 class="gallery__title">${original_title}</h3>
-		<p class="gallery__genres">${Object.values(
-      makeGenresArrayMarkup({ genre_ids })
-    ).join(', ')} | ${makeReleaseDate({ release_date, first_air_date })}</p>
-	  </a></li>`;
+  return `<li class="gallery_card__item" data-id=${id}>
+    <a href="./" class="gallery_card__link">
+        <div class="gallery_thumb">
+            <img src=https://image.tmdb.org/t/p/w500${backdrop_path} alt="movie cover" loading='lazy' class="gallery_card__img">
+        </div>
+        <div class="gallery_info">
+            <h3 class="gallery_info__name">${original_title}</h3>
+            <div class = "gallery_info__about">
+                <p class = "gallery_info__genres">${Object.values(
+                  makeGenresArrayMarkup({ genre_ids })
+                ).join(', ')}</p>
+                <p class = "gallery_info__separator">|</p>
+                <p class = "gallery_info__year">${makeReleaseDate({
+                  release_date,
+                  first_air_date,
+                })}</p>
+            </div>
+        </div>
+    </a>
+</li>`;
 }
 
 // Получает id возвращает массив с названиями жанров
 function makeGenresArrayMarkup({ genre_ids }) {
   const genresArray = [];
 
-
   // !!!!!!!!!!!!!!!!!!!!!!!!Ошибка при пустом локал сторидж
   for (id of genre_ids) {
     // если название пустое -- пропускаем
     if (parsedGenres[id] === null || parsedGenres[id] === undefined) {
       continue;
-    };
+    }
 
-    
     // если массив 2+ жанров -- пишем 'Other'
     if (genresArray.length === 2) {
       genresArray.push('Other');
       break;
-    };
+    }
     genresArray.push(parsedGenres[id]);
   }
   return genresArray;
