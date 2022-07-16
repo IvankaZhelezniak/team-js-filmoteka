@@ -1,29 +1,23 @@
 <header class="section header">
   <div class="container wrapper">
+
     <nav class="header-nav">
       <a class="header-nav-logo" href="/src/index.html" aria-label="logo" lang="en">
         <svg class="header-nav-logo-icon" width="24" height="24">
-          <use href="#"></use>
+          <use class="icon-color" href="/src/images/icons/sprite.svg#icon-film"></use>
         </svg>
         <span class="header-nav-logo-text">Filmoteka</span>
       </a>
-
-      <!-- <button type="button" class="menu-button" aria-expanded="false" aria-controls="menu-container" data-menu-button>
-        <svg width="40" height="40" aria-label="mobile menu">
-          <use class="icon-cross" href="#"></use>
-          <use class="icon-menu" href="#"></use>
-        </svg>
-      </button> -->
-
-    <div class="search">
-          <input class="search-input" type="text" name="search" placeholder="Search a movie" />
-          <div class="search-btn">
-            <svg class="search-icon">
-              <use href="#"></use>
-            </svg>
-          </div>
-    </div>
     </nav>
+
+    <div class="search search-box">
+      <input class="search-input" type="text" name="search" placeholder="Movie search" />
+      <div class="search-btn">
+        <svg class="search-icon">
+          <use href="/src/images/icons/sprite.svg#icon-search"></use>
+        </svg>
+      </div>
+    </div>
 
     <div class="special">
       <div class="menu-container" id="menu-container" data-menu>
@@ -35,11 +29,10 @@
             <a href="#" class="header-nav-list-link">My library</a>
           </li>
         </ul>
-
-        <!-- <include src="./partials/loginButtonHome.html"></include> -->
       </div>
-      <!-- <include src="./partials/switchTheme.html"></include> -->
     </div>
 
   </div>
+  <p class="search-error is-hidden">Search result not successful. Enter the correct movie name!</p>
+
 </header>
