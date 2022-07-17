@@ -6,7 +6,7 @@ import {
   parsedFindedFilmsFromLS, parseFindedFilms, genresClass,
 } from './localStorage';
 
-
+genresClass.parseGenres();
 // Генерирует разметку популярных фильмов, первой страницы
 export default createStartPortfolio();
 

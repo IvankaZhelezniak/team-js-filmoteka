@@ -1,4 +1,4 @@
-import { parseGenres, genresClass} from './localStorage';
+import { genresClass } from './localStorage';
 export { createMurkup };
 
 function createMurkup({
@@ -23,7 +23,9 @@ function createMurkup({
       <div class="gallery_info">
           <h3 class="gallery_info__name">${original_title}</h3>
           <div class = "gallery_info__about">
-              <p class = "gallery_info__genres">${makeGenresArrayMarkup(genre_ids)}</p>
+              <p class = "gallery_info__genres">${makeGenresArrayMarkup(
+                genre_ids
+              )}</p>
               <p class = "gallery_info__separator">|</p>
               <p class = "gallery_info__year">${makeReleaseDate({
                 release_date,
@@ -37,7 +39,8 @@ function createMurkup({
 
 // Получает id возвращает массив с названиями жанров
 function makeGenresArrayMarkup(genre_ids) {
-  const parsedGenres = parseGenres();
+  const parsedGenres = genresClass.parseGenres();
+
   const genresArray = [];
 
   for (id of genre_ids) {
@@ -53,7 +56,7 @@ function makeGenresArrayMarkup(genre_ids) {
     }
     genresArray.push(parsedGenres[id]);
   }
-  return   Object.values(genresArray).join(', ');
+  return Object.values(genresArray).join(', ');
 }
 
 function makeReleaseDate({ release_date, first_air_date }) {
