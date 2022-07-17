@@ -1,5 +1,5 @@
 <header class="section header">
-  <div class="container wrapper">
+  <div class="wrapper">
 
     <nav class="header-nav">
       <a class="header-nav-logo" href="/src/index.html" aria-label="logo" lang="en">
@@ -8,9 +8,18 @@
         </svg>
         <span class="header-nav-logo-text">Filmoteka</span>
       </a>
+
+      <ul class="header-nav-list">
+        <li class="header-nav-list-item">
+          <a href="/src/index.html" class="current header-nav-list-link">Home</a>
+        </li>
+        <li class="header-nav-list-item">
+          <a href="/src/partials/header-library.html" class="header-nav-list-link">My library</a>
+        </li>
+      </ul>
     </nav>
 
-    <div class="search search-box">
+    <div class="search">
       <input class="search-input" type="text" name="search" placeholder="Movie search" />
       <div class="search-btn">
         <svg class="search-icon">
@@ -18,21 +27,10 @@
         </svg>
       </div>
     </div>
+    <p class="search-error">Search result not successful. Enter the correct movie name!</p>
 
-    <div class="special">
-      <div class="menu-container" id="menu-container" data-menu>
-        <ul class="header-nav-list">
-          <li class="header-nav-list-item">
-            <a href="/src/index.html" class="current header-nav-list-link">Home</a>
-          </li>
-          <li class="header-nav-list-item">
-            <a href="#" class="header-nav-list-link">My library</a>
-          </li>
-        </ul>
-      </div>
-    </div>
 
   </div>
-  <p class="search-error is-hidden">Search result not successful. Enter the correct movie name!</p>
+  <!-- <p class="search-error is-hidden">Search result not successful. Enter the correct movie name!</p> -->
 
 </header>
