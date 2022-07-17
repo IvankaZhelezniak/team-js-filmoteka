@@ -1,28 +1,40 @@
-export {  parsedFindedFilmsFromLS, parseFindedFilms, saveToLocalStorageFindedFilms, parseGenres };
+export {
+  parsedFindedFilmsFromLS,
+  parseFindedFilms,
+  saveToLocalStorageFindedFilms,
+  parseGenres,
+};
 
 const parsedGenres = parseGenres();
 const parsedFindedFilmsFromLS = parseFindedFilms();
 
 // Посылает запрос за id всех жанров
-function fetchGenresList() {
-  return fetch(
+async function fetchGenresList() {
+  const genres = await fetch(
     'https://api.themoviedb.org/3/genre/movie/list?api_key=5692dca6012d3660a336300872bd664c&language=en-US'
-  ).then(response => {
-    return response.json();
-  });
+  );
+  return await genres.json();
 }
 
 // Сохраняет id всех жанров в локал сторидж
-function saveGenres() {
-  return fetchGenresList().then(genresArray => {
-    const newGenresObj = {};
+async function saveGenres() {
+  try {
+    return await fetchGenresList().then(genresArray => {
+      const newGenresObj = {};
+      changeGenresToBeUsable(genresArray, newGenresObj);
 
-    genresArray.genres.map(genre => {
-      newGenresObj[genre.id] = genre.name;
-      return newGenresObj;
+      return localStorage.setItem('genres', JSON.stringify(newGenresObj));
     });
+  } catch (error) {
+    console.log(error);
+  }
+}
 
-    return localStorage.setItem('genres', JSON.stringify(newGenresObj));
+// Возвращает объект с жанрами в виде ключ-значение
+function changeGenresToBeUsable(genresArray, newGenresObj) {
+  genresArray.genres.map(genre => {
+    newGenresObj[genre.id] = genre.name;
+    return newGenresObj;
   });
 }
 
