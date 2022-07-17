@@ -3,9 +3,10 @@ import { createMurkup } from './createGalleryMarkup';
 import { refs } from '../refs';
 import {
   saveToLocalStorageFindedFilms,
-  parsedFindedFilmsFromLS, parseFindedFilms,
+  parsedFindedFilmsFromLS, parseFindedFilms, genresClass,
 } from './localStorage';
 
+genresClass.parseGenres();
 // Генерирует разметку популярных фильмов, первой страницы
 export default createStartPortfolio();
 
