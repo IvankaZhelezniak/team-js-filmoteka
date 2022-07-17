@@ -3,14 +3,14 @@ import { createMurkup } from './createGalleryMarkup';
 import { refs } from '../refs';
 import {
   saveToLocalStorageFindedFilms,
-  parsedFindedFilmsFromLS,
+  parsedFindedFilmsFromLS, parseFindedFilms,
 } from './localStorage';
 
 // Генерирует разметку популярных фильмов, первой страницы
 export default createStartPortfolio();
 
-function createStartPortfolio() {
-  return fetchPopularMovies().then(films => {
+async function createStartPortfolio() {
+  return await fetchPopularMovies().then(films => {
     saveToLocalStorageFindedFilms(films);
 
     return refs.gallery.insertAdjacentHTML(
@@ -46,6 +46,7 @@ function onClickPortfolioItem(evt) {
 }
 
 function searchFilmByIdInLS(id) {
+  const parsedFindedFilmsFromLS = parseFindedFilms();
   return parsedFindedFilmsFromLS.find(film => {
     if (film.id == id) {
       return film;
