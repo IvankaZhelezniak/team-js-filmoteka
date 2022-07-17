@@ -9,8 +9,8 @@ import {
 // Генерирует разметку популярных фильмов, первой страницы
 export default createStartPortfolio();
 
-function createStartPortfolio() {
-  return fetchPopularMovies().then(films => {
+async function createStartPortfolio() {
+  return await fetchPopularMovies().then(films => {
     saveToLocalStorageFindedFilms(films);
 
     return refs.gallery.insertAdjacentHTML(
