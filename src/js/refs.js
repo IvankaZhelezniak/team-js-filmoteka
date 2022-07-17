@@ -1,4 +1,4 @@
 export { refs };
 const refs = {
-	gallery: document.querySelector('.gallery-container'),
+	gallery: document.querySelector('.js-gallery__list'),
   };
