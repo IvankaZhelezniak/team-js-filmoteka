@@ -1,33 +1,54 @@
 <header class="section header">
   <div class="wrapper">
-
     <nav class="header-nav">
-      <a class="header-nav-logo" href="/src/index.html" aria-label="logo" lang="en">
+      <a
+        class="header-nav-logo"
+        href="/src/index.html"
+        aria-label="logo"
+        lang="en"
+      >
         <svg class="header-nav-logo-icon" width="24" height="24">
-          <use class="icon-color" href="/src/images/icons/sprite.svg#icon-film"></use>
+          <use
+            class="icon-color"
+            href="/src/images/icons/sprite.svg#icon-film"
+          ></use>
         </svg>
         <span class="header-nav-logo-text">Filmoteka</span>
       </a>
 
       <ul class="header-nav-list">
         <li class="header-nav-list-item">
-          <a href="/src/index.html" class="current header-nav-list-link">Home</a>
+          <a href="/src/index.html" class="current header-nav-list-link"
+            >Home</a
+          >
         </li>
         <li class="header-nav-list-item">
-          <a href="/src/partials/header-library.html" class="header-nav-list-link">My library</a>
+          <a
+            href="/src/partials/header-library.html"
+            class="header-nav-list-link"
+            >My library</a
+          >
         </li>
       </ul>
     </nav>
 
     <div>
-    <div class="search search-box">
-      <input class="search-input" type="text" name="search" placeholder="Movie search" />
-      <div class="search-btn">
-        <svg class="search-icon">
-          <use href="/src/images/icons/sprite.svg#icon-search"></use>
-        </svg>
+      <div class="search search-box">
+        <input
+          class="search-input"
+          type="text"
+          name="search"
+          placeholder="Movie search"
+        />
+        <div class="search-btn">
+          <svg class="search-icon">
+            <use href="/src/images/icons/sprite.svg#icon-search"></use>
+          </svg>
+        </div>
       </div>
+      <p class="search-error">
+        Search result not successful. Enter the correct movie name!
+      </p>
     </div>
-    <p class="search-error">Search result not successful. Enter the correct movie name!</p>
   </div>
 </header>
