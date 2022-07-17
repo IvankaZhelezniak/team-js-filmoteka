@@ -3,7 +3,7 @@ import { createMurkup } from './createGalleryMarkup';
 import { refs } from '../refs';
 import {
   saveToLocalStorageFindedFilms,
-  parsedFindedFilmsFromLS,
+  parsedFindedFilmsFromLS, parseFindedFilms,
 } from './localStorage';
 
 // Генерирует разметку популярных фильмов, первой страницы
@@ -46,6 +46,7 @@ function onClickPortfolioItem(evt) {
 }
 
 function searchFilmByIdInLS(id) {
+  const parsedFindedFilmsFromLS = parseFindedFilms();
   return parsedFindedFilmsFromLS.find(film => {
     if (film.id == id) {
       return film;

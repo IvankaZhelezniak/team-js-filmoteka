@@ -1,4 +1,4 @@
-export { parsedGenres, parsedFindedFilmsFromLS, saveToLocalStorageFindedFilms };
+export {  parsedFindedFilmsFromLS, parseFindedFilms, saveToLocalStorageFindedFilms, parseGenres };
 
 const parsedGenres = parseGenres();
 const parsedFindedFilmsFromLS = parseFindedFilms();
