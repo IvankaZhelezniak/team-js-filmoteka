@@ -1,8 +1,9 @@
-import { genresClass } from './localStorage';
+import { movieClass } from './movieClass';
+import genres from './genres';
+
 export { createMurkup };
 
 function createMurkup({
-  backdrop_path,
   original_title,
   original_name,
   id,
@@ -11,7 +12,7 @@ function createMurkup({
   first_air_date,
   poster_path,
 }) {
-  // проверка дает ли бэк original_title (дает не всегда), если нет заменяем его на original_name (костыль)
+  // проверка дает ли бэк original_title
   if (!original_title) {
     original_title = original_name;
   }
@@ -24,48 +25,14 @@ function createMurkup({
       <div class="gallery_info">
           <h3 class="gallery_info__name">${original_title}</h3>
           <div class = "gallery_info__about">
-              <p class = "gallery_info__genres">${makeGenresArrayMarkup(
-                genre_ids
-              )}</p>
+              <p class = "gallery_info__genres">${movieClass.makeGenresList(genre_ids, genres)}</p>
               <p class = "gallery_info__separator">|</p>
-              <p class = "gallery_info__year">${makeReleaseDate({
+              <p class = "gallery_info__year">${movieClass.modifyDate(
                 release_date,
-                first_air_date,
-              })}</p>
+                first_air_date
+              )}</p>
           </div>
       </div>
   </a>
 </li>`;
-}
-
-// Получает id возвращает массив с названиями жанров
-function makeGenresArrayMarkup(genre_ids) {
-  const parsedGenres = genresClass.parseGenres();
-
-  const genresArray = [];
-
-  for (id of genre_ids) {
-    // если название пустое -- пропускаем
-    if (parsedGenres[id] === null || parsedGenres[id] === undefined) {
-      continue;
-    }
-
-    // если массив 2+ жанров -- пишем 'Other'
-    if (genresArray.length === 2) {
-      genresArray.push('Other');
-      break;
-    }
-    genresArray.push(parsedGenres[id]);
-  }
-  return Object.values(genresArray).join(', ');
-}
-
-function makeReleaseDate({ release_date, first_air_date }) {
-  // в некоторых нет даты релиза, используют дату первого полета
-  if (release_date) {
-    return release_date.slice(0, 4);
-  } else if (first_air_date) {
-    return first_air_date.slice(0, 4);
-  }
-  return '';
 }
