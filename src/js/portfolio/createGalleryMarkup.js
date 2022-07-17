@@ -23,7 +23,7 @@ function createMurkup({
       <div class="gallery_info">
           <h3 class="gallery_info__name">${original_title}</h3>
           <div class = "gallery_info__about">
-              <p class = "gallery_info__genres">${makeGenresArrayMarkup(genre_ids )}</p>
+              <p class = "gallery_info__genres">${makeGenresArrayMarkup(genre_ids)}</p>
               <p class = "gallery_info__separator">|</p>
               <p class = "gallery_info__year">${makeReleaseDate({
                 release_date,
@@ -53,7 +53,7 @@ function makeGenresArrayMarkup(genre_ids) {
     }
     genresArray.push(parsedGenres[id]);
   }
-  return genresArray;
+  return   Object.values(genresArray).join(', ');
 }
 
 function makeReleaseDate({ release_date, first_air_date }) {
