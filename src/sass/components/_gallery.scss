@@ -6,7 +6,17 @@
 
 .gallery_card__item {
     margin-bottom: 20px;
+    &:nth-child(2n + 1){
+        @media screen and (min-width: 768px) and (max-width: 1279px) {
+        margin-right: 32px;
+        }
     }
+    &:not(:nth-child(3n)){
+        @media screen and (min-width: 1280px) {
+            margin-right: 16px;
+        }
+    }
+}
 
 .gallery_thumb{
     height: 400px;   
