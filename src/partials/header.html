@@ -25,30 +25,36 @@
         <li class="header-nav-list-item">
           <a
             href="/src/partials/header-library.html"
-            class="header-nav-list-link"
+            class="header-nav-list-link library"
             >My library</a
           >
         </li>
       </ul>
     </nav>
 
-    <div>
-      <div class="search search-box">
+    
+
+      <div class="search">
+
         <input
           class="search-input"
           type="text"
           name="search"
           placeholder="Movie search"
         />
-        <div class="search-btn">
+
+        <button class="search-btn" type="submit" aria-label="search button" name="search button">
           <svg class="search-icon">
             <use href="/src/images/icons/sprite.svg#icon-search"></use>
           </svg>
-        </div>
+        </button>
+
       </div>
-      <p class="search-error">
+
+      <p class="search-error ">
         Search result not successful. Enter the correct movie name!
       </p>
-    </div>
+
+
   </div>
 </header>
