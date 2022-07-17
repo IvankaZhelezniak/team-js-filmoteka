@@ -1,4 +1,4 @@
-import { parseGenres} from './localStorage';
+import { parseGenres, genresClass} from './localStorage';
 export { createMurkup };
 
 function createMurkup({
