@@ -9,6 +9,7 @@ function createMurkup({
   genre_ids,
   release_date,
   first_air_date,
+  poster_path,
 }) {
   // проверка дает ли бэк original_title (дает не всегда), если нет заменяем его на original_name (костыль)
   if (!original_title) {
@@ -18,7 +19,7 @@ function createMurkup({
   return `<li class="gallery_card__item" data-id=${id}>
   <a href="./" class="gallery_card__link">
       <div class="gallery_thumb">
-          <img src=https://image.tmdb.org/t/p/w500${backdrop_path} alt="movie cover" loading='lazy' class="gallery_card__img">
+          <img src=https://image.tmdb.org/t/p/w500${poster_path} alt="movie cover" loading='lazy' class="gallery_card__img">
       </div>
       <div class="gallery_info">
           <h3 class="gallery_info__name">${original_title}</h3>
