@@ -8,16 +8,17 @@ function onModalBtnClick(evt) {
   evt.preventDefault();
 
   const li = evt.target.closest('li');
+  if (!li) return;
+
   const id = li.getAttribute('data-id');
   const actions = li.getAttribute('data-actions');
 
-  if (!li) return;
-
   const film = movieClass.searchFilmByIdInLS(id);
+  // console.log('film', film,  'actions', actions, 'id', id);
 
-  // console.log('film', film,  'actions', actions);
+  if ( movieClass.isModalFilmIncludesLS(id, actions)) {
+
+  }
   movieClass.saveToLibraryMovieInLS(film, actions);
-
-
 
 }

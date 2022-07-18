@@ -41,18 +41,20 @@ export {
 		}
 	}
 
-	// parseFindedFilms() {
-	// 	const value = localStorage.getItem('findFilms');
-	// 	let parsedFindedFilmsFromLS = [];
-	// 	try {
-	// 	  parsedFindedFilmsFromLS = JSON.parse(value);
-	// 	} catch (error) {
-	// 	  if (error.name === 'SyntaxError') {
-	// 		console.log('Ошибка парса JSON');
-	// 	  }
-	// 	}
-	// 	return parsedFindedFilmsFromLS;
-	// }
+	isModalFilmIncludesLS(id, actions) {
+		const filmsArray = movieClass.getFromLS(actions);
+		if (filmsArray === null) {
+			return console.log('фильма нет в локал сторидж', );
+		}
+
+		return filmsArray.find(film => {
+		  if (film.id == id) {
+			return console.log('фильм уже есть в локал сторидж', );
+			
+		  }
+		});
+	  }
+
 
 	modifyDate(release_date, first_air_date) {
 	  // в некоторых нет даты релиза, используют дату первого полета
