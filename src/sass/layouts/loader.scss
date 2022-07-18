@@ -6,7 +6,7 @@
     height: 100%;
     background: black;
     z-index: 100;
-    transition: 3s;
+    transition: 5s;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -19,14 +19,24 @@
 .loader {
     width: 75px;
     height: 75px;
-    border: 10px solid white;
-    border-top-color: brown;
+    border: 10px solid rgb(223, 16, 171);
+    border-top:100ex;
+    border-bottom: 0ex;
+    border-left-color: gold;
+    
+     
+    
+    
     border-radius: 50%;
-    animation: 1s spin linear infinite;
+    animation: 0.5s spin infinite linear;
 }
 
 @keyframes spin {
-    100% {
-        transform: rotate(360deg);
+    0% {
+            transform: rotate(0deg);
+        }
+    
+        100% {
+            transform: rotate(360deg);
+        }
     }
-}
