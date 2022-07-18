@@ -1,3 +1,3 @@
 import './js/someFunction';
 import './js/portfolio/createStartPortfolio';
-import './js/portfolio/openModal';
+import './js/portfolio/modalFilm';
