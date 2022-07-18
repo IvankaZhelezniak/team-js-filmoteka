@@ -1,20 +1,21 @@
-import { fetchPopularMovies } from './fetchPopularMovies';
-import { createMurkup } from './createGalleryMarkup';
-import {refs} from '../refs'
-
 // Генерирует разметку популярных фильмов, первой страницы
 export default createStartPortfolio();
 
-function createStartPortfolio() {
-	return fetchPopularMovies().then(films => {
-		return refs.gallery.insertAdjacentHTML(
-		  'beforeend',
-		  films.results
-			.map(film => {
-			  return createMurkup(film);
-			})
-			.join('')
-		);
-	  });
-}
+import { createMurkup } from './createGalleryMarkup';
+import { refs } from '../refs';
+import { movieClass } from './movieClass';
 
+async function createStartPortfolio() {
+  return await movieClass.fetchPopularMovies().then(films => {
+    movieClass.saveToLocalStorageFindedFilms(films);
+
+    return refs.gallery.insertAdjacentHTML(
+      'beforeend',
+      films.results
+        .map(film => {
+          return createMurkup(film);
+        })
+        .join('')
+    );
+  });
+}
