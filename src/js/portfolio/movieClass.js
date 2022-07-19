@@ -20,12 +20,27 @@ export {
 	}
 
 	saveToLibraryMovieInLS(film, actions) {		
+		// console.log(`фильм сохранен в LS ${actions}`);
 		let filmArray = this.getFromLS(`${actions}`);
 		if (!filmArray){ filmArray =[]}
 
 		filmArray.push(film);
 		// console.log('actions, filmArray', actions, filmArray);
 		localStorage.setItem(`${actions}`, JSON.stringify(filmArray));
+	}
+
+	removeFromLibraryMovieInLS(filmToRemove, actions) {
+		// console.log(`фильм удален из LS ${actions}`);
+		
+		let filmArray = this.getFromLS(`${actions}`);
+		const removeIndex = filmArray.findIndex(film => film.id == filmToRemove.id);
+
+		filmArray.splice(removeIndex, 1);
+		
+		localStorage.setItem(`${actions}`, JSON.stringify(filmArray));
+	}
+
+	changeModalBtnName(li, actions) {
 	}
 
 	getFromLS(key) {
@@ -44,12 +59,12 @@ export {
 	isModalFilmIncludesLS(id, actions) {
 		const filmsArray = movieClass.getFromLS(actions);
 		if (filmsArray === null) {
-			return console.log('фильма нет в локал сторидж', );
+			// return console.log('фильма нет в локал сторидж', );
 		}
 
 		return filmsArray.find(film => {
 		  if (film.id == id) {
-			return console.log('фильм уже есть в локал сторидж', );
+			// return console.log('фильм уже есть в локал сторидж', );
 			
 		  }
 		});
