@@ -1,3 +1,4 @@
+import { btnModalClass } from '../modal/btnModalClass';
 export {
 	movieClass
   };
@@ -20,7 +21,7 @@ export {
 	}
 
 	saveToLibraryMovieInLS(film, actions) {		
-		// console.log(`фильм сохранен в LS ${actions}`);
+		console.log(`фильм сохранен в LS ${actions}`);
 		let filmArray = this.getFromLS(`${actions}`);
 		if (!filmArray){ filmArray =[]}
 
@@ -30,7 +31,7 @@ export {
 	}
 
 	removeFromLibraryMovieInLS(filmToRemove, actions) {
-		// console.log(`фильм удален из LS ${actions}`);
+		console.log(`фильм удален из LS ${actions}`);
 		
 		let filmArray = this.getFromLS(`${actions}`);
 		const removeIndex = filmArray.findIndex(film => film.id == filmToRemove.id);
@@ -40,7 +41,13 @@ export {
 		localStorage.setItem(`${actions}`, JSON.stringify(filmArray));
 	}
 
-	changeModalBtnName(li, actions) {
+	changeModalBtnName(li, id, actions) {
+		console.log('work', );
+		
+		if (btnModalClass.isFilmIncludesLSLibrary( id, actions)) {
+			return li.textContent = `remove from ${actions}`;
+		  }
+		  return li.textContent = `add to ${actions}`;
 	}
 
 	getFromLS(key) {

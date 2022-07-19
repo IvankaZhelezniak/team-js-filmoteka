@@ -274,3 +274,7 @@
     background-color: #FF6B01;
     transition: 250ms background-color ease-in-out;
 }
+
+.modal-film__link {
+    pointer-events: none;
+}

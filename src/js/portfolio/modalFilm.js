@@ -3,7 +3,7 @@ import { movieClass } from './movieClass';
 // import { genres } from './genres';
 import genres from './genres';
 
-console.log('genresModal', genres);
+// console.log('genresModal', genres);
 refs.gallery.addEventListener('click', onFilmCardClick);
 
 function onFilmCardClick(e) {
@@ -17,9 +17,9 @@ function onFilmCardClick(e) {
   const film = movieClass.searchFilmByIdInLS(id);
   const genresList = movieClass.makeAllMoodalGenresList(film.genre_ids, genres);
   // console.log('film:', film);
-  console.log('genres modal', genres);
+  // console.log('genres modal', genres);
   
-  console.log('film.genre_ids', film.genre_ids);
+  // console.log('film.genre_ids', film.genre_ids);
   
 
   const URL_IMG = 'https://image.tmdb.org/t/p/original';
