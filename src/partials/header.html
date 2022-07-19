@@ -24,31 +24,66 @@
         </li>
         <li class="header-nav-list-item">
           <a
-            href="/src/partials/header-library.html"
-            class="header-nav-list-link"
+            href="/src/library.html"
+            class="header-nav-list-link library"
             >My library</a
           >
         </li>
       </ul>
     </nav>
 
-    <div>
-      <div class="search search-box">
+    <!-- <div>
+      <form class="search search-box">
         <input
           class="search-input"
           type="text"
           name="search"
           placeholder="Movie search"
         />
-        <div class="search-btn">
+        <button class="search-btn" type="submit">
           <svg class="search-icon">
             <use href="/src/images/icons/sprite.svg#icon-search"></use>
           </svg>
-        </div>
-      </div>
+        </button>
+      </form>
       <p class="search-error">
         Search result not successful. Enter the correct movie name!
       </p>
-    </div>
+    </div> -->
+
+    <div class="search-form-container" id="search-form">
+      <form
+         class="search-form"
+         name="form"
+         autocomplete="off"
+         id="form"
+         novalidate
+      >
+         <div class="search-box">
+            <label class="search-label">
+               <input
+                  class="search-input"
+                  type="text"
+                  name="search"
+                  placeholder="Movie search"
+               />
+            </label>
+            <button
+               class="search-btn"
+               type="submit"
+               aria-label="search button"
+               name="search button"
+            >
+               <svg class="search-icon" width="15" height="15">
+                  <use href="/src/images/icons/sprite.svg#icon-search" />
+               </svg>
+            </button>
+         </div>
+         <p id="input-error" class="input-error visually-hidden">
+            Search result not successful. Enter the correct movie name!
+         </p>
+      </form>
+   </div>
+
   </div>
 </header>
