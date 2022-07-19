@@ -9,10 +9,15 @@ function onModalBtnClick(evt) {
 
   const li = evt.target.closest('li');
   const id = li.getAttribute('data-id');
-  const acions = li.getAttribute('data-actions');
+  const actions = li.getAttribute('data-actions');
 
   if (!li) return;
 
   const film = movieClass.searchFilmByIdInLS(id);
-  console.log('button', acions, 'film', film);
+
+  // console.log('film', film,  'actions', actions);
+  movieClass.saveToLibraryMovieInLS(film, actions);
+
+
+
 }

@@ -1,6 +1,7 @@
 import { refs } from "../refs";
 import { createMurkup } from './createGalleryMarkup';
 import { saveToLocalStorageFindedFilms } from './localStorage';
+import { movieClass } from './movieClass';
 
 refs.searchForm.addEventListener("submit", handleSubmit);
 console.log(refs.searchError);
@@ -37,6 +38,7 @@ async function createSearchedPortfolio(input) {
     return await fetchSearchedMovies(input).then(films => {
     if(films.total_results !== 0) {
         saveToLocalStorageFindedFilms(films);  
+      movieClass.saveToLocalStorageFindedFilms(films);  
         refs.gallery.innerHTML = "";  
         return refs.gallery.insertAdjacentHTML(
         'beforeend',
@@ -54,4 +56,4 @@ async function createSearchedPortfolio(input) {
 
 const onSearchError = () => {
     refs.searchError.style.visibility = "hidden";
-}  
+}
