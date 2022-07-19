@@ -1,0 +1,39 @@
+.mask {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: black;
+    z-index: 100;
+    transition: 5s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.done {
+    opacity: 0;
+}
+
+.loader {
+    width: 75px;
+    height: 75px;
+    border: 10px solid rgb(223, 16, 171);
+    border-top:100ex;
+    border-bottom: 0ex;
+    border-left-color: gold;
+    
+     
+    
+    
+    border-radius: 50%;
+    animation: 0.5s spin infinite linear;
+}
+
+@keyframes spin {
+
+    100% {
+            transform: rotate(360deg);
+        }
+    }
