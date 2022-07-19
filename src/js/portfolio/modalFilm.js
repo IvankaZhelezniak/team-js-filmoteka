@@ -46,9 +46,12 @@ function onEscPress(e) {
 }
 
 refs.backdrop.addEventListener('click', onCloseBackdropClick);
+
 function onCloseBackdropClick(e) {
-  refs.backdrop.classList.add('is-hidden');
-  refs.body.classList.remove('backdrop-body-block-scroll');
+  if (e.target === e.currentTarget) {
+    refs.backdrop.classList.add('is-hidden');
+    refs.body.classList.remove('backdrop-body-block-scroll');
+  }
 }
 
 function clearInfoModal() {
