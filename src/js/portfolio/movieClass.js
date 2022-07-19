@@ -101,9 +101,7 @@ export {
   
 	makeGenresList(genre_ids, genres) {
 	  const genresArray = [];
-	
 	  for (let id of genre_ids) {
-		// если название пустое -- пропускаем
 		if (genres[id] === null || genres[id] === undefined) {
 		  continue;
 		}
@@ -117,6 +115,17 @@ export {
 	  return Object.values(genresArray).join(', ');
 	}
   
+	makeAllMoodalGenresList(genre_ids, genres) {
+		const genresArray = [];
+		for (let id of genre_ids) {
+		  if (genres[id] === null || genres[id] === undefined) {
+			continue;
+		  }
+		  genresArray.push(genres[id].name);
+		}
+		return Object.values(genresArray).join(', ');
+	  }
+
 	parseFindedFilms() {
 	  const value = localStorage.getItem('findFilms');
 	  let parsedFindedFilmsFromLS = [];
