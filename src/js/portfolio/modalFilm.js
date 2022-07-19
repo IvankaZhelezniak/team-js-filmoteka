@@ -1,7 +1,9 @@
 import { refs } from '../refs';
 import { movieClass } from './movieClass';
-import { genres } from './genres';
+// import { genres } from './genres';
+import genres from './genres';
 
+console.log('genresModal', genres);
 refs.gallery.addEventListener('click', onFilmCardClick);
 
 function onFilmCardClick(e) {
@@ -13,7 +15,12 @@ function onFilmCardClick(e) {
   const id = li.getAttribute('data-id');
 
   const film = movieClass.searchFilmByIdInLS(id);
+  const genresList = movieClass.makeAllMoodalGenresList(film.genre_ids, genres);
   // console.log('film:', film);
+  console.log('genres modal', genres);
+  
+  console.log('film.genre_ids', film.genre_ids);
+  
 
   const URL_IMG = 'https://image.tmdb.org/t/p/original';
   refs.imageModal.src = `${URL_IMG}${film.poster_path}`;
@@ -24,7 +31,7 @@ function onFilmCardClick(e) {
   refs.voteModal.textContent = `${film.vote_average.toFixed(2)}`;
   refs.votesModal.textContent = `${film.vote_count}`;
   refs.popularityModal.textContent = `${film.popularity}`;
-  refs.genreModal.textContent = `${film.genre_ids}`;
+  refs.genreModal.textContent = `${genresList}`;
   refs.overviewModal.textContent = `${film.overview}`;
 
   refs.backdrop.classList.remove('is-hidden');
