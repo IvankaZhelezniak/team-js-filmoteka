@@ -4,37 +4,51 @@
   padding-top: 40px;
   padding-bottom: 44px;
   background-color: rgba(0, 0, 0, 0.56);
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
+    url('/src/images/header/header-mob.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+  padding-right: 20px;
+  padding-left: 20px;
+  max-height: 230px;
 
-  @media screen and (min-width: 320px) {
-    background-image:
-      url('/src/images/header/header-mob.jpg');
-      padding-right: 20px;
-      padding-left: 20px;
-      max-height: 230px;
-
+  @media screen and (min-device-pixel-ratio: 2) and (min-width: 320px),
+    screen and (min-resolution: 192dpi) and (min-width: 320px),
+    screen and (min-resolution: 2dppx) and (min-width: 320px) {
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
+      url('/src/images/header/header-mob@2x.jpg');
   }
 
   @media screen and (min-width: 768px) {
-    background-image:
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
       url('/src/images/header/header-tab.jpg');
       padding-right: 32px;
       padding-left: 32px;
       min-height: 216px;
   }
 
+  @media screen and (min-device-pixel-ratio: 2) and (min-width: 768px),
+    screen and (min-resolution: 192dpi) and (min-width: 768px),
+    screen and (min-resolution: 2dppx) and (min-width: 768px) {
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
+      url('/src/images/header/header-tab@2x.jpg');
+  }
 
   @media screen and (min-width: 1280px) {
-    background-image: 
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
       url('/src/images/header/header-desk.jpg');
       padding-right: 32px;
       padding-left: 32px;
       min-height: 216px;
-
   }
 
+  @media screen and (min-device-pixel-ratio: 2) and (min-width: 1280px),
+    screen and (min-resolution: 192dpi) and (min-width: 1280px),
+    screen and (min-resolution: 2dppx) and (min-width: 1280px) {
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
+      url('/src/images/header/header-desk@2x.jpg');
+  }
 }
 
 .icon-color {
