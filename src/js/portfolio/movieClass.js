@@ -4,6 +4,10 @@ export {
   
   // ================================class Movie======================================
   const movieClass = new class Movie {
+	constructor() {
+		this.storageWatched = [];
+		this.storageQueue = [];
+	}
 	async fetchPopularMovies() {
 	  const response = await fetch(
 		'https://api.themoviedb.org/3/trending/all/day?api_key=5692dca6012d3660a336300872bd664c'
@@ -14,7 +18,59 @@ export {
 	saveToLocalStorageFindedFilms(films) {
 	  localStorage.setItem('findFilms', JSON.stringify(films.results));
 	}
-  
+
+	saveToLibraryMovieInLS(film, actions) {		
+		// console.log(`фильм сохранен в LS ${actions}`);
+		let filmArray = this.getFromLS(`${actions}`);
+		if (!filmArray){ filmArray =[]}
+
+		filmArray.push(film);
+		// console.log('actions, filmArray', actions, filmArray);
+		localStorage.setItem(`${actions}`, JSON.stringify(filmArray));
+	}
+
+	removeFromLibraryMovieInLS(filmToRemove, actions) {
+		// console.log(`фильм удален из LS ${actions}`);
+		
+		let filmArray = this.getFromLS(`${actions}`);
+		const removeIndex = filmArray.findIndex(film => film.id == filmToRemove.id);
+
+		filmArray.splice(removeIndex, 1);
+		
+		localStorage.setItem(`${actions}`, JSON.stringify(filmArray));
+	}
+
+	changeModalBtnName(li, actions) {
+	}
+
+	getFromLS(key) {
+		const value = localStorage.getItem(`${key}`);
+		
+		try{
+			// console.log('JSON.parse(value)', JSON.parse(value));
+		return JSON.parse(value);
+		} catch(error) {
+			if (error.name ==='SyntaxError') {
+				console.log('Ошибка парса JSON', );
+			}
+		}
+	}
+
+	isModalFilmIncludesLS(id, actions) {
+		const filmsArray = movieClass.getFromLS(actions);
+		if (filmsArray === null) {
+			// return console.log('фильма нет в локал сторидж', );
+		}
+
+		return filmsArray.find(film => {
+		  if (film.id == id) {
+			// return console.log('фильм уже есть в локал сторидж', );
+			
+		  }
+		});
+	  }
+
+
 	modifyDate(release_date, first_air_date) {
 	  // в некоторых нет даты релиза, используют дату первого полета
 	  if (release_date) {
@@ -85,6 +141,9 @@ export {
   }
   
   
+
+
+
   // ============================Genres (not use)=====================
   class Genres {
 	constructor() {}
