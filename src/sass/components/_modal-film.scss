@@ -1,25 +1,19 @@
 // Backdrop
 
 .backdrop-film {
+    transition: opacity 0.3s;
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     background-color: rgba($color: #000000, $alpha: 0.7);
-    // background-image: url(/src/images/modal-test-plug.jpg);
-    object-fit: cover;
-
-}
-
-.backdrop-film.is-hidden {
-    opacity: 0;
-    pointer-events: none;    
 }
 
 // body scroll block
 .backdrop-body-block-scroll {
     overflow: hidden;
+    
 }
 
 // Modal window
