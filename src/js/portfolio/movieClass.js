@@ -121,9 +121,9 @@ export {
 		  genresArray.push('Other');
 		  break;
 		}
+		genresArray.push(genres[id].name);
 		
-		genresArray.push(genres[index].name);
-	  }	  
+	  }
 	  return Object.values(genresArray).join(', ');
 	}
   
