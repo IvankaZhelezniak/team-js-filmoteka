@@ -17,4 +17,6 @@ const refs = {
   searchForm: document.querySelector('.search'),
   searchError: document.querySelector('.search-error'),
   searchFormContainer: document.querySelector('.search-form-container'),
+  modalBtnWatched: document.querySelector('[data-actions="watched"]'),
+  modalBtnQueue: document.querySelector('[data-actions="queue"]'),
 };
