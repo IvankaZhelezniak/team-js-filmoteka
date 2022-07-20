@@ -2,9 +2,11 @@ import { refs } from '../refs';
 import { createMurkup } from './createGalleryMarkup';
 import { movieClass } from './movieClass';
 
-refs.searchForm.addEventListener("submit", handleSubmit);
-refs.searchError.style.visibility = "hidden";
-
+if(refs?.searchForm) {
+  refs.searchForm.addEventListener("submit", handleSubmit);
+  console.log(refs.searchError);
+  refs.searchError.style.visibility = "hidden";
+}
 let page = 1;
 
 function handleSubmit(event) {
