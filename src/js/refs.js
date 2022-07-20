@@ -1,6 +1,5 @@
 export { refs };
 const refs = {
-
   gallery: document.querySelector('.js-gallery__list'),
   backdrop: document.querySelector('#backdrop'),
   body: document.querySelector('body'),
@@ -13,8 +12,8 @@ const refs = {
   popularityModal: document.querySelector('#popularity'),
   genreModal: document.querySelector('#genre'),
   overviewModal: document.querySelector('#overview'),
-	gallery: document.querySelector('.js-gallery__list'),
 	modalBtn: document.querySelector('.js-modal-button'),
-  	searchForm: document.querySelector('.search'),
-	searchError: document.querySelector('.search-error'),
+  searchForm: document.getElementById('form'),
+	searchError: document.getElementById('input-error'),
+  searchInput: document.querySelector('input[name="search"]'),
   };

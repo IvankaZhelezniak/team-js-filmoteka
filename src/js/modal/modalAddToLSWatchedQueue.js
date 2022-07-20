@@ -15,13 +15,12 @@ function onModalBtnClick(evt) {
   const film = movieClass.searchFilmByIdInLS(id);
   // console.log('film:', film,  'actions:', actions, 'id:', id, 'liBtn', liBtn);
 
+  // Проверка - сохранен ли фильм, внесение или удаление с локал сторидж 
   if (btnModalClass.isFilmIncludesLSLibrary(id, actions)) {
     movieClass.removeFromLibraryMovieInLS(film, actions);
   } else {
     movieClass.saveToLibraryMovieInLS(film, actions);
   }
 
-  // if (  btnModalClass.isFilmIncludesLSQueue(id)) {movieClass.removeFromLibraryMovie(film, actions)} else{
-  //   movieClass.saveToLibraryMovieInLS(film, actions);
-  // }
+  movieClass.changeModalBtnName(liBtn, id, actions);
 }
