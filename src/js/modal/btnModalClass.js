@@ -31,13 +31,5 @@ const btnModalClass = new class BtnModal {
 		  }
 		});
   }
-
-  changeWatchedBtnName() {
-	refs.modalBtnWatched.textContent = 'in watched list';
-  }
-
-  isFilmIncludesLSQueue() {
-	refs.modalBtnWatched.textContent = 'in queue list';
-  }
   
 }

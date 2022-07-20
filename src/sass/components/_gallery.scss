@@ -41,6 +41,7 @@
 
 .gallery_info__about{
     display: flex;
+    align-items: baseline;
     font-size: 12px;
     font-weight: 500;
     line-height: 14.06px;
@@ -51,6 +52,19 @@
     margin: 0 5px;
     }
 
+.gallery_info__rate {
+        font-size: 12px;
+        text-align: center;
+        width: 40px;
+        height: 20px;
+        color: #fff;
+        margin-left: 10px;
+        background-color: #ff6b01;
+        border-radius: 5px;
+        padding: 3px 0;
+        line-height: 14px;
+        display: inline-block;
+    }
     
 @media screen and (min-width: 768px) and (max-width: 1279px) {
     

@@ -1,27 +1,22 @@
 import { refs } from '../refs';
 import { createMurkup } from './createGalleryMarkup';
-// import { saveToLocalStorageFindedFilms } from './localStorage';
 import { movieClass } from './movieClass';
 
-if (refs.searchForm) {
-  refs.searchForm.addEventListener('submit', handleSubmit);
+if(refs?.searchForm) {
+  refs.searchForm.addEventListener("submit", handleSubmit);
+  console.log(refs.searchError);
+  refs.searchError.style.visibility = "hidden";
 }
-// console.log(refs.searchError);
-// refs.searchError.style.visibility = 'hidden';
 let page = 1;
 
 function handleSubmit(event) {
   event.preventDefault();
-
-  const {
-    elements: { search },
-  } = event.currentTarget;
-  searchQuery = search.value.trim();
+  const searchQuery = refs.searchForm.search.value.trim();
 
   if (searchQuery !== '') {
     createSearchedPortfolio(searchQuery);
-    event.currentTarget.reset();
-  }
+    refs.searchForm.reset();
+    }
   return searchQuery;
 }
 
@@ -38,12 +33,11 @@ async function fetchSearchedMovies(searchQuery) {
 }
 
 async function createSearchedPortfolio(input) {
-  return await fetchSearchedMovies(input).then(films => {
-    if (films.total_results !== 0) {
-      // saveToLocalStorageFindedFilms(films);
-      movieClass.saveToLocalStorageFindedFilms(films);
-      refs.gallery.innerHTML = '';
-      return refs.gallery.insertAdjacentHTML(
+    return await fetchSearchedMovies(input).then(films => {
+    if(films.total_results !== 0) {
+      movieClass.saveToLocalStorageFindedFilms(films);  
+        refs.gallery.innerHTML = "";  
+        return refs.gallery.insertAdjacentHTML(
         'beforeend',
         films.results
           .map(film => {
