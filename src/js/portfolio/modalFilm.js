@@ -16,11 +16,10 @@ function onFilmCardClick(e) {
 
   const film = movieClass.searchFilmByIdInLS(id);
   const genresList = movieClass.makeAllMoodalGenresList(film.genre_ids, genres);
-  // console.log('film:', film);
-  console.log('genres modal', genres);
-  
-  console.log('film.genre_ids', film.genre_ids);
-  
+  console.log('film:', film);
+  // console.log('genres modal', genres);
+
+  // console.log('film.genre_ids', film.genre_ids);
 
   const URL_IMG = 'https://image.tmdb.org/t/p/original';
   refs.imageModal.src = `${URL_IMG}${film.poster_path}`;
@@ -33,6 +32,9 @@ function onFilmCardClick(e) {
   refs.popularityModal.textContent = `${film.popularity}`;
   refs.genreModal.textContent = `${genresList}`;
   refs.overviewModal.textContent = `${film.overview}`;
+
+  refs.backdrop.style.background = `url(${URL_IMG}${film.backdrop_path}) no-repeat center`;
+  refs.backdrop.style.backgroundSize = 'cover';
 
   refs.backdrop.classList.remove('is-hidden');
   refs.body.classList.add('backdrop-body-block-scroll');
