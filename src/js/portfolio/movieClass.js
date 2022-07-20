@@ -96,6 +96,7 @@ export {
 		  break;
 		}
 		genresArray.push(genres[id].name);
+		
 	  }
 	  return Object.values(genresArray).join(', ');
 	}
