@@ -12,11 +12,10 @@ const refs = {
   popularityModal: document.querySelector('#popularity'),
   genreModal: document.querySelector('#genre'),
   overviewModal: document.querySelector('#overview'),
-  gallery: document.querySelector('.js-gallery__list'),
-  modalBtn: document.querySelector('.js-modal-button'),
-  searchForm: document.querySelector('.search'),
-  searchError: document.querySelector('.search-error'),
-  searchFormContainer: document.querySelector('.search-form-container'),
+	modalBtn: document.querySelector('.js-modal-button'),
+  searchForm: document.getElementById('form'),
+	searchError: document.getElementById('input-error'),
+  searchInput: document.querySelector('input[name="search"]'),
   modalBtnWatched: document.querySelector('[data-actions="watched"]'),
   modalBtnQueue: document.querySelector('[data-actions="queue"]'),
-};
+  };

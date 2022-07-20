@@ -1,10 +1,24 @@
 
 .theme {
     position:absolute;
-    top: 180px;
-    left:70%;
     display: flex;
-    justify-content: flex-end;
+    justify-content:center;
+    @media screen and (max-width: 319px) {
+        top: 180px;
+        left:45%;
+    }
+    @media screen and (min-width: 320px) and (max-width: 767px) {
+        top: 150px;
+        left:46%;
+    }
+    @media screen and (min-width: 768px) and (max-width: 1279px) {
+        top: 80px;
+        right:60px;
+    }
+    @media screen and (min-width: 1280px)  {
+        top: 80px;
+        right:68px;
+    }
 }
 
 .theme-toggle {
@@ -37,13 +51,17 @@
     fill:#ff6b01;
 }
 
-.is-hidden {
+.invisible {
     display: none;
 }
 
-.dark {    
+.dark {   
+    transition: 0.3s; 
     background-color: #505050;
     color: white;
+}
+body {
+    transition: 0.3s;
 }
 
 // .darkText {
