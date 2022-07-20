@@ -178,7 +178,8 @@
     max-width: 110px;
     align-items: center;
     text-align: center;
-    background-color: #FF6B01;
+    justify-content:center;
+    // background-color: #FF6B01;
     border-radius: 5px;
     transition: 250ms background-color ease-in-out;
     transition: 50ms opacity ease-in-out;
@@ -188,23 +189,25 @@
     }
 }
 
-.modal-film__link-item:first-child {
-    & .modal-film__link {
-        padding: 6px 27px;
-        font-size: 12px;
-        line-height: 16px;
-        color: #FFFFFF;
+// .modal-film__link-item:first-child {
+//     & .modal-film__link {
+//         padding: 6px 27px;
+//         font-size: 12px;
+//         line-height: 16px;
+//         color: #FFFFFF;
 
-        @media screen and (min-width:768px) {
-            padding: 14px 12px 13px 12px;
-        }
-    }
-}
+//         @media screen and (min-width:768px) {
+//             padding: 14px 12px 13px 12px;
+//         }
+//     }
+// }
 
-.modal-film__link-item:last-child {
+.modal-film__link-item {
     border-radius: 5px;
     background-color: #fff;
     border: solid 1px black;
+    height: 44px;
+    text-transform: uppercase;
 
     & .modal-film__link {
         padding: 13px;
@@ -223,16 +226,16 @@
     }
 }
 
-.modal-film__link-item:first-child:hover,
-.modal-film__link-item:first-child:focus {
-    & .modal-film__link {
-            color: #000000;
-            transition: 250ms color ease-in-out;
-        }
-}
+// .modal-film__link-item:first-child:hover,
+// .modal-film__link-item:first-child:focus {
+//     & .modal-film__link {
+//             color: #000000;
+//             transition: 250ms color ease-in-out;
+//         }
+// }
 
-.modal-film__link-item:last-child:hover, 
-.modal-film__link-item:last-child:focus {
+.modal-film__link-item:hover, 
+.modal-film__link-item:focus {
     transition: 250ms background-color ease-in-out;
     background-color: #FF6B01;
     border: solid 1px #FF6B01;
