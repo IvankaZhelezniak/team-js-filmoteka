@@ -17,11 +17,10 @@ function onFilmCardClick(e) {
   const film = movieClass.searchFilmByIdInLS(id);
   const genresList = movieClass.makeAllMoodalGenresList(film.genre_ids, genres);
   console.log('film:', film);
-  // console.log('genres modal', genres);
 
-  // console.log('film.genre_ids', film.genre_ids);
+  refs.searchFormContainer.style.display = 'none';
 
-  const URL_IMG = 'https://image.tmdb.org/t/p/original';
+  const URL_IMG = 'https://image.tmdb.org/t/p/w500';
   refs.imageModal.src = `${URL_IMG}${film.poster_path}`;
   refs.modalTitle.textContent = `${film.title ? film.title : film.name}`;
   refs.modalTitleOriginal.textContent = `${
@@ -40,29 +39,27 @@ function onFilmCardClick(e) {
   refs.body.classList.add('backdrop-body-block-scroll');
 }
 
-refs.btnCloseModalFilm.addEventListener('click', onCloseModalClick);
-function onCloseModalClick(e) {
-  refs.backdrop.classList.add('is-hidden');
-  refs.body.classList.remove('backdrop-body-block-scroll');
-}
+refs.btnCloseModalFilm.addEventListener('click', closeModal);
 
 window.addEventListener('keydown', onEscPress);
 function onEscPress(e) {
   if (e.key === 'Escape') {
-    refs.backdrop.classList.add('is-hidden');
-    refs.body.classList.remove('backdrop-body-block-scroll');
+    closeModal();
   }
 }
 
 refs.backdrop.addEventListener('click', onCloseBackdropClick);
-
 function onCloseBackdropClick(e) {
   if (e.target === e.currentTarget) {
-    refs.backdrop.classList.add('is-hidden');
-    refs.body.classList.remove('backdrop-body-block-scroll');
+    closeModal();
   }
 }
 
+function closeModal() {
+  refs.searchFormContainer.style.display = null;
+  refs.backdrop.classList.add('is-hidden');
+  refs.body.classList.remove('backdrop-body-block-scroll');
+}
 function clearInfoModal() {
   refs.imageModal.src = ``;
   refs.modalTitle.textContent = ``;
