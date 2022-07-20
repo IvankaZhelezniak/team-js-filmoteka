@@ -130,10 +130,11 @@ export {
 	makeAllMoodalGenresList(genre_ids, genres) {
 		const genresArray = [];
 		for (let id of genre_ids) {
-		  if (genres[id] === null || genres[id] === undefined) {
+			const index = genres.findIndex(genre => genre.id == id);
+		  if (genres[index] === null || genres[index] === undefined) {
 			continue;
 		  }
-		  genresArray.push(genres[id].name);
+		  genresArray.push(genres[index].name);
 		}
 		return Object.values(genresArray).join(', ');
 	  }
