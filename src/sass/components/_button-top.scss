@@ -20,6 +20,7 @@ html{
     pointer-events: all;
   }
   &:hover{
+    
     svg{
       fill: #FF6B08;
     }
@@ -32,7 +33,9 @@ html{
     transition: 0.15s all ease-in-out;
     padding: 7px;
     &:hover{
-      background: transparent;
+      background: rgba(#fff, 0.2);
+      backdrop-filter: blur(4px);
+      box-shadow: 0 0 10px rgba(#000, 0.2);
       
     }
 }
