@@ -4,3 +4,5 @@ import './js/portfolio/modalFilm';
 import './js/portfolio/searchByName';
 import './js/modal/modalAddToLSWatchedQueue';
 import './js/theme-toggle';
+import './js/loader';
+import './js/refs';
