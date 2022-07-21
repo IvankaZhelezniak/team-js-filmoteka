@@ -3,6 +3,7 @@ export {
   };
   
   // ================================class Movie======================================
+  let page = 1;
   const movieClass = new class Movie {
 	constructor() {
 		this.storageWatched = [];
@@ -10,8 +11,9 @@ export {
 	}
 	async fetchPopularMovies() {
 	  const response = await fetch(
-		'https://api.themoviedb.org/3/trending/all/day?api_key=5692dca6012d3660a336300872bd664c'
+		`https://api.themoviedb.org/3/trending/all/day?api_key=5692dca6012d3660a336300872bd664c&page=${page}`
 	  );
+	  page += 1;
 	  return await response.json();
 	}
   

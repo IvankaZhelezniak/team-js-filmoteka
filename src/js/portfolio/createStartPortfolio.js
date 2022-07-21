@@ -1,5 +1,6 @@
 // Генерирует разметку популярных фильмов, первой страницы
 export default createStartPortfolio();
+export {createStartPortfolio};
 
 import { createMurkup } from './createGalleryMarkup';
 import { refs } from '../refs';
