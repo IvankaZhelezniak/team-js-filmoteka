@@ -16,7 +16,9 @@ function onFilmCardClick(e) {
   // console.log('open modal id ', id);
 
   const film = movieClass.searchFilmByIdInLS(id);
-  const genresList = movieClass.makeAllMoodalGenresList(film.genre_ids, genres);
+  const genresList = movieClass.makeAllMoodalGenresList(film.genre_ids, genres)
+  ? movieClass.makeAllMoodalGenresList(film.genre_ids, genres)
+  : 'No info';
 
   refs.searchForm.style.display = 'none';
 
