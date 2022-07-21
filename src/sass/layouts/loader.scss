@@ -6,14 +6,17 @@
     height: 100%;
     background: black;
     z-index: 100;
-    transition: 5s;
+    transition: 7s all;
     display: flex;
     justify-content: center;
     align-items: center;
+    opacity: 1;
+    visibility: visible;
 }
 
 .done {
     opacity: 0;
+    visibility: hidden;
 }
 
 .loader {
@@ -23,12 +26,8 @@
     border-top:100ex;
     border-bottom: 0ex;
     border-left-color: gold;
-    
-     
-    
-    
     border-radius: 50%;
-    animation: 0.5s spin infinite linear;
+    animation: 0.5s spin linear infinite;
 }
 
 @keyframes spin {

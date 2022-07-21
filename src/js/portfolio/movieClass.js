@@ -1,3 +1,4 @@
+import { btnModalClass } from '../modal/btnModalClass';
 export {
 	movieClass
   };
@@ -42,7 +43,13 @@ export {
 		localStorage.setItem(`${actions}`, JSON.stringify(filmArray));
 	}
 
-	changeModalBtnName(li, actions) {
+	changeModalBtnName(li, id, actions) {
+		// console.log('work', );
+		
+		if (btnModalClass.isFilmIncludesLSLibrary( id, actions)) {
+			return li.textContent = `remove from ${actions}`;
+		  }
+		  return li.textContent = `add to ${actions}`;
 	}
 
 	getFromLS(key) {
@@ -101,18 +108,23 @@ export {
 	  return Object.values(genresArray).join(', ');
 	}
   
-	makeGenresList(genre_ids, genres) {
+	makeGenresList(genres_id, genres) {
 	  const genresArray = [];
-	  for (let id of genre_ids) {
-		if (genres[id] === null || genres[id] === undefined) {
+	  
+	  for (let id of genres_id) {
+		const index = genres.findIndex(genre => genre.id == id);
+		
+		if (genres[index] === null || genres[index] === undefined) {
 		  continue;
 		}
+
 		// если массив 2+ жанров -- пишем 'Other'
 		if (genresArray.length === 2) {
 		  genresArray.push('Other');
 		  break;
 		}
-		genresArray.push(genres[id].name);
+		genresArray.push(genres[index].name);
+		
 	  }
 	  return Object.values(genresArray).join(', ');
 	}
@@ -120,10 +132,11 @@ export {
 	makeAllMoodalGenresList(genre_ids, genres) {
 		const genresArray = [];
 		for (let id of genre_ids) {
-		  if (genres[id] === null || genres[id] === undefined) {
+			const index = genres.findIndex(genre => genre.id == id);
+		  if (genres[index] === null || genres[index] === undefined) {
 			continue;
 		  }
-		  genresArray.push(genres[id].name);
+		  genresArray.push(genres[index].name);
 		}
 		return Object.values(genresArray).join(', ');
 	  }

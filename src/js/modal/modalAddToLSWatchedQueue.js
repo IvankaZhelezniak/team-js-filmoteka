@@ -15,13 +15,18 @@ function onModalBtnClick(evt) {
   const film = movieClass.searchFilmByIdInLS(id);
   // console.log('film:', film,  'actions:', actions, 'id:', id, 'liBtn', liBtn);
 
+  // Проверка - сохранен ли фильм, внесение или удаление с локал сторидж 
   if (btnModalClass.isFilmIncludesLSLibrary(id, actions)) {
+    // console.log('удаляю из хранилища', );
+    
     movieClass.removeFromLibraryMovieInLS(film, actions);
   } else {
+    // console.log('добавляю в хранилище', );
+    
     movieClass.saveToLibraryMovieInLS(film, actions);
   }
 
-  // if (  btnModalClass.isFilmIncludesLSQueue(id)) {movieClass.removeFromLibraryMovie(film, actions)} else{
-  //   movieClass.saveToLibraryMovieInLS(film, actions);
-  // }
+  // console.log('изменяю название кнопки', );
+  
+  movieClass.changeModalBtnName(liBtn, id, actions);
 }
