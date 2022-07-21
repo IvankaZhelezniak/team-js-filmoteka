@@ -1,5 +1,6 @@
 import './js/someFunction';
 import './js/portfolio/createStartPortfolio';
+import './js/students';
 import './js/portfolio/modalFilm';
 import './js/portfolio/searchByName';
 import './js/portfolio/infinite-scroll-trending';
