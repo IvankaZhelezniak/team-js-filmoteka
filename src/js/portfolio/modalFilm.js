@@ -19,7 +19,7 @@ function onFilmCardClick(e) {
   const film = movieClass.searchFilmByIdInLS(id);
   const genresList = movieClass.makeAllMoodalGenresList(film.genre_ids, genres);
 
-  refs.searchFormContainer.style.display = 'none';
+  refs.searchForm.style.display = 'none';
 
   const URL_IMG = 'https://image.tmdb.org/t/p/w500';
   refs.modalBtnQueue.setAttribute('data-id', `${id}`);
@@ -62,7 +62,7 @@ function onCloseBackdropClick(e) {
 }
 
 function closeModal() {
-  refs.searchFormContainer.style.display = null;
+  refs.searchForm.style.display = null;
   refs.backdrop.classList.add('is-hidden');
   refs.body.classList.remove('backdrop-body-block-scroll');
 }
