@@ -4,7 +4,6 @@ import { movieClass } from './movieClass';
 import genres from './genres';
 import { btnModalClass } from '../modal/btnModalClass';
 
-// console.log('genresModal', genres);
 refs.gallery.addEventListener('click', onFilmCardClick);
 
 function onFilmCardClick(e) {
