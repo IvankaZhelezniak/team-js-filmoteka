@@ -1,8 +1,10 @@
+import { btnModalClass } from '../modal/btnModalClass';
 export {
 	movieClass
   };
   
   // ================================class Movie======================================
+  let page = 1;
   const movieClass = new class Movie {
 	constructor() {
 		this.storageWatched = [];
@@ -10,8 +12,9 @@ export {
 	}
 	async fetchPopularMovies() {
 	  const response = await fetch(
-		'https://api.themoviedb.org/3/trending/all/day?api_key=5692dca6012d3660a336300872bd664c'
+		`https://api.themoviedb.org/3/trending/all/day?api_key=5692dca6012d3660a336300872bd664c&page=${page}`
 	  );
+	  page += 1;
 	  return await response.json();
 	}
   
@@ -20,12 +23,33 @@ export {
 	}
 
 	saveToLibraryMovieInLS(film, actions) {		
+		// console.log(`фильм сохранен в LS ${actions}`);
 		let filmArray = this.getFromLS(`${actions}`);
 		if (!filmArray){ filmArray =[]}
 
 		filmArray.push(film);
 		// console.log('actions, filmArray', actions, filmArray);
 		localStorage.setItem(`${actions}`, JSON.stringify(filmArray));
+	}
+
+	removeFromLibraryMovieInLS(filmToRemove, actions) {
+		// console.log(`фильм удален из LS ${actions}`);
+		
+		let filmArray = this.getFromLS(`${actions}`);
+		const removeIndex = filmArray.findIndex(film => film.id == filmToRemove.id);
+
+		filmArray.splice(removeIndex, 1);
+		
+		localStorage.setItem(`${actions}`, JSON.stringify(filmArray));
+	}
+
+	changeModalBtnName(li, id, actions) {
+		// console.log('work', );
+		
+		if (btnModalClass.isFilmIncludesLSLibrary( id, actions)) {
+			return li.textContent = `remove from ${actions}`;
+		  }
+		  return li.textContent = `add to ${actions}`;
 	}
 
 	getFromLS(key) {
@@ -41,18 +65,20 @@ export {
 		}
 	}
 
-	// parseFindedFilms() {
-	// 	const value = localStorage.getItem('findFilms');
-	// 	let parsedFindedFilmsFromLS = [];
-	// 	try {
-	// 	  parsedFindedFilmsFromLS = JSON.parse(value);
-	// 	} catch (error) {
-	// 	  if (error.name === 'SyntaxError') {
-	// 		console.log('Ошибка парса JSON');
-	// 	  }
-	// 	}
-	// 	return parsedFindedFilmsFromLS;
-	// }
+	isModalFilmIncludesLS(id, actions) {
+		const filmsArray = movieClass.getFromLS(actions);
+		if (filmsArray === null) {
+			// return console.log('фильма нет в локал сторидж', );
+		}
+
+		return filmsArray.find(film => {
+		  if (film.id == id) {
+			// return console.log('фильм уже есть в локал сторидж', );
+			
+		  }
+		});
+	  }
+
 
 	modifyDate(release_date, first_air_date) {
 	  // в некоторых нет даты релиза, используют дату первого полета
@@ -82,24 +108,39 @@ export {
 	  return Object.values(genresArray).join(', ');
 	}
   
-	makeGenresList(genre_ids, genres) {
+	makeGenresList(genres_id, genres) {
 	  const genresArray = [];
-	
-	  for (let id of genre_ids) {
-		// если название пустое -- пропускаем
-		if (genres[id] === null || genres[id] === undefined) {
+	  
+	  for (let id of genres_id) {
+		const index = genres.findIndex(genre => genre.id == id);
+		
+		if (genres[index] === null || genres[index] === undefined) {
 		  continue;
 		}
+
 		// если массив 2+ жанров -- пишем 'Other'
 		if (genresArray.length === 2) {
 		  genresArray.push('Other');
 		  break;
 		}
-		genresArray.push(genres[id].name);
+		genresArray.push(genres[index].name);
+		
 	  }
 	  return Object.values(genresArray).join(', ');
 	}
   
+	makeAllMoodalGenresList(genre_ids, genres) {
+		const genresArray = [];
+		for (let id of genre_ids) {
+			const index = genres.findIndex(genre => genre.id == id);
+		  if (genres[index] === null || genres[index] === undefined) {
+			continue;
+		  }
+		  genresArray.push(genres[index].name);
+		}
+		return Object.values(genresArray).join(', ');
+	  }
+
 	parseFindedFilms() {
 	  const value = localStorage.getItem('findFilms');
 	  let parsedFindedFilmsFromLS = [];
