@@ -1,30 +1,45 @@
 // Backdrop
 
 .backdrop-film {
+    transition: opacity 0.3s;
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba($color: #000000, $alpha: 0.25);
+    background-color: rgba($color: #000000, $alpha: 0.7);
+    
 }
 
-.backdrop-film.is-hidden {
-    opacity: 0;
-    pointer-events: none;
+
+
+// body scroll block
+.backdrop-body-block-scroll {
+    overflow: hidden;
+    
 }
 
 // Modal window
 
 .modal-film {
-    position: absolute;
+    position: relative;
     left: 50%;
     transform: translate(-50%);
     min-width: 280px;
     min-height: 240px;
     border-radius: 5px;
     background-color: #FFFFFF;
-
+    &-back{
+        position: absolute;
+        width: 100vw;
+        height: 100vh;
+        z-index: -1;
+        backdrop-filter: blur(10px);
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
+  
     @media screen and(max-width:767px) {
         padding-top: 48px;
         padding-bottom: 40px;
@@ -33,7 +48,7 @@
         margin-top: 20px;
     }
     @media screen and (min-width: 768px) {
-        display: flex;
+        display: inline-flex;
         min-width: 704px;
         padding-top: 40px;
         padding-bottom: 40px;
@@ -54,7 +69,7 @@
     margin-left: auto;
     margin-right: auto;
     min-width: 240px;
-    min-height: 357px;
+    // min-height: 357px;
     border-radius: 5px;
     object-fit: cover;
 
@@ -64,11 +79,11 @@
         margin-left: 0;
         margin-right: 68px;
         width: 264px;
-        height: 373px;
+        // height: 373px;
     }
     @media screen and (min-width: 1280px) {
-        min-width: 375px;
-        min-height: 478px;
+        width: 375px;
+        // min-height: 478px;
     }
 }
 
@@ -89,20 +104,17 @@
     font-size: 12px;
     line-height: 1.33;
     color: #8C8C8C;
-
-}
-
-.modal-film__list-info-backend {
-    margin-left: 39px;
-    font-family: 'Roboto';
-    font-weight: 500;
-    font-size: 12px;
-    line-height: 1.33;
-    color: #000000;
-}
-
-.modal-film__list-info-item:not(:first-child) {
-    margin-top: 9px;
+    &-backend {
+        margin-left: 39px;
+        font-family: 'Roboto';
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 1.33;
+        color: #000000;
+    }
+    &-item:not(:first-child) {
+        margin-top: 9px;
+    }
 }
 
 .modal-film__title-about {
@@ -111,14 +123,13 @@
     font-weight: 500;
     font-size: 12px;
     line-height: 1.33;
-}
-
-.modal-film__title-about-text {
-    margin-bottom: 20px;
-    font-family: 'Roboto';
-    font-weight: 500;
-    font-size: 12px;
-    line-height: 1.66;
+    &-text {
+        margin-bottom: 20px;
+        font-family: 'Roboto';
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 1.66;
+    }
 }
 
 .modal-film__info-box {
@@ -148,11 +159,10 @@
     color: #FFFFFF;
     border-radius: 5px;
     background-color: #FF6B01;
-}
-
-.modal-film__votes:last-child {
-    color: #000000;
-    background-color: #F7F7F7;
+    &:last-child {
+        color: #000000;
+        background-color: #F7F7F7;
+    }
 }
 
 // Links - Buttons
@@ -161,7 +171,13 @@
     display: flex;
     justify-content: space-between;
     @media screen and (min-width: 1280px) {
-        justify-content:flex-start
+        position: fixed;
+        bottom: 40px;
+    }
+
+    @media screen and (min-width: 768px) {
+        position: fixed;
+        bottom: 40px;
     }
 }
 
@@ -170,67 +186,51 @@
     max-width: 110px;
     align-items: center;
     text-align: center;
-    background-color: #FF6B01;
+    justify-content:center;
     border-radius: 5px;
     transition: 250ms background-color ease-in-out;
     transition: 50ms opacity ease-in-out;
-
-    @media screen and (min-width: 768px) {
-        min-width: 125px;
-    }
-}
-
-.modal-film__link-item:first-child {
-    & .modal-film__link {
-        padding: 6px 27px;
-        font-size: 12px;
-        line-height: 16px;
-        color: #FFFFFF;
-
-        @media screen and (min-width:768px) {
-            padding: 14px 12px 13px 12px;
-        }
-    }
-}
-
-.modal-film__link-item:last-child {
     border-radius: 5px;
     background-color: #fff;
     border: solid 1px black;
+    height: 44px;
+    text-transform: uppercase;
 
+    &:hover,
+    &:focus {
+        transition: 250ms background-color ease-in-out;
+        background-color: #FF6B01;
+        border: solid 1px #FF6B01;
+        & .modal-film__link {
+            color: #fff;
+        }
+    }
+ 
     & .modal-film__link {
         padding: 13px;
         line-height: 16px;
         font-size: 12px;
         color: #000;
         transition: 250ms color ease-in-out;
+        
 
         @media screen and (min-width:768px) {
             padding: 14px 20px 13px 20px;
         }
     }
 
+    @media screen and (min-width: 768px) {
+        &:last-child{margin-left: 40px;}
+        min-width: 125px;
+    }
+
     @media screen and (min-width: 1280px) {
-        margin-left: 15px;
+        &:last-child{margin-left: 120px;}
     }
 }
 
-.modal-film__link-item:first-child:hover,
-.modal-film__link-item:first-child:focus {
-    & .modal-film__link {
-            color: #000000;
-            transition: 250ms color ease-in-out;
-        }
-}
-
-.modal-film__link-item:last-child:hover, 
-.modal-film__link-item:last-child:focus {
-    transition: 250ms background-color ease-in-out;
-    background-color: #FF6B01;
-    border: solid 1px #FF6B01;
-    & .modal-film__link {
-        color: #fff;
-    }
+.pointer{
+    cursor: pointer;
 }
 
 .modal-film__link-item:last-child:active,
@@ -254,15 +254,14 @@
     border: none;
     cursor: pointer;
     border-radius: 35%;
+    &:hover,
+    &:focus {
+        background-color: #FF6B01;
+        outline: none;
+        transition: 250ms background-color ease-in-out;
+    }
 }
 
-.modal-film__btn-close:focus {
-    background-color: #FF6B01;
-    outline: none;
-    transition: 250ms background-color ease-in-out;
-}
-
-.modal-film__btn-close:hover {
-    background-color: #FF6B01;
-    transition: 250ms background-color ease-in-out;
+.modal-film__link {
+    pointer-events: none;
 }
