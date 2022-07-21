@@ -1,7 +1,12 @@
-.footer__container {
-    background-color: var(--bg-second-color--);
-  }
-  
+.footer{
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  background-color: #F7F7F7;
+  background-size: cover;
+  background-position: center;
+}
+
   .footer__text {
     display: flex;
     justify-content: center;
