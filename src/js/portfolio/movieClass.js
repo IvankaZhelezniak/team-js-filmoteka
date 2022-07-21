@@ -21,7 +21,7 @@ export {
 	}
 
 	saveToLibraryMovieInLS(film, actions) {		
-		console.log(`фильм сохранен в LS ${actions}`);
+		// console.log(`фильм сохранен в LS ${actions}`);
 		let filmArray = this.getFromLS(`${actions}`);
 		if (!filmArray){ filmArray =[]}
 
@@ -31,7 +31,7 @@ export {
 	}
 
 	removeFromLibraryMovieInLS(filmToRemove, actions) {
-		console.log(`фильм удален из LS ${actions}`);
+		// console.log(`фильм удален из LS ${actions}`);
 		
 		let filmArray = this.getFromLS(`${actions}`);
 		const removeIndex = filmArray.findIndex(film => film.id == filmToRemove.id);
@@ -42,7 +42,7 @@ export {
 	}
 
 	changeModalBtnName(li, id, actions) {
-		console.log('work', );
+		// console.log('work', );
 		
 		if (btnModalClass.isFilmIncludesLSLibrary( id, actions)) {
 			return li.textContent = `remove from ${actions}`;
@@ -121,7 +121,7 @@ export {
 		  genresArray.push('Other');
 		  break;
 		}
-		genresArray.push(genres[id].name);
+		genresArray.push(genres[index].name);
 		
 	  }
 	  return Object.values(genresArray).join(', ');

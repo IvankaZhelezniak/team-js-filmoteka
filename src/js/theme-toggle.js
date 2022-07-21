@@ -8,8 +8,9 @@ const refs = {
     modalFilm: document.querySelector('.modal-film')
 }
 
-
-console.log(refs.infoNames);
+// console.log(refs.themeBtn);
+// console.log(refs.body);
+// console.log(refs.infoNames);
 
 updateTheme();
 

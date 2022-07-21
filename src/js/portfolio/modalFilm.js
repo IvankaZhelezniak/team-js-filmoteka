@@ -2,6 +2,7 @@ import { refs } from '../refs';
 import { movieClass } from './movieClass';
 // import { genres } from './genres';
 import genres from './genres';
+import { btnModalClass } from '../modal/btnModalClass';
 
 // console.log('genresModal', genres);
 refs.gallery.addEventListener('click', onFilmCardClick);
@@ -13,13 +14,16 @@ function onFilmCardClick(e) {
   const li = e.target.closest('li');
   if (!li) return;
   const id = li.getAttribute('data-id');
+  // console.log('open modal id ', id);
 
   const film = movieClass.searchFilmByIdInLS(id);
   const genresList = movieClass.makeAllMoodalGenresList(film.genre_ids, genres);
 
-  refs.searchFormContainer.style.display = 'none';
+  refs.searchForm.style.display = 'none';
 
   const URL_IMG = 'https://image.tmdb.org/t/p/w500';
+  refs.modalBtnQueue.setAttribute('data-id', `${id}`);
+  refs.modalBtnWatched.setAttribute('data-id', `${id}`);
   refs.imageModal.src = `${URL_IMG}${film.poster_path}`;
   refs.modalTitle.textContent = `${film.title ? film.title : film.name}`;
   refs.modalTitleOriginal.textContent = `${
@@ -36,6 +40,9 @@ function onFilmCardClick(e) {
 
   refs.backdrop.classList.remove('is-hidden');
   refs.body.classList.add('backdrop-body-block-scroll');
+
+  checkStartBtn(id, refs.modalBtnWatched, refs.modalBtnWatched.getAttribute('data-actions'));
+  checkStartBtn(id, refs.modalBtnQueue,  refs.modalBtnQueue.getAttribute('data-actions'));
 }
 
 refs.btnCloseModalFilm.addEventListener('click', closeModal);
@@ -55,7 +62,7 @@ function onCloseBackdropClick(e) {
 }
 
 function closeModal() {
-  refs.searchFormContainer.style.display = null;
+  refs.searchForm.style.display = null;
   refs.backdrop.classList.add('is-hidden');
   refs.body.classList.remove('backdrop-body-block-scroll');
 }
@@ -68,4 +75,12 @@ function clearInfoModal() {
   refs.popularityModal.textContent = ``;
   refs.genreModal.textContent = ``;
   refs.overviewModal.textContent = ``;
+}
+
+function checkStartBtn(id, btn, actions) {
+  if (btnModalClass.isFilmIncludesLSLibrary(id, actions)) {
+    btn.textContent = `remove from ${actions}`;
+  } else {
+    btn.textContent = `add to ${actions}`;
+  }
 }
