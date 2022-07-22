@@ -1,34 +1,36 @@
+@import '../variables';
+
 // Backdrop
 
 .backdrop-film {
-    transition: opacity 0.3s;
+    transition: opacity 0.3s $animation-cubic;
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     background-color: rgba($color: #000000, $alpha: 0.7);
-    
 }
 
 
 
 // body scroll block
-.backdrop-body-block-scroll {
+.backdrop-film .backdrop-body-block-scroll {
     overflow: hidden;
-    
 }
 
 // Modal window
 
-.modal-film {
+.backdrop-film .modal-film {
     position: relative;
     left: 50%;
-    transform: translate(-50%);
+    top: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 400px;
     min-width: 280px;
     min-height: 240px;
     border-radius: 5px;
-    background-color: #FFFFFF;
+    background-color: $bg-color-modal;
     &-back{
         position: absolute;
         width: 100vw;
@@ -46,6 +48,8 @@
         padding-left: 20px;
         padding-right: 20px;
         margin-top: 20px;
+        top: 0;
+        transform: translate(-50%);
     }
     @media screen and (min-width: 768px) {
         display: inline-flex;
@@ -53,23 +57,22 @@
         padding-top: 40px;
         padding-bottom: 40px;
         padding-left: 36px;
-        padding-right: 72px;
-        margin-top: 219px;
+        padding-right: 36px;
     }
     @media screen and (min-width: 1280px) {
-        margin-top: 150px;
         padding: 40px 12px;
+        min-width: 806px;
     }
 }
 
 // Image 
 
-.modal-film__image {
+.backdrop-film .modal-film__image {
     margin-bottom: 20px;
     margin-left: auto;
     margin-right: auto;
+    // max-height: 50px;
     min-width: 240px;
-    // min-height: 357px;
     border-radius: 5px;
     object-fit: cover;
 
@@ -78,65 +81,71 @@
         margin-top: 0;
         margin-left: 0;
         margin-right: 68px;
-        width: 264px;
-        // height: 373px;
+        width: 300px;
     }
     @media screen and (min-width: 1280px) {
         width: 375px;
-        // min-height: 478px;
     }
 }
 
 // Info
 
-.modal-film__title {
+.backdrop-film .modal-film__title {
     margin-bottom: 20px;
-    font-family: 'Roboto';
+    font-family: $main-font;
     font-weight: 500;
     font-size: 20px;
     line-height: 1.15;
-    color: #000000;
+    color: $main-text-color-modal;
 }
 
-.modal-film__list-info {
-    font-family: 'Roboto';
+.backdrop-film .modal-film__list-info {
+    font-family: $main-font;
     font-weight: 500;
-    font-size: 12px;
+    font-size: $main-font-size;
     line-height: 1.33;
-    color: #8C8C8C;
+    color: $second-text-color-modal;
     &-backend {
         margin-left: 39px;
-        font-family: 'Roboto';
+        font-family: $main-font;
         font-weight: 500;
-        font-size: 12px;
+        font-size: $main-font-size;
         line-height: 1.33;
-        color: #000000;
+        color: $main-text-color-modal;
     }
     &-item:not(:first-child) {
         margin-top: 9px;
     }
-}
-
-.modal-film__title-about {
-    margin-bottom: 8px;
-    font-family: 'Roboto';
-    font-weight: 500;
-    font-size: 12px;
-    line-height: 1.33;
-    &-text {
-        margin-bottom: 20px;
-        font-family: 'Roboto';
-        font-weight: 500;
-        font-size: 12px;
-        line-height: 1.66;
+    @media screen and (min-width:768px) {
+        min-width: 70px;
     }
 }
 
-.modal-film__info-box {
+.backdrop-film .modal-film__title-about {
+    margin-bottom: 8px;
+    font-family: $main-font;
+    font-weight: 500;
+    font-size: $main-font-size;
+    line-height: 1.33;
+    color: $main-text-color-modal;
+    &-text {
+        margin-bottom: 20px;
+        font-family: $main-font;
+        font-weight: 500;
+        font-size: $main-font-size;
+        line-height: 1.66;
+        color: $main-text-color-modal;
+        @media screen and (min-width: 1280px) {
+            margin-bottom: 40px;
+        }
+    }
+}
+
+.backdrop-film .modal-film__info-box {
     margin-left: auto;
     margin-right: auto;
     @media screen and (min-width:768px) {
-        width: 264px;
+        width: 320px;
         margin: 0;
     }
     @media screen and (min-width: 1280px) {
@@ -145,22 +154,24 @@
     }
 }
 
-.modal-film__info-container {
+.backdrop-film .modal-film__info-container {
     display: flex;
     margin-bottom: 20px;
 }
 
-.modal-film__votes {
+ .modal-film__votes {
     display: inline-block;
     padding: 1px 0;
     text-align: center;
     min-width: 36px;
+    padding-left: 4px;
+    padding-right: 4px;
     line-height: 14px;
     color: #FFFFFF;
     border-radius: 5px;
-    background-color: #FF6B01;
+    background-color: $accentColor;
     &:last-child {
-        color: #000000;
+        color: $main-text-color-modal;
         background-color: #F7F7F7;
     }
 }
@@ -169,75 +180,63 @@
 
 .modal-film__links-list {
     display: flex;
-    justify-content: space-between;
-    @media screen and (min-width: 1280px) {
-        position: fixed;
-        bottom: 40px;
-    }
+    // justify-content: center;
+    
+    // @media screen and (min-width: 1280px) {
+    //     position: fixed;
+    //     bottom: 40px;
+    // }
 
-    @media screen and (min-width: 768px) {
-        position: fixed;
-        bottom: 40px;
-    }
+    // @media screen and (min-width: 768px) {
+    //     position: fixed;
+    //     bottom: 40px;
+    // }
 }
 
 .modal-film__link-item {
     display: flex;
-    max-width: 110px;
     align-items: center;
     text-align: center;
     justify-content:center;
+    width: 150px;
     border-radius: 5px;
-    transition: 250ms background-color ease-in-out;
-    transition: 50ms opacity ease-in-out;
+    transition: 250ms $animation-cubic;
+    transition: 50ms $animation-cubic;
     border-radius: 5px;
-    background-color: #fff;
     border: solid 1px black;
     height: 44px;
     text-transform: uppercase;
+    color: $main-text-color-modal;
+
+    &:last-child {
+        margin-left: 20px;
+    }
 
     &:hover,
     &:focus {
-        transition: 250ms background-color ease-in-out;
-        background-color: #FF6B01;
+        transition: 250ms $animation-cubic;
+        background-color: $accentColor;
         border: solid 1px #FF6B01;
-        & .modal-film__link {
-            color: #fff;
-        }
+        cursor: pointer;
     }
- 
     & .modal-film__link {
         padding: 13px;
         line-height: 16px;
-        font-size: 12px;
-        color: #000;
-        transition: 250ms color ease-in-out;
-        
+        font-size: $main-font-size;
+        color: $main-text-color-modal;
+        transition: 250ms $animation-cubic;
 
-        @media screen and (min-width:768px) {
+        @media screen and (min-width:200px) {
             padding: 14px 20px 13px 20px;
         }
     }
-
-    @media screen and (min-width: 768px) {
-        &:last-child{margin-left: 40px;}
-        min-width: 125px;
-    }
-
-    @media screen and (min-width: 1280px) {
-        &:last-child{margin-left: 120px;}
-    }
-}
-
-.pointer{
-    cursor: pointer;
 }
 
 .modal-film__link-item:last-child:active,
 .modal-film__link-item:first-child:active,
 .modal-film__btn-close:active {
     opacity: 0.8;
-    transition: 100ms opacity ease-in-out;
+    transition: 100ms  $animation-cubic;
 }
 
 
@@ -258,7 +257,7 @@
     &:focus {
         background-color: #FF6B01;
         outline: none;
-        transition: 250ms background-color ease-in-out;
+        transition: 250ms $animation-cubic;
     }
 }
 

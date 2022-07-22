@@ -1,61 +1,103 @@
 const storageKey = 'preference-theme';
-const refs = {
-    body: document.querySelector('body'),
-    infoNames: document.querySelectorAll('.gallery_info__name'),
-    themeBtn: document.querySelector('.theme-toggle'),
-    lightToggleIcon: document.querySelector('.lightToggleIcon'),
-    darkToggleIcon: document.querySelector('.darkToggleIcon'),
-    modalFilm: document.querySelector('.modal-film')
-}
-
-// console.log(refs.themeBtn);
-// console.log(refs.body);
-// console.log(refs.infoNames);
+import { refs } from './refs';
 
 updateTheme();
+changeTheme();
 
-refs.themeBtn.addEventListener('click', toggleTheme);
+function changeTheme() {
+    if (refs.bodyHtml) {
+        refs.themeBtnHtml.addEventListener('click', toggleThemeHtml);
+    } if (refs.bodyLibrary) {
+        refs.themeBtnLibrary.addEventListener('click', toggleThemeLibrary);
+    }
+}
 
-function toggleTheme(event) {
+function toggleThemeHtml(event) {
     event.preventDefault();
-    const result = refs.themeBtn.classList.toggle('js-light');
+    const result = refs.themeBtnHtml.classList.toggle('js-light');
     // console.log(result);
     if (result) {
         theme = 'light';
-        refs.body.classList.remove('dark');
-        refs.modalFilm.classList.remove('dark');
-        refs.darkToggleIcon.classList.add('invisible');
-        refs.lightToggleIcon.classList.remove('invisible');
-        // refs.infoNames.map(infoName => infoName.classList.remove('darkText'));
-    } else {
-        theme = "dark";
-        refs.body.classList.add('dark');
-        refs.modalFilm.classList.add('dark');
-        refs.lightToggleIcon.classList.add('invisible');
-        refs.darkToggleIcon.classList.remove('invisible');
-        // refs.infoNames.map(infoName => infoName.classList.add('darkText'));
-    }
-    // console.log(theme);
-    localStorage.setItem("preference-theme", theme);
-}
-function updateTheme() {
-    theme = localStorage.getItem('preference-theme');
-    // console.log(theme);
-    if (theme === 'light') {
-        refs.body.classList.remove('dark');
-        refs.modalFilm.classList.remove('dark');
-        refs.themeBtn.classList.add('js-light');
-        refs.lightToggleIcon.classList.remove('invisible');
-        refs.darkToggleIcon.classList.add('invisible');
-        // refs.infoNames.map(infoName => infoName.classList.remove('darkText'));
+        refs.bodyHtml.classList.remove('dark');
+        refs.backdrop.classList.remove('darkModal');
+        removeLightIconInvisible();        
         
     } else {
-        refs.body.classList.add('dark');
-        refs.modalFilm.classList.add('dark');
-        refs.themeBtn.classList.remove('js-light');
-        refs.lightToggleIcon.classList.add('invisible');
-        refs.darkToggleIcon.classList.remove('invisible');
-        // refs.infoNames.map(infoName => infoName.classList.add('darkText'));
-
+        theme = "dark";
+        refs.bodyHtml.classList.add('dark');
+        refs.backdrop.classList.add('darkModal');
+        addLightIconInvisible();
+        
     }
+    // console.log(theme);
+    localStorage.setItem(storageKey, theme);
+}
+
+function toggleThemeLibrary(event) {
+    event.preventDefault();
+    const result = refs.themeBtnLibrary.classList.toggle('js-light');
+    // console.log(result);
+    if (result) {
+        theme = 'light';
+        refs.bodyLibrary.classList.remove('dark');
+        refs.backdrop.classList.remove('darkModal');
+        removeLightIconInvisible();
+        
+    } else {
+        theme = "dark";
+        refs.bodyLibrary.classList.add('dark');
+        refs.backdrop.classList.add('darkModal');
+        addLightIconInvisible();
+        
+    }
+    // console.log(theme);
+    localStorage.setItem(storageKey, theme);
+}
+
+
+function updateTheme() {
+    theme = localStorage.getItem(storageKey);
+    // console.log(theme);
+    if (refs.bodyHtml) {
+        // console.log(refs.bodyHtml);
+        if (theme === 'light') {
+            refs.bodyHtml.classList.remove('dark');
+            refs.themeBtnHtml.classList.add('js-light');
+            refs.backdrop.classList.remove('darkModal');
+            removeLightIconInvisible();
+                        
+        } else {
+            refs.bodyHtml.classList.add('dark');
+            refs.themeBtnHtml.classList.remove('js-light');
+            refs.backdrop.classList.add('darkModal');
+            addLightIconInvisible();
+               
+        }
+        
+    } if (refs.bodyLibrary) {
+        // console.log(refs.bodyLibrary);
+        if (theme === 'light') {
+            refs.bodyLibrary.classList.remove('dark');
+            refs.themeBtnLibrary.classList.add('js-light');
+            refs.backdrop.classList.remove('darkModal');
+            removeLightIconInvisible();
+            
+        } 
+        else {
+            refs.bodyLibrary.classList.add('dark');
+            refs.themeBtnLibrary.classList.remove('js-light');
+            refs.backdrop.classList.add('darkModal');
+            addLightIconInvisible();
+        }
+    }
+}
+
+function addLightIconInvisible() {
+    refs.lightToggleIcon.classList.add('invisible');
+    refs.darkToggleIcon.classList.remove('invisible');
+}
+
+function removeLightIconInvisible() {
+    refs.lightToggleIcon.classList.remove('invisible');
+    refs.darkToggleIcon.classList.add('invisible');
 }
