@@ -1,11 +1,11 @@
+import './js/theme-toggle';
 import './js/someFunction';
 import './js/portfolio/createStartPortfolio';
-import './js/students';
 import './js/portfolio/modalFilm';
+import './js/students';
 import './js/portfolio/searchByName';
 import './js/portfolio/infinite-scroll-trending';
 import './js/modal/modalAddToLSWatchedQueue';
 import './js/portfolio/buttonTop';
-import './js/theme-toggle';
 import './js/loader';
 import './js/refs';
