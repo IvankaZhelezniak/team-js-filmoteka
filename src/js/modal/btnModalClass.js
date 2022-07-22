@@ -6,12 +6,15 @@ export { btnModalClass };
 const btnModalClass = new (class BtnModal {
   isFilmIncludesLSLibrary(id, actions) {
     const filmsArray = movieClass.getFromLS(`${actions}`);
-    if (filmsArray === null) {
+    
+    if (filmsArray === null) {      
       return false;
     }
 
     return filmsArray.find(film => {
-      if (film.id == id) {
+      if (film.id == id) {  
+        // console.log('inc yees', `${id}`);
+        
         return true;
       }
     });

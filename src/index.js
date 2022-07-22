@@ -9,3 +9,4 @@ import './js/portfolio/buttonTop';
 import './js/theme-toggle';
 import './js/loader';
 import './js/refs';
+import './js/portfolio/cteateGalleryStickers';
