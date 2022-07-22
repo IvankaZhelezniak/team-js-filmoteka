@@ -22,7 +22,6 @@ const refs = {
   themeBtnHtml: document.querySelector('#theme-toggle__html'),
   lightToggleIcon: document.querySelector('.lightToggleIcon'),
   darkToggleIcon: document.querySelector('.darkToggleIcon'),
-  modalFilm: document.querySelector('.modal-film'),
   bodyHtml: document.querySelector('#body-html'),
   bodyLibrary: document.querySelector('#body-library'),
   modalFilmBackBlure: document.querySelector('.modal-film-back'),
