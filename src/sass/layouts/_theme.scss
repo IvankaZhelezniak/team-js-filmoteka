@@ -1,4 +1,4 @@
-
+@import '../variables'; 
 .theme {
     position:absolute;
     display: flex;
@@ -44,11 +44,11 @@
 
 .lightToggleIcon {
     position: relative;
-    fill:#ff6b01;
+    fill: $accentColor;
 }
 .darkToggleIcon {
     position: relative;
-    fill:#ff6b01;
+    fill:$accentColor;
 }
 
 .invisible {
@@ -57,18 +57,37 @@
 
 .dark {   
     transition: 0.3s; 
-    background-color: #505050;
-    color: white;
+    background-color: $bg-dark-modal-color;
+    color: $text-white-color;
 }
 
-.darkBtn {
-    background-color: #333333;
+.darkModal .modal-film {
+    background-color: $bg-dark-modal-color;
+}
+.darkModal .modal-film__btn-close {
+    background-color: $icon-color;
+}
+.darkModal .modal-film__title {
+    color: $text-dark-theme-color;
 }
 
-body {
-    transition: 0.3s;
+.darkModal .pointer {
+    background-color: $icon-color;
+    color: $text-dark-theme-color;
 }
 
-// .darkText {
-//     color: white;
-// }
+.darkModal .vote {
+    color: $text-dark-theme-color;
+}
+
+.darkModal .votes {
+    background-color: $icon-color;
+}
+
+.darkModal .light {
+    color:$text-dark-theme-color;
+}
+
+.darkModal .gray {
+    color: $icon-color;
+}
