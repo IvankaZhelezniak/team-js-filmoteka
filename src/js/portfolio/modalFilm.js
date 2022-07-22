@@ -7,6 +7,7 @@ import { btnModalClass } from '../modal/btnModalClass';
 refs.gallery.addEventListener('click', onFilmCardClick);
 
 function onFilmCardClick(e) {
+  refs.modalBtn.addEventListener('click', onModalBtnClick);
   e.preventDefault();
   clearInfoModal();
 
@@ -99,6 +100,7 @@ function onFilmCardClick(e) {
   }
 
   function closeModal() {
+    refs.modalBtn.removeEventListener('click', onModalBtnClick);
     refs.searchForm.style.display = null;
     refs.backdrop.classList.add('is-hidden');
     refs.body.classList.remove('backdrop-body-block-scroll');

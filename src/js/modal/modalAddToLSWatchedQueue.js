@@ -2,8 +2,6 @@ import { refs } from '../refs';
 import { movieClass } from '../portfolio/movieClass';
 import { btnModalClass } from './btnModalClass';
 
-refs.modalBtn.addEventListener('click', onModalBtnClick);
-
 function onModalBtnClick(evt) {
   evt.preventDefault();
 
