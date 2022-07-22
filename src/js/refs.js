@@ -18,4 +18,11 @@ const refs = {
   searchInput: document.querySelector('input[name="search"]'),
   modalBtnWatched: document.querySelector('[data-actions="watched"]'),
   modalBtnQueue: document.querySelector('[data-actions="queue"]'),
+  themeBtnLibrary: document.querySelector('#theme-toggle__library'),
+  themeBtnHtml: document.querySelector('#theme-toggle__html'),
+  lightToggleIcon: document.querySelector('.lightToggleIcon'),
+  darkToggleIcon: document.querySelector('.darkToggleIcon'),
+  modalFilm: document.querySelector('.modal-film'),
+  bodyHtml: document.querySelector('#body-html'),
+  bodyLibrary: document.querySelector('#body-library'),
   };
