@@ -13,7 +13,6 @@ function onFilmCardClick(e) {
   const li = e.target.closest('li');
   if (!li) return;
   const id = li.getAttribute('data-id');
-  // console.log('open modal id ', id);
 
   const film = movieClass.searchFilmByIdInLS(id);
 
