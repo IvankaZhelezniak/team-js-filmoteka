@@ -6,7 +6,11 @@ import { refs } from '../refs';
 import { movieClass } from './movieClass';
 
 async function createStartPortfolio() {
-  return await movieClass.fetchPopularMovies().then(films => {
+  var searchQuery = '';
+  var type = 'trending/all/day';
+  var page = '1';
+  var lang = 'en-US';
+  return await movieClass.fetchMovies(type, page, lang, searchQuery).then(films => {
     movieClass.saveToLocalStorageFindedFilms(films);
 
     return refs.gallery.insertAdjacentHTML(

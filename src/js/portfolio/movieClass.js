@@ -9,9 +9,10 @@ export {
 		this.storageWatched = [];
 		this.storageQueue = [];
 	}
-	async fetchPopularMovies() {
-	  const response = await fetch(
-		'https://api.themoviedb.org/3/trending/all/day?api_key=5692dca6012d3660a336300872bd664c'
+	async fetchMovies(type, page, lang, searchQuery) {
+
+	const response = await fetch(
+		`https://api.themoviedb.org/3/${type}?api_key=5692dca6012d3660a336300872bd664c&page=${page}&language=${lang}&include_adult=false&query=${searchQuery}`
 	  );
 	  return await response.json();
 	}
