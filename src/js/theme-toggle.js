@@ -19,15 +19,15 @@ function toggleThemeHtml(event) {
     if (result) {
         theme = 'light';
         refs.bodyHtml.classList.remove('dark');
-        removeDarkClass();
+        refs.backdrop.classList.remove('darkModal');
         removeLightIconInvisible();        
-        // refs.infoNames.map(infoName => infoName.classList.remove('darkText'));
+        
     } else {
         theme = "dark";
         refs.bodyHtml.classList.add('dark');
-        addDarkClass();
+        refs.backdrop.classList.add('darkModal');
         addLightIconInvisible();
-        // refs.infoNames.map(infoName => infoName.classList.add('darkText'));
+        
     }
     // console.log(theme);
     localStorage.setItem(storageKey, theme);
@@ -40,15 +40,15 @@ function toggleThemeLibrary(event) {
     if (result) {
         theme = 'light';
         refs.bodyLibrary.classList.remove('dark');
-        removeDarkClass();
+        refs.backdrop.classList.remove('darkModal');
         removeLightIconInvisible();
-        // refs.infoNames.map(infoName => infoName.classList.remove('darkText'));
+        
     } else {
         theme = "dark";
         refs.bodyLibrary.classList.add('dark');
-        addDarkClass();
+        refs.backdrop.classList.add('darkModal');
         addLightIconInvisible();
-        // refs.infoNames.map(infoName => infoName.classList.add('darkText'));
+        
     }
     // console.log(theme);
     localStorage.setItem(storageKey, theme);
@@ -63,15 +63,15 @@ function updateTheme() {
         if (theme === 'light') {
             refs.bodyHtml.classList.remove('dark');
             refs.themeBtnHtml.classList.add('js-light');
-            removeDarkClass();
+            refs.backdrop.classList.remove('darkModal');
             removeLightIconInvisible();
-            // refs.infoNames.map(infoName => infoName.classList.remove('darkText'));            
+                        
         } else {
             refs.bodyHtml.classList.add('dark');
             refs.themeBtnHtml.classList.remove('js-light');
-            addDarkClass();
+            refs.backdrop.classList.add('darkModal');
             addLightIconInvisible();
-            // refs.infoNames.map(infoName => infoName.classList.add('darkText'));    
+               
         }
         
     } if (refs.bodyLibrary) {
@@ -79,39 +79,25 @@ function updateTheme() {
         if (theme === 'light') {
             refs.bodyLibrary.classList.remove('dark');
             refs.themeBtnLibrary.classList.add('js-light');
-            removeDarkClass();
+            refs.backdrop.classList.remove('darkModal');
             removeLightIconInvisible();
-            // refs.infoNames.map(infoName => infoName.classList.remove('darkText'));
+            
         } 
         else {
             refs.bodyLibrary.classList.add('dark');
             refs.themeBtnLibrary.classList.remove('js-light');
-            addDarkClass();
+            refs.backdrop.classList.add('darkModal');
             addLightIconInvisible();
-            // refs.infoNames.map(infoName => infoName.classList.add('darkText'));    
         }
     }
 }
 
-function removeDarkClass() {
-    refs.modalFilm.classList.remove('dark');
-    refs.modalBtnWatched.classList.remove('darkBtn');
-    refs.modalBtnQueue.classList.remove('darkBtn');
-    refs.btnCloseModalFilm.classList.remove('darkBtn');
-}
- function addDarkClass() {
-    refs.modalFilm.classList.add('dark');
-    refs.modalBtnWatched.classList.add('darkBtn');
-    refs.modalBtnQueue.classList.add('darkBtn');
-    refs.btnCloseModalFilm.classList.add('darkBtn');
- }
-
- function addLightIconInvisible() {
+function addLightIconInvisible() {
     refs.lightToggleIcon.classList.add('invisible');
     refs.darkToggleIcon.classList.remove('invisible');
- }
+}
 
- function removeLightIconInvisible() {
+function removeLightIconInvisible() {
     refs.lightToggleIcon.classList.remove('invisible');
     refs.darkToggleIcon.classList.add('invisible');
- }
+}
