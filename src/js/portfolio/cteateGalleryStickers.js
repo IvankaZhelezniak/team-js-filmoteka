@@ -1,9 +1,9 @@
 import { btnModalClass } from '../modal/btnModalClass';
 import { movieClass } from './movieClass';
 import { refs } from '../refs';
-export {createGalleryStickers};
+export {createGalleryStickers, createFilmStickers, removeFilmStickers};
 
-// createGalleryStickers ();
+
 function createGalleryStickers () {
 	filmsInGallery = movieClass.parseFindedFilms();
 	// console.log('filmsInGallery', filmsInGallery);
@@ -32,6 +32,13 @@ function createFilmStickers(film, actions) {
 	const card = document.querySelector(`[data-id='${film.id}']`);
 	// console.log('card', card);
 
-	card.insertAdjacentHTML('beforeend', `<a>--${actions}--</a>`);
+	card.insertAdjacentHTML('beforeend', `<a class=btnAcction data-id=${film.id}${actions} >--${actions}--</a>`);
 	
+}
+
+function removeFilmStickers(film, actions) {
+	// console.log(`удаляю стикер ${actions} на карточке фильма ${film.id}`, );
+	const statusBtn = document.querySelector(`[data-id='${film.id}${actions}']`)
+    // console.log('statusBtn', statusBtn);
+	statusBtn.remove();
 }
