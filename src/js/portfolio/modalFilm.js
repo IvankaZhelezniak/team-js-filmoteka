@@ -3,17 +3,18 @@ import { movieClass } from './movieClass';
 // import { genres } from './genres';
 import genres from './genres';
 import { btnModalClass } from '../modal/btnModalClass';
+import {onModalBtnClick} from '../modal/modalAddToLSWatchedQueue'
 
 refs.gallery.addEventListener('click', onFilmCardClick);
 
 function onFilmCardClick(e) {
+  refs.modalBtn.addEventListener('click', onModalBtnClick);
   e.preventDefault();
   clearInfoModal();
 
   const li = e.target.closest('li');
   if (!li) return;
   const id = li.getAttribute('data-id');
-  // console.log('open modal id ', id);
 
   const film = movieClass.searchFilmByIdInLS(id);
 
@@ -56,7 +57,7 @@ function onFilmCardClick(e) {
       refs.modalBtnQueue.getAttribute('data-actions')
     );
 
-    console.log('film:', film);
+    // console.log('film:', film);
     // console.log(
     //   `http://api.themoviedb.org/3/movie/${film.id}?api_key=5692dca6012d3660a336300872bd664c&append_to_response=videos`
     // );
@@ -99,6 +100,7 @@ function onFilmCardClick(e) {
   }
 
   function closeModal() {
+    refs.modalBtn.removeEventListener('click', onModalBtnClick);
     refs.searchForm.style.display = null;
     refs.backdrop.classList.add('is-hidden');
     refs.body.classList.remove('backdrop-body-block-scroll');

@@ -9,3 +9,4 @@ import './js/modal/modalAddToLSWatchedQueue';
 import './js/portfolio/buttonTop';
 import './js/loader';
 import './js/refs';
+import './js/portfolio/cteateGalleryStickers';
