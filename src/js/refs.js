@@ -12,9 +12,9 @@ const refs = {
   popularityModal: document.querySelector('#popularity'),
   genreModal: document.querySelector('#genre'),
   overviewModal: document.querySelector('#overview'),
-	modalBtn: document.querySelector('.js-modal-button'),
+  modalBtn: document.querySelector('.js-modal-button'),
   searchForm: document.getElementById('form'),
-	searchError: document.getElementById('input-error'),
+  searchError: document.getElementById('input-error'),
   searchInput: document.querySelector('input[name="search"]'),
   modalBtnWatched: document.querySelector('[data-actions="watched"]'),
   modalBtnQueue: document.querySelector('[data-actions="queue"]'),
@@ -25,4 +25,5 @@ const refs = {
   modalFilm: document.querySelector('.modal-film'),
   bodyHtml: document.querySelector('#body-html'),
   bodyLibrary: document.querySelector('#body-library'),
-  };
+  modalFilmBackBlure: document.querySelector('.modal-film-back'),
+};
