@@ -58,7 +58,7 @@ function onFilmCardClick(e) {
       refs.modalBtnQueue.getAttribute('data-actions')
     );
 
-    console.log('film:', film);
+    // console.log('film:', film);
     // console.log(
     //   `http://api.themoviedb.org/3/movie/${film.id}?api_key=5692dca6012d3660a336300872bd664c&append_to_response=videos`
     // );
