@@ -5,7 +5,7 @@
       modal: document.querySelector('[team-data]'),
     };
   
-    // refs.openModalBtn.addEventListener('click', toggleModal);
+    refs.openModalBtn.addEventListener('click', toggleModal);
     refs.closeModalBtn.addEventListener('click', toggleModal);
   
     function toggleModal() {
