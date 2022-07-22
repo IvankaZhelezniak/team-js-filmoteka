@@ -17,12 +17,12 @@ function onModalBtnClick(evt) {
 
   // Проверка - сохранен ли фильм, внесение или удаление с локал сторидж 
   if (btnModalClass.isFilmIncludesLSLibrary(id, actions)) {
-    console.log('удаляю из хранилища', );
+    // console.log('удаляю из хранилища', );
     
     removeFilmStickers(film, actions);
     movieClass.removeFromLibraryMovieInLS(film, actions);
   } else {
-    console.log('добавляю в хранилище', );
+    // console.log('добавляю в хранилище', );
     
     createFilmStickers(film, actions);
     movieClass.saveToLibraryMovieInLS(film, actions);
