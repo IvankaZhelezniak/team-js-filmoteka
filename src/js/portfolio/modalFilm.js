@@ -3,6 +3,7 @@ import { movieClass } from './movieClass';
 // import { genres } from './genres';
 import genres from './genres';
 import { btnModalClass } from '../modal/btnModalClass';
+import {onModalBtnClick} from '../modal/modalAddToLSWatchedQueue'
 
 refs.gallery.addEventListener('click', onFilmCardClick);
 

@@ -1,6 +1,7 @@
 import { refs } from '../refs';
 import { movieClass } from '../portfolio/movieClass';
 import { btnModalClass } from './btnModalClass';
+export {onModalBtnClick};
 
 function onModalBtnClick(evt) {
   evt.preventDefault();
