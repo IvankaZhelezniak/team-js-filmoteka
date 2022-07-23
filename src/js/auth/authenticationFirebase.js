@@ -1,6 +1,8 @@
 // Import the functions you need from the SDKs you need
+import { showRegisterError } from "../registerLoginForm";
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
+import { getAuth, createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
 // TODO: Add SDKs for Firebase products that you want to use
 
 // Your web app's Firebase configuration
@@ -18,3 +20,48 @@ const firebaseConfig = {
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
+
+
+const auth = getAuth();
+// const createAccount = async (userName, email, password) => {
+//   try 
+// }
+createUserWithEmailAndPassword(auth, email, password)
+  .then((userCredential) => {
+    // Signed in 
+    const user = userCredential.user;
+    // ...
+  })
+  .catch((error) => {
+    const errorCode = error.code;
+    const errorMessage = error.message;
+    // ..
+  });
+
+refs.registerFormCreatFormSignUp.addEventListener("submit", e => {
+  e.preventDefault();
+  const accountName = e.target.name.value.trim();
+  const email = e.target.email.value;
+  const password = e.target.password.value;
+
+  if (!validateEmail(email)) {
+    const error = { message: 'No validate email' };
+    showRegisterError(error);
+  } else if (!displayName) {
+    const error = { message: 'No validate Name' };
+    showRegisterError(error);
+  } else {
+    createAccount(userName, email, password);
+  }
+});
+  
+const validateEmail = email => {
+   return String(email)
+      .toLowerCase()
+      .match(
+         /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+      );
+};
+
+
+// Прослушать изменения статуса аутентификации вход или виход

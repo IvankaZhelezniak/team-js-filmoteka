@@ -1,4 +1,6 @@
 export { refs };
+  
+  
 const refs = {
   gallery: document.querySelector('.js-gallery__list'),
   backdrop: document.querySelector('#backdrop'),
@@ -18,4 +20,14 @@ const refs = {
   searchInput: document.querySelector('input[name="search"]'),
   modalBtnWatched: document.querySelector('[data-actions="watched"]'),
   modalBtnQueue: document.querySelector('[data-actions="queue"]'),
+
+
+
+  
+	// Рефи для регістрації і строрення аккаунта
+	registerFormCreatFormSignUp: document.getElementById('creatFormSignUp'),
+	divRegisterError: document.getElementById('divRegisterError'),
+
+	formaLoginCreatRegister: document.getElementById('formaLoginCreatRegister')
+
   };

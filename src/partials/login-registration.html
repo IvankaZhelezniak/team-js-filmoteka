@@ -1,0 +1,68 @@
+<div class="backdrop" id="formaLoginCreatRegister">
+  <div class="form-register__box" id="container">
+    <div class="form-register__container container-sign-up">
+      <form
+        action="#"
+        class="form-register__creat-form-sign-up"
+        name="form"
+        id="creatFormSignUp"
+      >
+        <h2 class="form-register__title" id="createAccount">Create Account</h2>
+        <input
+          class="form-register__input"
+          id="nameCreatRegister"
+          type="text"
+          name="name"
+          placeholder="Name"
+          required
+        />
+        <input
+          class="form-register__input"
+          id="emailCreatRegister"
+          name="email"
+          type="email"
+          placeholder="Email"
+          required
+        />
+        <input
+          class="form-register__input"
+          id="passwordCreatRegister"
+          name="password"
+          type="password"
+          placeholder="Password"
+          required
+        />
+        <div id="divRegisterError" class="errorlabel">Error message</div>
+        <button type="submit" class="form-register__btn" id="singUpBtn" aria-label="sign up" name="sign up">SIGN UP</button>
+      </form>
+    </div>
+    <div class="form-register__container container-sign-in">
+      <form
+        class="form-register__sign-in"
+        name="form"
+        id="registerForm"
+      >
+        <h2 class="form-register__title" id="registerAccountForm">Sign in</h2>
+        <input
+          class="form-register__input"
+          id="emailLogin"
+          name="email"
+          type="email"
+          placeholder="Email"
+          required
+        />
+        <input
+          class="form-register__input"
+          id="passwordLogin"
+          name="password"
+          type="password"
+          placeholder="Password"
+          required
+        />
+        <div id="divLoginError" class="errorlabel">Error message</div>
+        <a class="form-register__link" href="#">Forgot your password?</a>
+        <button type="submit" class="form-register__btn" id="loginBtn">SIGN IN</button>
+      </form>
+    </div>
+  </div>
+</div>
