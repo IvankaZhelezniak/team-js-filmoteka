@@ -1,23 +1,27 @@
 @import '../variables'; 
+
 .theme {
     position:absolute;
     display: flex;
-    justify-content:center;
+    justify-content: start;
+    min-width: 320;
+    top: 180px;
+
     @media screen and (max-width: 319px) {
-        top: 180px;
-        left:45%;
+        width: 100%;
+        padding-left: 20px;
     }
     @media screen and (min-width: 320px) and (max-width: 767px) {
-        top: 150px;
-        left:46%;
+        max-width: 767px;
+        padding-left: 20px;
     }
     @media screen and (min-width: 768px) and (max-width: 1279px) {
-        top: 80px;
-        right:60px;
+        max-width: 1279px;
+        padding-left: 32px;
     }
-    @media screen and (min-width: 1280px)  {
-        top: 80px;
-        right:68px;
+    @media screen and (min-width: 1280px) and (max-width: 1440px) {
+        max-width: 1439px;
+        padding-left: 32px;
     }
 }
 
