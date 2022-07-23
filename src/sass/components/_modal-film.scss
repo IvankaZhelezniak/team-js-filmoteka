@@ -14,9 +14,10 @@
 
 
 
-// body scroll block
+body scroll block
 .backdrop-film .backdrop-body-block-scroll {
     overflow: hidden;
+
 }
 
 // Modal window
@@ -218,6 +219,7 @@
         background-color: $accentColor;
         border: solid 1px #FF6B01;
         cursor: pointer;
+        color: #ffffff;
     }
     & .modal-film__link {
         padding: 13px;
@@ -243,21 +245,22 @@
 // Button close 
 
 .modal-film__btn-close {
+    transition: fill 250ms $animation-cubic;
     position: absolute;
     right: 8px;
     top: 8px;
     display: flex;
     padding: 0;
     align-items: center;
-    background: #ffffff;
+    background-color: transparent;
     border: none;
     cursor: pointer;
     border-radius: 35%;
     &:hover,
     &:focus {
-        background-color: #FF6B01;
+        fill: #FF6B01;
         outline: none;
-        transition: 250ms $animation-cubic;
+
     }
 }
 
