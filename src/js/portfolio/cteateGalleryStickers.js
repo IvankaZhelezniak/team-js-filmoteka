@@ -32,7 +32,7 @@ function createFilmStickers(film, actions) {
 	const card = document.querySelector(`[data-id='${film.id}']`);
 	// console.log('card', card);
 	const divWrapper = document.querySelector(`[data-status='${film.id}']`);
-	console.log('divWrapper', divWrapper);
+	// console.log('divWrapper', divWrapper);
 	
 	divWrapper.insertAdjacentHTML('beforeend', `<button type="button" class="status-btn" data-id=${film.id}${actions}>${actions}</button>`);
 }
