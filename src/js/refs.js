@@ -1,4 +1,6 @@
 export { refs };
+  
+  
 const refs = {
   gallery: document.querySelector('.js-gallery__list'),
   backdrop: document.querySelector('#backdrop'),
@@ -18,6 +20,7 @@ const refs = {
   searchInput: document.querySelector('input[name="search"]'),
   modalBtnWatched: document.querySelector('[data-actions="watched"]'),
   modalBtnQueue: document.querySelector('[data-actions="queue"]'),
+
   themeBtnLibrary: document.querySelector('#theme-toggle__library'),
   themeBtnHtml: document.querySelector('#theme-toggle__html'),
   lightToggleIcon: document.querySelector('.lightToggleIcon'),
@@ -25,4 +28,12 @@ const refs = {
   bodyHtml: document.querySelector('#body-html'),
   bodyLibrary: document.querySelector('#body-library'),
   modalFilmBackBlure: document.querySelector('.modal-film-back'),
+
+
+  	// Рефи для регістрації і строрення аккаунта
+	registerFormCreatFormSignUp: document.getElementById('creatFormSignUp'),
+	divRegisterError: document.getElementById('divRegisterError'),
+
+	formaLoginCreatRegister: document.getElementById('formaLoginCreatRegister')
 };
+
