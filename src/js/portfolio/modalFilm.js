@@ -42,6 +42,8 @@ function onFilmCardClick(e) {
     refs.backdrop.style.background = `url(${URL_IMG}${film.backdrop_path}) no-repeat center`;
     refs.backdrop.style.backgroundSize = 'cover';
 
+    refs.searchBox.classList.add('is-hidden');
+    refs.modalFilmBox.classList.remove('is-hidden');
     refs.backdrop.classList.remove('is-hidden');
     refs.body.classList.add('backdrop-body-block-scroll');
 
@@ -87,6 +89,7 @@ function onFilmCardClick(e) {
     refs.searchForm.style.display = null;
     refs.backdrop.classList.add('is-hidden');
     refs.body.classList.remove('backdrop-body-block-scroll');
+    refs.searchBox.classList.remove('is-hidden');
   }
   function clearInfoModal() {
     refs.imageModal.src = ``;

@@ -12,14 +12,13 @@
     background-color: rgba($color: #000000, $alpha: 0.7);
 }
 
-.backdrop-film.is-hidden {
+.modal-film.is-hidden {
     display: none;
 }
 
 // body scroll block
 .backdrop-film .backdrop-body-block-scroll {
-    overflow: hidden;
-
+    overflow: hidden
 }
 
 // Modal window
