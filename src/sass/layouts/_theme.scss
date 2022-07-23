@@ -89,7 +89,8 @@
 
 .darkModal .pointer {
     background-color: $icon-color;
-    color: $text-dark-theme-color;
+    // color: $text-dark-theme-color;
+    color: #fff;
     &:hover {
         background-color: $accentColor;
     }
@@ -108,5 +109,6 @@
 }
 
 .darkModal .gray {
-    color: $icon-color;
+    color: $text-dark-theme-color;
+    // color: #fff;
 }
