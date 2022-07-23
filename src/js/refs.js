@@ -14,20 +14,26 @@ const refs = {
   popularityModal: document.querySelector('#popularity'),
   genreModal: document.querySelector('#genre'),
   overviewModal: document.querySelector('#overview'),
-	modalBtn: document.querySelector('.js-modal-button'),
+  modalBtn: document.querySelector('.js-modal-button'),
   searchForm: document.getElementById('form'),
-	searchError: document.getElementById('input-error'),
+  searchError: document.getElementById('input-error'),
   searchInput: document.querySelector('input[name="search"]'),
   modalBtnWatched: document.querySelector('[data-actions="watched"]'),
   modalBtnQueue: document.querySelector('[data-actions="queue"]'),
 
+  themeBtnLibrary: document.querySelector('#theme-toggle__library'),
+  themeBtnHtml: document.querySelector('#theme-toggle__html'),
+  lightToggleIcon: document.querySelector('.lightToggleIcon'),
+  darkToggleIcon: document.querySelector('.darkToggleIcon'),
+  bodyHtml: document.querySelector('#body-html'),
+  bodyLibrary: document.querySelector('#body-library'),
+  modalFilmBackBlure: document.querySelector('.modal-film-back'),
 
 
-  
-	// Рефи для регістрації і строрення аккаунта
+  	// Рефи для регістрації і строрення аккаунта
 	registerFormCreatFormSignUp: document.getElementById('creatFormSignUp'),
 	divRegisterError: document.getElementById('divRegisterError'),
 
 	formaLoginCreatRegister: document.getElementById('formaLoginCreatRegister')
+};
 
-  };

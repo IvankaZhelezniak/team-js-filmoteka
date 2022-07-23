@@ -1,0 +1,234 @@
+
+// Students
+.team__container{
+    background-color: var(--second-bg-color);
+    background-size: 100%;
+    padding-top: 30px;
+    padding-bottom: 20px;
+    //   @media screen and (min-width: 1200px){
+    //   padding-top: 20px;
+    //   padding-bottom: 20px;
+    //   background-size: 1600px;
+    //   }
+  }
+  
+  .team-list{
+  // display: flex;
+  justify-content: center;
+      @media screen and (min-width: 768px)  {
+        display: flex;
+        flex-wrap: wrap;
+        margin-left: -30px;
+      }
+  margin-bottom: -30px;
+    }
+  
+  .section-title{
+    @media screen and(max-width: 1199px){
+     font-size: 18px; 
+    margin-bottom: 30px;
+    }
+  font-size: 24px;
+  line-height: 1.17;
+  text-align: center;
+  letter-spacing: 0.03em;
+  margin-bottom: 50px;
+  color: var(--second-text-color);
+  }
+  
+
+  .team-list__item{
+    background-color: var(--third-bg-color);
+    background: #FFFFFF;
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
+    // border-radius: 0px 0px 4px 4px;
+	border-bottom-right-radius: 40px;
+  //   &:not(:last-child){
+  //   margin-right: 30px;
+  // }
+  width: 100%;
+  margin-bottom: 30px;
+  @media screen and (min-width: 768px){
+            flex-basis: calc(100% / 2 - 40px);
+            margin-left: 30px;
+            display: flex;
+            flex-wrap: wrap;
+            margin-bottom: 30px;
+        }
+  @media screen and (min-width: 1200px){
+            flex-basis: calc(100% / 4 - 40px);
+        }
+      img {
+          width: 100%;
+      }
+  }
+  
+  .team-list__wrap{
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+  .team-list__image{
+  position: relative;
+  overflow: hidden; 
+  width: 220px;
+  height: 220px;
+  }
+
+  .team-list__team-about{
+	position: relative;
+	@media screen and (min-width: 768px){
+		font-size: 16px;
+		padding: 43px 24px 63px 24px;
+		  }
+		font-size: 18px;
+		line-height: 1.56;
+		color: #ffffff;
+		background-color: rgba(33, 150, 243, 0.9);
+		width: 100%;
+		height: 100%;
+		padding: 63px 24px 63px 24px;
+		position: absolute;
+		top: 0;
+		left: 0;
+		transform: translateY(100%);
+		transition: transform 250ms linear;
+		.portfolio-img__link:hover &,
+		.portfolio-img__link:focus &{
+		 transform: translateY(0);
+		 box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
+		}
+  }
+
+  
+  .team-list__team-name{
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.19;
+  /* identical to box height */
+  letter-spacing: 0.03em;
+  color: var(--second-text-color);
+  }
+  
+  .team-list__team-proffesion{
+  font-size: 16px;
+  line-height: 1.19;
+  /* identical to box height */
+  letter-spacing: 0.03em;
+  margin-top: 10px;
+  margin-bottom: 16px;
+  color: var(--main-text-color);
+  }
+ 
+  .social-list{
+	display: flex;
+	justify-content: center;
+  }
+  
+  .social-list__item{
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  }
+  
+  .social-list__item + .social-list__item{
+	margin-left: 10px;
+  }
+  
+  .social-list__link-grey{
+	width: 100%;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 50%;
+	color: #AFB1B8;
+	outline: none;
+	transition: color 250ms;
+	transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);
+	transition: background-color 250ms;
+	transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);
+	  &:hover,
+	&:focus{
+	  background-color: #2196F3;
+	  color:#ffffff;
+	}
+  }
+
+
+//   Modalka
+.overflow {
+    overflow: hidden;
+}
+
+.backdrop__students{
+	overflow: auto;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    // background-color:rgba(72, 42, 42, 0.2);
+    background-image: url('https://image.tmdb.org/t/p/w500');
+    transition: opacity 1000ms, visibility 1000ms;
+  }
+
+  .modal-window{
+	display: flex;
+    position: absolute;
+    top:50%;
+    left:50%;
+    max-width: 90%;
+	max-height: 90%;
+	overflow-y: scroll;
+    background-color: #fef9f9;
+    box-shadow: 0px 1px 3px rgba(202, 47, 47, 0.12), 0px 1px 1px rgba(159, 150, 150, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
+    border-radius: 20px;
+    transform: translate(-50%,-50%) scale(1) rotate(0);
+    transition: transform 1000ms;
+	  }
+  
+  
+  .backdrop__students.is-hidden{
+    .modal{
+    transform: scale(1.5) rotate(180deg) translate(1000px);
+    transition: transform 1000ms;
+    }
+  }
+  
+  .modal-window__modal-close{
+  width: 30px;
+  height: 30px;
+  background-color:#ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  &:hover,
+  &:focus{
+  fill: #2196F3;
+  }
+  }
+  
+  
+  .modal-window__modal-title {
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 1.15;
+  text-align: center;
+  letter-spacing: 0.03em;
+  @media screen and (max-width: 1199px)  {
+  font-size: 20px;
+  line-height: 1.5;
+  }
+  color: #212121;
+  margin: 20px;
+  }
+
