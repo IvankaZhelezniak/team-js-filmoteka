@@ -63,10 +63,22 @@
 
 .darkModal .modal-film {
     background-color: $bg-dark-modal-color;
+    & .modal-film__btn-close {
+                    transition: fill 250ms $animation-cubic;
+    }
+    & .modal-film__btn-close:hover .close-modal-icon {
+                    fill: $accentColor;
+                    // transition: fill 250ms $animation-cubic;
+                }
+    & .close-modal-icon {
+        fill: $text-dark-theme-color;
+    }
 }
-.darkModal .modal-film__btn-close {
-    background-color: $icon-color;
-}
+
+// .darkModal .modal-film__btn-close {
+//     background-color: $icon-color;
+// }
+
 .darkModal .modal-film__title {
     color: $text-dark-theme-color;
 }
@@ -74,6 +86,9 @@
 .darkModal .pointer {
     background-color: $icon-color;
     color: $text-dark-theme-color;
+    &:hover {
+        background-color: $accentColor;
+    }
 }
 
 .darkModal .vote {

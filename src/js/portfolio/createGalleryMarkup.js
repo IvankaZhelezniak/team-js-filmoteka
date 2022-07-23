@@ -26,6 +26,7 @@ function createMurkup({
     : 'No info'
 
   return `<li class="gallery_card__item" data-id=${id}>
+  <div class="status-btn-wrapper" data-status=${id}></div>
   <a href="./" class="gallery_card__link">
       <div class="gallery_thumb">
           <img src=https://image.tmdb.org/t/p/w500${poster_path} alt="movie cover" loading='lazy' class="gallery_card__img">
