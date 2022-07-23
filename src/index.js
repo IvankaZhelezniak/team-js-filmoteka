@@ -9,4 +9,4 @@ import './js/portfolio/buttonTop';
 import './js/loader';
 import './js/refs';
 import './js/portfolio/cteateGalleryStickers';
-import './js/students';
+// import './js/students';
