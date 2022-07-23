@@ -15,8 +15,14 @@
 
 
 // body scroll block
+<<<<<<< Updated upstream
 .backdrop-film .backdrop-body-block-scroll {
     overflow: hidden;
+=======
+.backdrop-body-block-scroll {
+    overflow: hidden;
+    display: none;
+>>>>>>> Stashed changes
 }
 
 // Modal window
@@ -26,6 +32,7 @@
 }
 
 .backdrop-film .modal-film {
+    display: none;
     position: relative;
     left: 50%;
     top: 50%;
