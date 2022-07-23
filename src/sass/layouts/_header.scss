@@ -228,6 +228,7 @@
 .search-box {
 	display: flex;
 	justify-content: center;
+  transition: 250ms opacity;
 }
 .input-error {
 	margin-top: 20px;
@@ -248,7 +249,6 @@
 	background-color: transparent;
   border: none;
 	border-bottom: 0.5px solid #818181;
-
 	@media screen and (min-width: 768px) {
 		width: 336px;
 	}

@@ -1,6 +1,5 @@
 export { refs };
-  
-  
+
 const refs = {
   gallery: document.querySelector('.js-gallery__list'),
   backdrop: document.querySelector('#backdrop'),
@@ -28,12 +27,11 @@ const refs = {
   bodyHtml: document.querySelector('#body-html'),
   bodyLibrary: document.querySelector('#body-library'),
   modalFilmBackBlure: document.querySelector('.modal-film-back'),
+  modalFilmBox: document.querySelector('.modal-film'),
+  searchBox: document.querySelector('.search-box'),
+  // Рефи для регістрації і строрення аккаунта
+  registerFormCreatFormSignUp: document.getElementById('creatFormSignUp'),
+  divRegisterError: document.getElementById('divRegisterError'),
 
-
-  	// Рефи для регістрації і строрення аккаунта
-	registerFormCreatFormSignUp: document.getElementById('creatFormSignUp'),
-	divRegisterError: document.getElementById('divRegisterError'),
-
-	formaLoginCreatRegister: document.getElementById('formaLoginCreatRegister')
+  formaLoginCreatRegister: document.getElementById('formaLoginCreatRegister'),
 };
-
