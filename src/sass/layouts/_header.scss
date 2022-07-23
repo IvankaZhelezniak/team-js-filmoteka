@@ -51,6 +51,18 @@
   }
 }
 
+.header-container {
+  min-width: 320px;
+  margin: 0 auto;
+
+@media screen and (min-width: 768px) {
+    max-width: 768px;
+}
+@media screen and (min-width: 1280px) {
+    max-width: 1280px;
+}
+}
+
 .icon-color {
   fill: #ffffff;
 }
@@ -270,69 +282,55 @@
   position: relative;
 
   justify-content: space-between;
-  align-items: baseline;
+  // align-items: baseline;
 }
 
-//library btn
-
-
-.library-btn__list {
+.header-login-btn-container {
+  // position:absolute;
   display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.library-btn:not(:last-child) {
-  margin-right: 20px;
+  justify-content: flex-end;
+  min-width: 320;
   @media screen and (min-width: 768px) {
-    margin-right: 32px;
-  }
-  @media screen and (min-width: 12804px) {
-    margin-right: 16px;
-  }
+    max-width: 768px;
+}
+@media screen and (min-width: 1280px) {
+    max-width: 1280px;
+}
 }
 
-.library-btn {
-  font-family: inherit;
-  font-weight: 500;
-  font-size: 12px;
-  line-height: 1.33;
-  text-transform: uppercase;
-
+.header-login-btn {
+  width: 180px;
+  height: 60px;
+  cursor: pointer;
+  background: transparent;
   border-radius: 5px;
-  border: 1px solid #ffffff;
+  border: 1px solid transparent;
+  outline: none;
+  transition: 1s ease-in-out;
+}
+
+  .header-login-svg {
+    position: absolute;
+    // left: 0;
+    // top: 0;
+    fill: none;
+    stroke: #FF6B08 ;
+    stroke-dasharray: 150 480;
+    stroke-dashoffset: 150;
+    transition: 1s ease-in-out;
+  }
+
+.header-login-btn:hover {
+  transition: 1.5s ease-in-out;
+  background: #ec823b;
+}
+
+.header-login-btn:hover svg {
+  stroke-dashoffset: -480;
+}
+
+.header-login-btn span {
   color: #ffffff;
-  background-color: transparent;
-
-  width: 130px;
-  height: 44px;
-
-  @media screen and (min-width: 768px) {
-    width: 152px;
-  }
-  @media screen and (min-width: 1280px) {
-    width: 148px;
-    height: 42px;
-  }
-
-  &:hover,
-  &:focus {
-    background-color: #FF6B08;
-    box-shadow: 0px 4px 4px rgb(245 124 50 / 12%), 0px 4px 4px rgb(245 124 50 / 12%),
-      1px 4px 6px rgb(245 124 50 / 12%);
-  }
-}
-
-.active {
-  background-color: #ffffff;
-  border: 0px solid #FF6B08;
-  &:hover,
-  &:focus {
-    border: 1px solid #FF6B08;
-  }
-}
-
-.is-hidden-header {
-  display: none;
-  pointer-events: none;
+  font-size: 18px;
+  font-weight: 100;
 }
