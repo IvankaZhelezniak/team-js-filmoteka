@@ -31,9 +31,10 @@ function createFilmStickers(film, actions) {
 	// console.log(`рисую стикер ${actions} на карточке фильма ${film.id}`, );
 	const card = document.querySelector(`[data-id='${film.id}']`);
 	// console.log('card', card);
-
-	card.insertAdjacentHTML('beforeend', `<a class=btnAcction data-id=${film.id}${actions} >--${actions}--</a>`);
+	const divWrapper = document.querySelector(`[data-status='${film.id}']`);
+	console.log('divWrapper', divWrapper);
 	
+	divWrapper.insertAdjacentHTML('beforeend', `<button type="button" class="status-btn" data-id=${film.id}${actions}>${actions}</button>`);
 }
 
 function removeFilmStickers(film, actions) {
