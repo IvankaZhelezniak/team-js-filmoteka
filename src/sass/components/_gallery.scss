@@ -5,6 +5,7 @@
     }
 
 .gallery_card__item {
+    position: relative;
     margin-bottom: 20px;
     &:nth-child(2n + 1){
         @media screen and (min-width: 768px) and (max-width: 1279px) {
@@ -16,6 +17,21 @@
             margin-right: 16px;
         }
     }
+}
+
+.status-btn-wrapper {
+    position: absolute;
+    top:10px;
+    left: 10px;
+}
+
+.status-btn {
+    display: block;
+    width: 40px;
+    height: 40px;
+
+    background-color:#ff6b01;
+
 }
 
 .gallery_thumb{

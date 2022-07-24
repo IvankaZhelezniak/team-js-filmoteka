@@ -1,22 +1,26 @@
-.footer__container {
+.footer{
     background-color: #F7F7F7;
     position: fixed;
     width: 100%;
     bottom: 0;
+    // opacity: 0;
+    // transform: translateY(100%);
   }
-  
+
+  // .footer-animation.element-show {
+  //   opacity: 1;
+  //   transition: all 1s;
+  //   transform: translateY(0%);
+  // }
+ 
   .footer__text {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding-top: 33px;
-    padding-bottom: 31px;
+    padding-top: 30px;
+    padding-bottom: 30px;
     margin-right: auto;
     margin-left: auto;
-    // @media screen and (min-width: 768px){
-    // padding-top: 30px;
-    // padding-bottom: 30px;
-    // }
     @media screen and (max-width: 767px) {
       display: block;
       text-align: center;

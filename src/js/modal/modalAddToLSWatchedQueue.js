@@ -1,6 +1,7 @@
 import { refs } from '../refs';
 import { movieClass } from '../portfolio/movieClass';
 import { btnModalClass } from './btnModalClass';
+import {createFilmStickers, removeFilmStickers} from '../portfolio/cteateGalleryStickers';
 export {onModalBtnClick};
 
 function onModalBtnClick(evt) {
@@ -18,11 +19,15 @@ function onModalBtnClick(evt) {
   if (btnModalClass.isFilmIncludesLSLibrary(id, actions)) {
     // console.log('удаляю из хранилища', );
     
+    removeFilmStickers(film, actions);
     movieClass.removeFromLibraryMovieInLS(film, actions);
   } else {
     // console.log('добавляю в хранилище', );
     
+    createFilmStickers(film, actions);
     movieClass.saveToLibraryMovieInLS(film, actions);
+
+    
   }
 
   // console.log('изменяю название кнопки', );

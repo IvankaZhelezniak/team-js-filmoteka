@@ -1,18 +1,18 @@
 <div class="backdrop-film is-hidden" id="backdrop">
   <section class="modal-film-back"></section>
-  <div class="modal-film">
+  <div class="modal-film is-hidden">
     <button
       class="modal-film__btn-close"
       aria-label="close"
       id="btn-close-modal"
     >
-      <svg class="close-svg" xmlns="http://www.w3.org/2000/svg" width="32" height="32">
-        <path
-          fill="none"
-          stroke-width="2.133"
-          stroke="#000"
-          d="m8.533 8.533 14.933 14.933M8.533 23.467 23.466 8.534"
-        />
+      <svg
+        class="close-modal-icon"
+        width="32px"
+        height="32px"
+        aria-label="closing modal window"
+      >
+        <use href="./images/icons/sprite.svg#icon-closeBtnModal"></use>
       </svg>
     </button>
     <img
@@ -27,7 +27,9 @@
         <ul class="modal-film__list-info">
           <li class="modal-film__list-info-item light"><p>Vote/Votes</p></li>
           <li class="modal-film__list-info-item light"><p>Popularity</p></li>
-          <li class="modal-film__list-info-item light"><p>Original Title</p></li>
+          <li class="modal-film__list-info-item light">
+            <p>Original Title</p>
+          </li>
           <li class="modal-film__list-info-item light"><p>Genre</p></li>
         </ul>
         <ul class="modal-film__list-info-backend">
@@ -35,7 +37,9 @@
             <p>
               <span class="modal-film__votes vote" id="vote">7.3</span>/<span
                 class="modal-film__votes votes"
-                id="votes">1260</span>              
+                id="votes"
+                >1260</span
+              >
             </p>
           </li>
           <li class="modal-film__list-info-item gray" id="popularity">
@@ -44,7 +48,9 @@
           <li class="modal-film__list-info-item gray">
             <p id="titleOriginal">A FISTFUL OF LEAD</p>
           </li>
-          <li class="modal-film__list-info-item gray" id="genre"><p>Western</p></li>
+          <li class="modal-film__list-info-item gray" id="genre">
+            <p>Western</p>
+          </li>
         </ul>
       </div>
       <div>
@@ -53,14 +59,20 @@
       </div>
       <ul class="modal-film__links-list js-modal-button">
         <li
-          class="modal-film__link-item"
+          class="modal-film__link-item pointer"
           data-actions="watched"
           data-id="507086"
         >
-          <a class="modal-film__link" href="/">ADD TO WATCHED</a>
+          <a class="modal-film__link watched-films pointer" href="/"
+            >ADD TO WATCHED</a
+          >
         </li>
-        <li class="modal-film__link-item" data-actions="queue" data-id="507086">
-          <a class="modal-film__link" href="/">ADD TO QUEUE</a>
+        <li
+          class="modal-film__link-item pointer"
+          data-actions="queue"
+          data-id="507086"
+        >
+          <a class="modal-film__link pointer" href="/">ADD TO QUEUE</a>
         </li>
       </ul>
     </div>
