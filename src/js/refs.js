@@ -1,6 +1,6 @@
 export { refs };
-  
- const refs = {
+
+const refs = {
   gallery: document.querySelector('.js-gallery__list'),
   backdrop: document.querySelector('#backdrop'),
   body: document.querySelector('body'),
@@ -20,6 +20,9 @@ export { refs };
   modalBtnWatched: document.querySelector('[data-actions="watched"]'),
   modalBtnQueue: document.querySelector('[data-actions="queue"]'),
 
+  btnWatched: document.querySelector('.watched-js'),
+  watchedListRef: document.querySelector('.js-library__list'),
+
   themeBtnLibrary: document.querySelector('#theme-toggle__library'),
   themeBtnHtml: document.querySelector('#theme-toggle__html'),
   lightToggleIcon: document.querySelector('.lightToggleIcon'),
@@ -27,7 +30,11 @@ export { refs };
   bodyHtml: document.querySelector('#body-html'),
   bodyLibrary: document.querySelector('#body-library'),
   modalFilmBackBlure: document.querySelector('.modal-film-back'),
-
+  modalFilmBox: document.querySelector('.modal-film'),
+  searchBox: document.querySelector('.search-box'),
+  // Рефи для регістрації і строрення аккаунта
+  registerFormCreatFormSignUp: document.getElementById('creatFormSignUp'),
+  divRegisterError: document.getElementById('divRegisterError'),
 
   	// Рефи для регістрації і строрення аккаунта
 	// registerFormCreatFormSignUp: document.getElementById('creatFormSignUp'),

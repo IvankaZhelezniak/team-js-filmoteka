@@ -4,7 +4,7 @@ import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, si
 import { showFormLogin, closeFormLoginRegister, resetFform } from "../registerLoginForm";
 import { refs } from "../refs";
 
-// Your web app's Firebase configuration
+// // Your web app's Firebase configuration
 
 const firebaseConfig = {
   apiKey: "AIzaSyAI1BJ85yh87lUFEz2tWAxiWAX4MIS7p4U",
@@ -16,10 +16,11 @@ const firebaseConfig = {
   measurementId: "G-6V5KHRSHSH"
 };
 
-// Initialize Firebase
+// // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
 const auth = getAuth(app);
+
 
 //listen for auth status changes
 // onAuthStateChanged(user => {
@@ -98,5 +99,3 @@ refs.btnLogin.addEventListener('click', showFormLogin);
 refs.btnLoginout.addEventListener('click', logout);
 
 
-
-// Прослушать изменения статуса аутентификации вход или виход

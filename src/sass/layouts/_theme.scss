@@ -5,7 +5,7 @@
     display: flex;
     justify-content: start;
     min-width: 320;
-    top: 180px;
+    top: 80px;
 
     @media screen and (max-width: 319px) {
         width: 100%;
@@ -89,7 +89,8 @@
 
 .darkModal .pointer {
     background-color: $icon-color;
-    color: $text-dark-theme-color;
+    // color: $text-dark-theme-color;
+    color: #fff;
     &:hover {
         background-color: $accentColor;
     }
@@ -108,5 +109,6 @@
 }
 
 .darkModal .gray {
-    color: $icon-color;
+    color: $text-dark-theme-color;
+    // color: #fff;
 }
