@@ -1,6 +1,6 @@
 import { refs } from '../refs';
 import { createMarkup } from './createWatchedMarkup';
-import { onFilmCardClick } from './modalFilm'
+import { onFilmCardClick } from './modalFilm';
 
 // console.log('we work', );
 
