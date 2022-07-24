@@ -21,13 +21,13 @@ import refs from "./refs";
 //    }
 // };
 
-// document.getElementById('reg-btn').addEventListener('click', function () {
-//    document.getElementById('register-div').style.display = "inline";
-//    document.getElementById('login-div').style.display = "none";
+document.getElementById('reg-btn').addEventListener('click', function () {
+   document.getElementById('register-div').style.display = "inline";
+   document.getElementById('login-div').style.display = "none";
 
-// })
+})
 
-// document.getElementById('log-btn').addEventListener('click', function () {
-//    document.getElementById('register-div').style.display = "none";
-//    document.getElementById('login-div').style.display = "inline";
-// })
+document.getElementById('log-btn').addEventListener('click', function () {
+   document.getElementById('register-div').style.display = "none";
+   document.getElementById('login-div').style.display = "inline";
+})
