@@ -1,0 +1,108 @@
+@import '../variables';
+// .form-register__box {
+//         background-color: #fff;
+//             border-radius: 10px;
+//             // box-shadow: $shadow;
+//             position: relative;
+//             overflow: hidden;
+//             margin: auto;
+//             width: 320px;
+//             max-width: 100%;
+//             min-height: 700px;
+
+//             @media screen and (min-width: 425px) {
+//                 width: 405px;
+//             }
+
+//             @media screen and (min-width: 768px) {
+//                 width: 688px;
+//                 min-height: 480px;
+//             }
+
+//             @media screen and (min-width: 1024px) {
+//                 width: 768px;
+//             }
+// }
+
+.center-box {
+  background-color: #fff;
+  // position: relative;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 2px solid $accentColor;;
+  border-radius: 40px;
+  color: $accentColor;
+  width: 300px;
+  height: 420px;
+  text-align: center;
+//   background-color: $primaryDarkColor;
+
+  @media screen and (min-width: 425px) {
+    width: 300px;
+  }
+
+  @media screen and (min-width: 768px) {
+    width: 450px;
+    // min-height: 480px;
+  }
+
+  @media screen and (min-width: 1024px) {
+    width: 450px;
+  }
+}
+
+
+
+.title-form {
+    color: $accentColor;
+    text-align: center;
+    margin: 45px 0;
+    font-size: 30px;
+}
+
+.text-field {
+    padding: 10px 30px;
+    margin: 20px 0;
+    border: 2px solid $accentColor;
+    border-radius: 10px;
+    font-size: 12pt;
+    color: black;
+}
+
+.btn-style {
+    padding: 10px 30px;
+    border: 1px solid $accentColor;
+    background-color: $accentColor;
+color: white;
+border-radius: 20px;
+}
+
+.btn-style:hover {
+    background-color: $text-black-color;
+}
+
+.an-btn {
+    margin-top: 10px;
+    border: 0;
+        background-color: $primaryDarkColor;
+        color: $accentColor;
+        font-size: 11pt;
+        padding: 5px;
+        border-radius: 10px;
+}
+
+#register-div {
+    display: none;
+}
+
+#result-box {
+    display: none;
+    position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 14pt;
+        color: white;
+}

@@ -1,0 +1,80 @@
+<div class="backdrop-film is-hidden" id="backdrop">
+  <section class="modal-film-back"></section>
+  <div class="modal-film is-hidden">
+    <button
+      class="modal-film__btn-close"
+      aria-label="close"
+      id="btn-close-modal"
+    >
+      <svg
+        class="close-modal-icon"
+        width="32px"
+        height="32px"
+        aria-label="closing modal window"
+      >
+        <use href="./images/icons/sprite.svg#icon-closeBtnModal"></use>
+      </svg>
+    </button>
+    <img
+      class="modal-film__image"
+      src="./images/modal-test-plug.jpg"
+      alt=""
+      id="imageModal"
+    />
+    <div class="modal-film__info-box">
+      <h2 class="modal-film__title" id="title">A FISTFUL OF LEAD</h2>
+      <div class="modal-film__info-container">
+        <ul class="modal-film__list-info">
+          <li class="modal-film__list-info-item light"><p>Vote/Votes</p></li>
+          <li class="modal-film__list-info-item light"><p>Popularity</p></li>
+          <li class="modal-film__list-info-item light">
+            <p>Original Title</p>
+          </li>
+          <li class="modal-film__list-info-item light"><p>Genre</p></li>
+        </ul>
+        <ul class="modal-film__list-info-backend">
+          <li class="modal-film__list-info-item">
+            <p>
+              <span class="modal-film__votes vote" id="vote">7.3</span>/<span
+                class="modal-film__votes votes"
+                id="votes"
+                >1260</span
+              >
+            </p>
+          </li>
+          <li class="modal-film__list-info-item gray" id="popularity">
+            <p>100.2</p>
+          </li>
+          <li class="modal-film__list-info-item gray">
+            <p id="titleOriginal">A FISTFUL OF LEAD</p>
+          </li>
+          <li class="modal-film__list-info-item gray" id="genre">
+            <p>Western</p>
+          </li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="modal-film__title-about gray">ABOUT</h3>
+        <p class="modal-film__title-about-text gray" id="overview"></p>
+      </div>
+      <ul class="modal-film__links-list js-modal-button">
+        <li
+          class="modal-film__link-item pointer"
+          data-actions="watched"
+          data-id="507086"
+        >
+          <a class="modal-film__link watched-films pointer" href="/"
+            >ADD TO WATCHED</a
+          >
+        </li>
+        <li
+          class="modal-film__link-item pointer"
+          data-actions="queue"
+          data-id="507086"
+        >
+          <a class="modal-film__link pointer" href="/">ADD TO QUEUE</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

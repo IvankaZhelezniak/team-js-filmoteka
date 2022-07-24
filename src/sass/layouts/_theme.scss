@@ -1,0 +1,112 @@
+@import '../variables'; 
+
+.theme {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.theme-library {
+    justify-content: start;
+    @media screen and (min-width: 768px) {
+        // display: flex;
+        
+        position: absolute;
+        top: 120px;
+    }
+}
+
+.theme-library {
+    @media screen and (min-width: 768px) {
+      position: absolute;
+      top: 120px;
+    }
+  }
+
+.theme-toggle {
+    --size: 2rem;
+    
+    background: none;
+    border: none;
+    padding: 0;
+    inline-size: var(--size);
+    block-size: var(--size);
+    aspect-ratio: 1;
+    border-radius: 50%;
+    cursor: pointer;
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
+    outline-offset: 5px;
+    & > svg {
+    inline-size: 100%;
+    block-size: 100%;
+    stroke-linecap: round;
+    }
+}
+
+.lightToggleIcon {
+    position: relative;
+    fill: $accentColor;
+}
+.darkToggleIcon {
+    position: relative;
+    fill:$accentColor;
+}
+
+.invisible {
+    display: none;
+}
+
+.dark {   
+    transition: 0.3s; 
+    background-color: $bg-dark-modal-color;
+    color: $text-white-color;
+}
+
+.dark .footer {
+    background-color: $bg-dark-modal-color;
+}
+
+.darkModal .modal-film {
+    background-color: $bg-dark-modal-color;
+    & .modal-film__btn-close {
+                    transition: fill 250ms $animation-cubic;
+    }
+    & .modal-film__btn-close:hover .close-modal-icon {
+                    fill: $accentColor;
+                    // transition: fill 250ms $animation-cubic;
+                }
+    & .close-modal-icon {
+        fill: $text-dark-theme-color;
+    }
+}
+
+.darkModal .modal-film__title {
+    color: $text-dark-theme-color;
+}
+
+.darkModal .pointer {
+    background-color: $icon-color;
+    // color: $text-dark-theme-color;
+    color: #fff;
+    &:hover {
+        background-color: $accentColor;
+    }
+}
+
+.darkModal .vote {
+    color: $text-dark-theme-color;
+}
+
+.darkModal .votes {
+    background-color: $icon-color;
+}
+
+.darkModal .light {
+    color:$text-dark-theme-color;
+}
+
+.darkModal .gray {
+    color: $text-dark-theme-color;
+    // color: #fff;
+}

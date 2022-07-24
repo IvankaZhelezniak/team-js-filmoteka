@@ -1,0 +1,42 @@
+html{
+  scroll-behavior: smooth;
+}
+
+.cont-back-to-top{
+  // z-index: 5px;
+  opacity: 0;
+  width: 45px;
+  height: 45px;
+  pointer-events: none;
+  position: fixed;
+  right: 50px;
+  bottom: 50px;
+  svg{
+    fill: #fff;
+    transition: 0.15s all ease-in-out;
+  }
+  transition: 0.5s opacity ease-in-out;
+  &._show{
+    opacity: 1;
+    pointer-events: all;
+  }
+  &:hover{
+    
+    svg{
+      fill: #FF6B08;
+    }
+  }
+}
+
+.back-to-top{
+    border-radius: 50%;
+    background-color: #FF6B08;
+    transition: 0.15s all ease-in-out;
+    padding: 7px;
+    &:hover{
+      background: rgba(#fff, 0.2);
+      backdrop-filter: blur(4px);
+      box-shadow: 0 0 10px rgba(#000, 0.2);
+      
+    }
+}
