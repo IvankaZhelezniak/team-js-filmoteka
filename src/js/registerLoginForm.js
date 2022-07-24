@@ -1,33 +1,49 @@
-import refs from "./refs";
-
-// export const showRegisterError = error => {
-//    refs.divRegisterError.style.display = 'block';
-//    if (error.code === 'auth/weak-password') {
-//       if(localStorage.getItem('language') === 'ua'){
-//          refs.divRegisterError.innerHTML = `Пароль має містити не менше 6 символів.`;
-//       }
-//       else{
-//          refs.divRegisterError.innerHTML = `Password should be at least 6 characters.`;
-//       }
-     
-//    } else if (error.code === 'auth/email-already-in-use') {
-//         if(localStorage.getItem('language') === 'ua'){
-//          refs.divRegisterError.innerHTML = `E-mail вже використовується.`;}
-//       else{
-//          refs.divRegisterError.innerHTML = `Email already in use.`;
-//       }
-//    } else {
-//       refs.divRegisterError.innerHTML = `Error: ${error.message}`;
-//    }
-// };
+import { refs} from "./refs";
 
 document.getElementById('reg-btn').addEventListener('click', function () {
-   document.getElementById('register-div').style.display = "inline";
-   document.getElementById('login-div').style.display = "none";
+   refs.signupForm.style.display = "inline";
+   refs.signinForm.style.display = "none";
 
 })
 
 document.getElementById('log-btn').addEventListener('click', function () {
-   document.getElementById('register-div').style.display = "none";
-   document.getElementById('login-div').style.display = "inline";
+   refs.signupForm.style.display = "none";
+   refs.signinForm.style.display = "inline";
 })
+
+
+// Закриває форму логінізації при кліку на бекдроп
+refs.formaLoginCreatRegister.addEventListener('click', e => {
+   if (e.target === e.currentTarget) {
+      resetFform();
+       closeFormLoginRegister();
+   }
+});
+
+
+// Показує форму логінізації
+export const showFormLogin = () => {
+   refs.formaLoginCreatRegister.classList.remove('is-hidden');
+   window.addEventListener('keydown', closeFormLoginRegisterByKey);
+}
+
+// Закриває форму по Escape
+const closeFormLoginRegisterByKey = (e) => {
+   if (e.key === 'Escape') {
+      closeFormLoginRegister();
+      window.removeEventListener('keydown', closeFormLoginRegisterByKey);
+   }
+}
+
+// Закриває форму логінізації
+export const closeFormLoginRegister = () => {
+refs.formaLoginCreatRegister.classList.add('is-hidden');
+}
+
+// обновляє форму
+export const resetFform = () => {
+      refs.signupForm.reset();
+      refs.signinForm.reset();
+};
+
+

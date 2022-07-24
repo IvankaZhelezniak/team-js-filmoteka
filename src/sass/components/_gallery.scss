@@ -21,15 +21,19 @@
 
 .status-btn-wrapper {
     position: absolute;
+    cursor:pointer;
     top:10px;
     left: 10px;
 }
 
 .status-btn {
+    cursor:pointer;
     display: block;
-    width: 40px;
     height: 40px;
-
+    text-decoration:none;
+    text-transform:uppercase;
+    color: #ffffff;
+    padding: 0 12px;
     background-color:#ff6b01;
 
 }
