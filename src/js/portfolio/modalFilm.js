@@ -5,7 +5,7 @@ import { btnModalClass } from '../modal/btnModalClass';
 import { onModalBtnClick } from '../modal/modalAddToLSWatchedQueue';
 
 refs.gallery.addEventListener('click', onFilmCardClick);
-function onFilmCardClick(e) {
+async function onFilmCardClick(e) {
   refs.modalBtn.addEventListener('click', onModalBtnClick);
   e.preventDefault();
   clearInfoModal();
@@ -15,35 +15,54 @@ function onFilmCardClick(e) {
   if (!li) return;
   const id = li.getAttribute('data-id');
 
-  const film = movieClass.searchFilmByIdInLS(id);
-
-  let genresList = null;
+  const film = await fetch(
+    `https://api.themoviedb.org/3/movie/${id}?api_key=5692dca6012d3660a336300872bd664c`
+  )
+    .then(res => res.json())
+    .then(data => {
+      if (data.success === false) {
+        return movieClass.searchFilmByIdInLS(id);
+      }
+      return data;
+    });
 
   if (film) {
-    genresList = movieClass.makeAllMoodalGenresList(film.genre_ids, genres)
-      ? movieClass.makeAllMoodalGenresList(film.genre_ids, genres)
-      : 'No info';
+    const genresList = film.genres?.map(genre => genre.name).join(', ');
 
-    refs.searchForm.style.display = 'none';
-
+    if (refs.searchForm != null) {
+      refs.searchForm.style.display = 'none';
+    }
     refs.modalBtnQueue.setAttribute('data-id', `${id}`);
     refs.modalBtnWatched.setAttribute('data-id', `${id}`);
 
     refs.imageModal.src = `${URL_IMG}${film.poster_path}`;
+    if (!film.poster_path) {
+      refs.imageModal.src =
+        'https://i.ibb.co/BrYLsTv/default-movie-poster-min.jpg';
+    }
     refs.modalTitle.textContent = `${film.title ? film.title : film.name}`;
     refs.modalTitleOriginal.textContent = `${
       film.original_title ? film.original_title : film.original_name
     }`;
-    refs.voteModal.textContent = `${film.vote_average.toFixed(2)}`;
+    refs.voteModal.textContent = `${film?.vote_average?.toFixed(2)}`;
     refs.votesModal.textContent = `${film.vote_count}`;
     refs.popularityModal.textContent = `${film.popularity}`;
     refs.genreModal.textContent = `${genresList}`;
+    if (!film.genres) {
+      refs.genreModal.textContent = ' ';
+    }
     refs.overviewModal.textContent = `${film.overview}`;
 
-    refs.backdrop.style.background = `url(${URL_IMG}${film.backdrop_path}) no-repeat center`;
+    if (film.backdrop_path) {
+      refs.backdrop.style.background = `url(${URL_IMG}${film.backdrop_path}) no-repeat center`;
+    } else {
+      refs.backdrop.style.background = '';
+    }
     refs.backdrop.style.backgroundSize = 'cover';
 
-    refs.searchBox.classList.add('is-hidden');
+    if (refs.searchBox != null) {
+      refs.searchBox.classList.add('is-hidden');
+    }
     refs.modalFilmBox.classList.remove('is-hidden');
     refs.backdrop.classList.remove('is-hidden');
     refs.body.classList.add('backdrop-body-block-scroll');
@@ -87,10 +106,12 @@ function onFilmCardClick(e) {
   }
   function closeModal() {
     refs.modalBtn.removeEventListener('click', onModalBtnClick);
-    refs.searchForm.style.display = null;
+    if (refs.searchBox != null) {
+      refs.searchForm.style.display = null;
+    }
     refs.backdrop.classList.add('is-hidden');
     refs.body.classList.remove('backdrop-body-block-scroll');
-    // refs.searchBox.classList.remove('is-hidden');
+
     setTimeout(function () {
       refs.searchBox.classList.remove('is-hidden');
     }, 130);
@@ -113,6 +134,4 @@ function onFilmCardClick(e) {
       btn.textContent = `add to ${actions}`;
     }
   }
-
-  // console.log('film:', film);
 }
