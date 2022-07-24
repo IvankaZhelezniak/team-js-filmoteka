@@ -1,6 +1,7 @@
 import { refs } from '../refs';
 import { createMarkup } from './createWatchedMarkup';
 import { onFilmCardClick } from './modalFilm'
+
 // console.log('we work', );
 
 refs.btnWatched.addEventListener('click', onWatchedBtn);
@@ -30,4 +31,5 @@ async function onWatchedBtn () {
         return
     }
 }
-// console.log('we work', );
+
+
