@@ -239,43 +239,35 @@
 
 .button-group {
   display: flex;
-  justify-content: space-between;
-  margin-top: 10px;
+  justify-content: center;
+  margin-top: 60px;
   @media screen and (min-width: 768px) {
-    justify-content: center;
-    margin-top: 40px;
+    margin-top: 40px;    
   }
   
 }
 
 .header-library-container {
-  // width: 110px;
-  // height: 44px;
-  
-  // width: 200px;
-  // height: 100px;
-  // position: absolute;
-  // left: 50%;
-  // top: 50%;
-  // transform: translate(-50%, -50%);
   display: flex;
   justify-content: center;
   align-items: center;
-  &:not(:last-child){
+  &:not(:last-child) {
+    margin-right: 20px;
     @media screen and (min-width: 768px) and (max-width: 1279px) {
       margin-right: 32px;
-      }
+      
     }
-    @media screen and (min-width: 1280px) {
-      margin-right: 16px;
-    }
+  }
+  @media screen and (min-width: 1280px) {
+    margin-right: 16px;
+  }
 }
 
-.header-library-center {
-  // width: 180px;
-  // height: 60px;
-  // position: absolute;
-}
+// .header-library-center {
+//   width: 180px;
+//   height: 60px;
+//   position: absolute;
+// }
 
 .header-library-btn {
   width: 129px;
@@ -313,7 +305,6 @@
 }
 
 
-
 .header-library-btn:hover svg {
   stroke-dashoffset: -480;
 }
@@ -321,7 +312,6 @@
 .header-library-btn span {
   color: #ffffff;
   font-size: 12px;
-  // font-size: 18px;
   font-weight: 100;
 }
 

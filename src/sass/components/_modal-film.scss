@@ -17,13 +17,21 @@
 }
 
 // body scroll block
-.backdrop-film .backdrop-body-block-scroll {
-    overflow: hidden
+.backdrop-body-block-scroll {
+    overflow: hidden;
+    
 }
+
+
+// ::-webkit-scrollbar {
+//     width: 0px;
+// }
+
 
 // Modal window
 
 .backdrop-film .modal-film {
+    overflow: auto;
     position: relative;
     left: 50%;
     top: 50%;
@@ -31,6 +39,7 @@
     max-width: 400px;
     min-width: 280px;
     min-height: 240px;
+    max-height: 95%;
     border-radius: 5px;
     background-color: $bg-color-modal;
     &-back{
@@ -39,12 +48,10 @@
         height: 100vh;
         z-index: -1;
         backdrop-filter: blur(10px);
-        left: 50%;
-        top: 50%;
-        transform: translate(-50%, -50%);
     }
   
     @media screen and(max-width:767px) {
+
         padding-top: 48px;
         padding-bottom: 40px;
         padding-left: 20px;
@@ -182,17 +189,9 @@
 
 .modal-film__links-list {
     display: flex;
-    // justify-content: center;
-    
-    // @media screen and (min-width: 1280px) {
-    //     position: fixed;
-    //     bottom: 40px;
-    // }
-
-    // @media screen and (min-width: 768px) {
-    //     position: fixed;
-    //     bottom: 40px;
-    // }
+    @media screen and (max-width: 767px) {
+        justify-content: space-between;
+    }
 }
 
 .modal-film__link-item {

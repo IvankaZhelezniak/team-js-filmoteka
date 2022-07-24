@@ -1,18 +1,12 @@
 .header {
   position: relative;
-
-  padding-top: 40px;
-  padding-bottom: 44px;
-  padding-left: 20px;
-  padding-right: 20px;
+  padding: 40px 20px 44px;
   background-color: rgba(0, 0, 0, 0.56);
   background-image: linear-gradient(to right, rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
     url('/src/images/header/header-mob.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  // padding-right: 20px;
-  // padding-left: 20px;
   max-height: 230px;
   width: 100%;
 
@@ -56,12 +50,7 @@
 
 .header-container {
   width: 100%;
-  
-  // min-width: 320px;
-  // margin: 0 auto;
-  // padding-right: 20px;
-  // padding-left: 20px;
-
+ 
 @media screen and (min-width: 768px) {
     max-width: 768px;
     margin: 0 auto;
@@ -253,6 +242,15 @@
 .search-label {
 	position: relative;
 	z-index: 4;
+  
+  &:hover .search-input {   
+      border-bottom: 1px solid #ff6b08;
+      transition: border-bottom 500ms;
+  }
+  &:hover  + .search-btn {  
+    border-bottom: 1px solid #ff6b08;
+    transition: border-bottom 500ms;
+  } 
 }
 .search-input {
 	width: 280px;
@@ -267,7 +265,6 @@
 .search-input::placeholder {
 	display: flex;
 	align-items: center;
-
 	color: #ffffff;
 }
 
@@ -295,6 +292,8 @@
 //   justify-content: space-between;
 //   // align-items: baseline;
 // }
+
+
 
 
 .header-login-btn-container {

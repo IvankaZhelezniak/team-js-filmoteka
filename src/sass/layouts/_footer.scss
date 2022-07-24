@@ -3,15 +3,7 @@
     position: fixed;
     width: 100%;
     bottom: 0;
-    // opacity: 0;
-    // transform: translateY(100%);
   }
-
-  // .footer-animation.element-show {
-  //   opacity: 1;
-  //   transition: all 1s;
-  //   transform: translateY(0%);
-  // }
  
   .footer__text {
     display: flex;
@@ -26,7 +18,6 @@
       text-align: center;
       padding-top: 28px;
       padding-bottom: 28px;
-      // width: 300px;
       width: 100%;
     }
   }
