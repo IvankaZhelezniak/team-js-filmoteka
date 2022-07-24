@@ -246,6 +246,15 @@
 .search-label {
 	position: relative;
 	z-index: 4;
+  
+  &:hover .search-input {   
+      border-bottom: 1px solid #ff6b08;
+      transition: border-bottom 500ms;
+  }
+  &:hover  + .search-btn {  
+    border-bottom: 1px solid #ff6b08;
+    transition: border-bottom 500ms;
+  } 
 }
 .search-input {
 	width: 280px;
@@ -260,7 +269,6 @@
 .search-input::placeholder {
 	display: flex;
 	align-items: center;
-
 	color: #ffffff;
 }
 
