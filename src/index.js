@@ -14,4 +14,3 @@ import './js/auth/authenticationFirebase';
 import './js/portfolio/cteateGalleryStickers';
 
 import './js/students';
-
