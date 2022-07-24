@@ -1,4 +1,4 @@
-import './js/registerLoginForm';
+// import './js/registerLoginForm';
 import './js/theme-toggle';
 import './js/portfolio/createStartPortfolio';
 import './js/portfolio/watchedBtn';
