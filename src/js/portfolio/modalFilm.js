@@ -39,6 +39,7 @@ function onFilmCardClick(e) {
     refs.popularityModal.textContent = `${film.popularity}`;
     refs.genreModal.textContent = `${genresList}`;
     refs.overviewModal.textContent = `${film.overview}`;
+
     refs.backdrop.style.background = `url(${URL_IMG}${film.backdrop_path}) no-repeat center`;
     refs.backdrop.style.backgroundSize = 'cover';
 
