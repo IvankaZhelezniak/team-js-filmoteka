@@ -16,6 +16,7 @@ async function onFilmCardClick(e) {
   const id = li.getAttribute('data-id');
 
   // const film = movieClass.searchFilmByIdInLS(id);
+
   const film = await fetch(
     `https://api.themoviedb.org/3/movie/${id}?api_key=5692dca6012d3660a336300872bd664c`
   )
@@ -27,62 +28,73 @@ async function onFilmCardClick(e) {
       return data;
     });
 
-  // if (film) {
-  // let genresList = null;
-  // console.log(id);
-  console.log(film);
-  const genresList = film.genres?.map(genre => genre.name).join(', ');
+  if (film) {
+    // let genresList = null;
+    // console.log(id);
+    console.log(film);
+    const genresList = film.genres?.map(genre => genre.name).join(', ');
 
-  // genresList = movieClass.makeAllMoodalGenresList(film.genre_ids, genres)
-  //   ? movieClass.makeAllMoodalGenresList(film.genre_ids, genres)
-  //   : 'No info';
+    // genresList = movieClass.makeAllMoodalGenresList(film.genre_ids, genres)
+    //   ? movieClass.makeAllMoodalGenresList(film.genre_ids, genres)
+    //   : 'No info';
 
-  refs.searchForm.style.display = 'none';
+    refs.searchForm.style.display = 'none';
 
-  refs.modalBtnQueue.setAttribute('data-id', `${id}`);
-  refs.modalBtnWatched.setAttribute('data-id', `${id}`);
+    refs.modalBtnQueue.setAttribute('data-id', `${id}`);
+    refs.modalBtnWatched.setAttribute('data-id', `${id}`);
 
-  refs.imageModal.src = `${URL_IMG}${film.poster_path}`;
-  refs.modalTitle.textContent = `${film.title ? film.title : film.name}`;
-  refs.modalTitleOriginal.textContent = `${
-    film.original_title ? film.original_title : film.original_name
-  }`;
-  refs.voteModal.textContent = `${film?.vote_average?.toFixed(2)}`;
-  refs.votesModal.textContent = `${film.vote_count}`;
-  refs.popularityModal.textContent = `${film.popularity}`;
-  refs.genreModal.textContent = `${genresList}`;
-  refs.overviewModal.textContent = `${film.overview}`;
+    refs.imageModal.src = `${URL_IMG}${film.poster_path}`;
+    if (!film.poster_path) {
+      refs.imageModal.src =
+        'https://i.ibb.co/BrYLsTv/default-movie-poster-min.jpg';
+    }
+    refs.modalTitle.textContent = `${film.title ? film.title : film.name}`;
+    refs.modalTitleOriginal.textContent = `${
+      film.original_title ? film.original_title : film.original_name
+    }`;
+    refs.voteModal.textContent = `${film?.vote_average?.toFixed(2)}`;
+    refs.votesModal.textContent = `${film.vote_count}`;
+    refs.popularityModal.textContent = `${film.popularity}`;
+    refs.genreModal.textContent = `${genresList}`;
+    if (!film.genres) {
+      refs.genreModal.textContent = ' ';
+    }
+    refs.overviewModal.textContent = `${film.overview}`;
 
-  refs.backdrop.style.background = `url(${URL_IMG}${film.backdrop_path}) no-repeat center`;
-  refs.backdrop.style.backgroundSize = 'cover';
+    if (film.backdrop_path) {
+      refs.backdrop.style.background = `url(${URL_IMG}${film.backdrop_path}) no-repeat center`;
+    } else {
+      refs.backdrop.style.background = '';
+    }
+    refs.backdrop.style.backgroundSize = 'cover';
 
-  refs.searchBox.classList.add('is-hidden');
-  refs.modalFilmBox.classList.remove('is-hidden');
-  refs.backdrop.classList.remove('is-hidden');
-  refs.body.classList.add('backdrop-body-block-scroll');
+    refs.searchBox.classList.add('is-hidden');
+    refs.modalFilmBox.classList.remove('is-hidden');
+    refs.backdrop.classList.remove('is-hidden');
+    refs.body.classList.add('backdrop-body-block-scroll');
 
-  checkStartBtn(
-    id,
-    refs.modalBtnWatched,
-    refs.modalBtnWatched.getAttribute('data-actions')
-  );
-  checkStartBtn(
-    id,
-    refs.modalBtnQueue,
-    refs.modalBtnQueue.getAttribute('data-actions')
-  );
+    checkStartBtn(
+      id,
+      refs.modalBtnWatched,
+      refs.modalBtnWatched.getAttribute('data-actions')
+    );
+    checkStartBtn(
+      id,
+      refs.modalBtnQueue,
+      refs.modalBtnQueue.getAttribute('data-actions')
+    );
 
-  checkStartBtn(
-    id,
-    refs.modalBtnWatched,
-    refs.modalBtnWatched.getAttribute('data-actions')
-  );
-  checkStartBtn(
-    id,
-    refs.modalBtnQueue,
-    refs.modalBtnQueue.getAttribute('data-actions')
-  );
-  // }
+    checkStartBtn(
+      id,
+      refs.modalBtnWatched,
+      refs.modalBtnWatched.getAttribute('data-actions')
+    );
+    checkStartBtn(
+      id,
+      refs.modalBtnQueue,
+      refs.modalBtnQueue.getAttribute('data-actions')
+    );
+  }
 
   refs.btnCloseModalFilm.addEventListener('click', closeModal);
   window.addEventListener('keydown', onEscPress);
@@ -126,6 +138,4 @@ async function onFilmCardClick(e) {
       btn.textContent = `add to ${actions}`;
     }
   }
-
-  // console.log('film:', film);
 }
