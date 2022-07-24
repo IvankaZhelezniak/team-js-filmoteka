@@ -239,10 +239,9 @@
 
 .button-group {
   display: flex;
-  justify-content: space-between;
-  margin-top: 10px;
+  justify-content: center;
+  margin-top: 60px;
   @media screen and (min-width: 768px) {
-    justify-content: center;
     margin-top: 40px;    
   }
   
@@ -253,6 +252,7 @@
   justify-content: center;
   align-items: center;
   &:not(:last-child) {
+    margin-right: 20px;
     @media screen and (min-width: 768px) and (max-width: 1279px) {
       margin-right: 32px;
       
