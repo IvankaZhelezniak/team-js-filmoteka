@@ -10,6 +10,7 @@ export {
 		this.storageWatched = [];
 		this.storageQueue = [];
 	}
+
 	async fetchPopularMovies() {
 	  const response = await fetch(
 		`https://api.themoviedb.org/3/trending/all/day?api_key=5692dca6012d3660a336300872bd664c&page=${page}`
@@ -17,6 +18,18 @@ export {
 	  page += 1;
 	  return await response.json();
 	}
+
+	async fetchSearchedMovies(searchQuery) {
+		try {
+		  page = 1;
+		  const response = await fetch(
+			`https://api.themoviedb.org/3/search/movie?api_key=5692dca6012d3660a336300872bd664c&language=en-US&page=${page}&include_adult=false&query=${searchQuery}`
+		  );
+		  return await response.json();
+		} catch (error) {
+		  console.log(error);
+		}
+	  }
   
 	saveToLocalStorageFindedFilms(films) {
 	  localStorage.setItem('findFilms', JSON.stringify(films.results));
