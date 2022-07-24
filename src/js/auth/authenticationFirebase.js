@@ -1,9 +1,8 @@
-// Import the functions you need from the SDKs you need
-// import { showRegisterError } from "../registerLoginForm";
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
-import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, updateProfile } from "firebase/auth";
-// TODO: Add SDKs for Firebase products that you want to use
+import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, onAuthStateChanged, updateProfile } from "firebase/auth";
+import { showFormLogin, closeFormLoginRegister, resetFform } from "../registerLoginForm";
+import { refs } from "../refs";
 
 // Your web app's Firebase configuration
 
@@ -22,7 +21,18 @@ const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
 const auth = getAuth(app);
 
-document.getElementById('login-btn').addEventListener('click', function () {
+//listen for auth status changes
+// onAuthStateChanged(user => {
+//     if (user) {
+//       console.log('user logged in: ', user);
+//     } else {
+//       console.log('user logged out', user);
+//     }
+// });
+  
+
+refs.btnSigninForm.addEventListener('click', function (e) {
+  e.preventDefault();
   const loginEmail = document.getElementById('login-email').value;
   const loginPassword = document.getElementById('login-password').value;
 
@@ -30,21 +40,24 @@ document.getElementById('login-btn').addEventListener('click', function () {
   .then((userCredential) => {
     const user = userCredential.user;
     document.getElementById('result-box').style.display = "inline";
-    document.getElementById('login-div').style.display = "none";
-    document.getElementById('result').innerHTML= "Welcome Back<br>"+loginEmail+" was login Successufully";
+    resetFform();
+    closeFormLoginRegister();
+    window.location.href ="../../library.html";
+    // document.getElementById('result').innerHTML = "Welcome Back<br>" + loginEmail + " was login Successufully";
   })
   .catch((error) => {
     const errorCode = error.code;
     const errorMessage = error.message;
         document.getElementById('result-box').style.display = "inline";
-    document.getElementById('login-div').style.display = "none";
+    closeFormLoginRegister();
     document.getElementById('result').innerHTML= "Sorry ! <br>"+errorMessage;
   });
 
 });
 
 
-document.getElementById('register-btn').addEventListener('click', function () {
+refs.btnSignupForm.addEventListener('click', function (e) {
+  e.preventDefault();
   const registerEmail = document.getElementById('register-email').value;
   const registerPassword = document.getElementById('register-password').value;
 
@@ -52,69 +65,38 @@ document.getElementById('register-btn').addEventListener('click', function () {
   .then((userCredential) => {
     const user = userCredential.user;
     document.getElementById('result-box').style.display = "inline";
-    document.getElementById('register-div').style.display = "none";
-    document.getElementById('result').innerHTML= "Welcome <br>"+registerEmail+" was Registered Successufully";
+    resetFform();
+    closeFormLoginRegister();
+    window.location.href ="../../library.html";
+    document.getElementById('result').innerHTML = "Welcome <br>" + registerEmail + " was Registered Successufully";
+    
   })
   .catch((error) => {
     const errorCode = error.code;
     const errorMessage = error.message;
         document.getElementById('result-box').style.display = "inline";
-    document.getElementById('login-div').style.display = "none";
+    closeFormLoginRegister();
     document.getElementById('result').innerHTML= "Sorry ! <br>"+errorMessage;
   });
 
 });
 
-document.getElementById('log-out-btn').addEventListener('click', function () {
-signOut(auth).then(() => {
+const logout = () => {
+  signOut(auth).then(() => {
     document.getElementById('result-box').style.display = "none";
-    document.getElementById('login-div').style.display = "inline";
-}).catch((error) => {
-  document.getElementById('result').innerHTML= "Sorry ! <br>"+errorMessage;
-});
- });
+    refs.signinForm.style.display = "inline";
+    resetFform();
+  }).catch((error) => {
+    document.getElementById('result').innerHTML = "Sorry ! <br>" + errorMessage;
+    resetFform();
+  });
+};
 
 
+ 
+refs.btnLogin.addEventListener('click', showFormLogin);
+refs.btnLoginout.addEventListener('click', logout);
 
-// const createAccount = async (userName, email, password) => {
-//   try 
-// }
-// createUserWithEmailAndPassword(auth, email, password)
-//   .then((userCredential) => {
-//     // Signed in 
-//     const user = userCredential.user;
-//     // ...
-//   })
-//   .catch((error) => {
-//     const errorCode = error.code;
-//     const errorMessage = error.message;
-//     // ..
-//   });
-
-// refs.registerFormCreatFormSignUp.addEventListener("submit", e => {
-//   e.preventDefault();
-//   const accountName = e.target.name.value.trim();
-//   const email = e.target.email.value;
-//   const password = e.target.password.value;
-
-//   if (!validateEmail(email)) {
-//     const error = { message: 'No validate email' };
-//     showRegisterError(error);
-//   } else if (!displayName) {
-//     const error = { message: 'No validate Name' };
-//     showRegisterError(error);
-//   } else {
-//     createAccount(userName, email, password);
-//   }
-// });
-  
-// const validateEmail = email => {
-//    return String(email)
-//       .toLowerCase()
-//       .match(
-//          /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
-//       );
-// };
 
 
 // Прослушать изменения статуса аутентификации вход или виход
