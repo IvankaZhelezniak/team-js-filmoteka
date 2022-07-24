@@ -28,8 +28,10 @@ async function onFilmCardClick(e) {
 
   if (film) {
     const genresList = film.genres?.map(genre => genre.name).join(', ');
-    refs.searchForm.style.display = 'none';
 
+    if (refs.searchForm != null) {
+      refs.searchForm.style.display = 'none';
+    }
     refs.modalBtnQueue.setAttribute('data-id', `${id}`);
     refs.modalBtnWatched.setAttribute('data-id', `${id}`);
 
@@ -58,7 +60,9 @@ async function onFilmCardClick(e) {
     }
     refs.backdrop.style.backgroundSize = 'cover';
 
-    refs.searchBox.classList.add('is-hidden');
+    if (refs.searchBox != null) {
+      refs.searchBox.classList.add('is-hidden');
+    }
     refs.modalFilmBox.classList.remove('is-hidden');
     refs.backdrop.classList.remove('is-hidden');
     refs.body.classList.add('backdrop-body-block-scroll');
