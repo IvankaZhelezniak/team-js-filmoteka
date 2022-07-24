@@ -61,7 +61,11 @@
 }
 
   .team-list__image{
-  width: 100%;
+  max-width: 100%;
+  height: auto;
+  border-radius: 50%;
+  object-fit: cover;
+
   }
   
   .team-list__team-name{
@@ -141,7 +145,7 @@
     left:50%;
     width: 200px;
     height: 95%;
-	  // overflow-y: scroll;
+	  overflow-y: scroll;
     margin: auto 0;
     background-color: #332c2c;
     box-shadow: 0px 1px 3px rgba(202, 47, 47, 0.12), 0px 1px 1px rgba(159, 150, 150, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
@@ -154,6 +158,7 @@
     }
       @media screen and (min-width: 1200px) {
       min-width: 1000px;
+      overflow-y: hidden;
     }
 	  }
   
@@ -168,6 +173,7 @@
   .modal-window__modal-close{
   width: 30px;
   height: 30px;
+  color: #332c2c;;
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 50%;
   position: absolute;
@@ -182,27 +188,35 @@
   }
   }
 
+  .students__icon{
+    width: 30px;
+    margin: auto 0;
+  }
+
 
   // Animation
 //   @import url(https://fonts.googleapis.com/css?family=Droid+Sans:400,700);
 
-// * { padding: 0; margin: 0; }
+// * { padding: 0; margin: 0; };
 
 // .titlecontent{
+//   @media screen and (max-width: 767px){
 // 	width: 100%;
 // 	height: 100%;
 // 	font-family: "Droid Sans", arial, verdana, sans-serif;
 //   font-size: 700;
 // 	color: orangered;
 // 	overflow: hidden;
+//   }
 // }
 
 // .titles{
+//   @media screen and (max-width: 767px){
 // 	width: 90%;
 // 	height:100%;
 // 	font-family: "Droid Sans", arial, verdana, sans-serif;
 // 	color: #ffff;
-// 	overflow: hidden;
+// 	overflow: hidden;}
 // }
 
 
@@ -239,6 +253,7 @@
 // /* the interesting 3D scrolling stuff */
 // #titles
 // {
+//   @media screen and (max-width: 767px){
 // 	position: absolute;
 // 	width: 18em;
 // 	height: 50em;
@@ -257,18 +272,19 @@
 // 	-moz-transform: perspective(300px) rotateX(10deg);
 // 	-ms-transform: perspective(300px) rotateX(10deg);
 // 	-o-transform: perspective(300px) rotateX(10deg);
-// 	transform: perspective(300px) rotateX(10deg);
+// 	transform: perspective(300px) rotateX(10deg);}
 // }
 
 // #titlecontent
 // {
+//   @media screen and (max-width: 767px){
 // 	position: absolute;
 // 	top: 100%;
 // 	-webkit-animation: scroll 150s linear 4s infinite;
 // 	-moz-animation: scroll 150s linear 4s infinite;
 // 	-ms-animation: scroll 150s linear 4s infinite;
 // 	-o-animation: scroll 150s linear 4s infinite;
-// 	animation: scroll 150s linear 4s infinite;
+// 	animation: scroll 150s linear 4s infinite;}
 // }
 
 // /* animation */
