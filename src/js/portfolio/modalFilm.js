@@ -106,7 +106,9 @@ async function onFilmCardClick(e) {
   }
   function closeModal() {
     refs.modalBtn.removeEventListener('click', onModalBtnClick);
-    refs.searchForm.style.display = null;
+    if (refs.searchBox != null) {
+      refs.searchForm.style.display = null;
+    }
     refs.backdrop.classList.add('is-hidden');
     refs.body.classList.remove('backdrop-body-block-scroll');
 
