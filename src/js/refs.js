@@ -20,6 +20,9 @@ const refs = {
   modalBtnWatched: document.querySelector('[data-actions="watched"]'),
   modalBtnQueue: document.querySelector('[data-actions="queue"]'),
 
+  btnWatched: document.querySelector('.watched-js'),
+  watchedListRef: document.querySelector('.js-library__list'),
+
   themeBtnLibrary: document.querySelector('#theme-toggle__library'),
   themeBtnHtml: document.querySelector('#theme-toggle__html'),
   lightToggleIcon: document.querySelector('.lightToggleIcon'),
