@@ -60,7 +60,7 @@ function updateTheme() {
     // console.log(theme);
     if (refs.bodyHtml) {
         // console.log(refs.bodyHtml);
-        if (theme === 'light') {
+        if (theme === 'light' || '') {
             refs.bodyHtml.classList.remove('dark');
             refs.themeBtnHtml.classList.add('js-light');
             refs.backdrop.classList.remove('darkModal');
