@@ -89,7 +89,10 @@ function onFilmCardClick(e) {
     refs.searchForm.style.display = null;
     refs.backdrop.classList.add('is-hidden');
     refs.body.classList.remove('backdrop-body-block-scroll');
-    refs.searchBox.classList.remove('is-hidden');
+    // refs.searchBox.classList.remove('is-hidden');
+    setTimeout(function () {
+      refs.searchBox.classList.remove('is-hidden');
+    }, 130);
   }
   function clearInfoModal() {
     refs.imageModal.src = ``;
