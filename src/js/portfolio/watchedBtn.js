@@ -1,12 +1,13 @@
 import { refs } from '../refs';
 import { createMarkup } from './createWatchedMarkup';
 import { onFilmCardClick } from './modalFilm'
-console.log('we work', );
+
+// console.log('we work', );
 
 refs.btnWatched.addEventListener('click', onWatchedBtn);
 refs.watchedListRef.addEventListener('click', onFilmCardClick);
 
-
+onWatchedBtn();
 async function onWatchedBtn () {
     const savedWatched = await localStorage.getItem("watched");
     const parsedWatched = JSON.parse(savedWatched);
@@ -30,4 +31,5 @@ async function onWatchedBtn () {
         return
     }
 }
-console.log('we work', );
+
+

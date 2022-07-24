@@ -45,7 +45,7 @@
             margin-bottom: 30px;
         }
   @media screen and (min-width: 1200px){
-            flex-basis: calc(100% / 4 - 40px);
+            flex-basis: calc(100% / 6 - 40px);
         }
       img {
           width: 100%;
@@ -74,7 +74,7 @@
   
   .team-list__team-proffesion{
     font-weight: bold;
-  font-size: 16px;
+  font-size: 14px;
   line-height: 1.19;
   letter-spacing: 0.03em;
   margin-top: 10px;
@@ -141,7 +141,7 @@
     left:50%;
     width: 200px;
     height: 95%;
-	  overflow-y: scroll;
+	  // overflow-y: scroll;
     margin: auto 0;
     background-color: #332c2c;
     box-shadow: 0px 1px 3px rgba(202, 47, 47, 0.12), 0px 1px 1px rgba(159, 150, 150, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
@@ -150,9 +150,10 @@
     transition: transform 1000ms;
     @media screen and (min-width: 768px) {
       min-width: 500px;
+      overflow-y: scroll;
     }
-      @media screen and (min-width: 1024px) {
-      min-width: 800px;
+      @media screen and (min-width: 1200px) {
+      min-width: 1000px;
     }
 	  }
   
