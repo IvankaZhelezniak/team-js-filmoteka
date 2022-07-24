@@ -15,8 +15,6 @@ async function onFilmCardClick(e) {
   if (!li) return;
   const id = li.getAttribute('data-id');
 
-  // const film = movieClass.searchFilmByIdInLS(id);
-
   const film = await fetch(
     `https://api.themoviedb.org/3/movie/${id}?api_key=5692dca6012d3660a336300872bd664c`
   )
@@ -29,15 +27,7 @@ async function onFilmCardClick(e) {
     });
 
   if (film) {
-    // let genresList = null;
-    // console.log(id);
-    console.log(film);
     const genresList = film.genres?.map(genre => genre.name).join(', ');
-
-    // genresList = movieClass.makeAllMoodalGenresList(film.genre_ids, genres)
-    //   ? movieClass.makeAllMoodalGenresList(film.genre_ids, genres)
-    //   : 'No info';
-
     refs.searchForm.style.display = 'none';
 
     refs.modalBtnQueue.setAttribute('data-id', `${id}`);
@@ -115,7 +105,7 @@ async function onFilmCardClick(e) {
     refs.searchForm.style.display = null;
     refs.backdrop.classList.add('is-hidden');
     refs.body.classList.remove('backdrop-body-block-scroll');
-    // refs.searchBox.classList.remove('is-hidden');
+
     setTimeout(function () {
       refs.searchBox.classList.remove('is-hidden');
     }, 130);
