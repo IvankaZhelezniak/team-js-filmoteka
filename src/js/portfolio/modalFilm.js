@@ -4,7 +4,7 @@ import genres from './genres';
 import { btnModalClass } from '../modal/btnModalClass';
 import { onModalBtnClick } from '../modal/modalAddToLSWatchedQueue';
 
-refs.gallery.addEventListener('click', onFilmCardClick);
+// refs.gallery.addEventListener('click', onFilmCardClick);
 function onFilmCardClick(e) {
   refs.modalBtn.addEventListener('click', onModalBtnClick);
   e.preventDefault();
