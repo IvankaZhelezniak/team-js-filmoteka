@@ -34,14 +34,14 @@ function createFilmStickers(film, actions) {
 	const divWrapper = document.querySelector(`[data-status='${film.id}']`);
 	// console.log('divWrapper', divWrapper);
 	if(actions == 'watched') {
-		const content = '<svg class="header-nav-logo-icon" width="40" height="40"><use class="icon-color" href="../../src/image/icons/sprite.svg#icon-film"></use></svg>'
-
-		divWrapper.insertAdjacentHTML('afterbegin', `<button type="button" class="status-btn" data-id=${film.id}${actions}>${content}</button>`);
+		const content = 'watched';
+		
+		divWrapper.insertAdjacentHTML('beforeend', `<button type="button" class="status-btn" data-id=${film.id}${actions}>${content}</button>`);
 	}
 
 	if(actions == 'queue') {
-		const content = '<svg class="" width="24" height="24"><use class="icon-color" href="/src/images/icons/sprite.svg#icon-film"></use></svg>'
-		divWrapper.insertAdjacentHTML('beforeend', `<button type="button" class="status-btn" data-id=${film.id}${actions}>${content}</button>`);
+		const content = 'in queue list';
+		divWrapper.insertAdjacentHTML('afterbegin', `<button type="button" class="status-btn" data-id=${film.id}${actions}>${content}</button>`);
 	}
 	
 	// divWrapper.insertAdjacentHTML('', `<button type="button" class="status-btn" data-id=${film.id}${actions}>${actions}</button>`);
