@@ -18,7 +18,7 @@
 
 // body scroll block
 .backdrop-film .backdrop-body-block-scroll {
-    overflow: hidden
+    overflow: hidden;
 }
 
 // Modal window
@@ -39,9 +39,6 @@
         height: 100vh;
         z-index: -1;
         backdrop-filter: blur(10px);
-        left: 50%;
-        top: 50%;
-        transform: translate(-50%, -50%);
     }
   
     @media screen and(max-width:767px) {
