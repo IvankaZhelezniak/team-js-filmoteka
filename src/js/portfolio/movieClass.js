@@ -254,7 +254,7 @@ export {
   const parsedGenres = genresClass.parseGenres();
   const allGenres = genresClass.parseGenres();
   
-=======
+
 export { movieClass };
 
 // ================================class Movie======================================

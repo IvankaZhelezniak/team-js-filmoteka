@@ -1,6 +1,5 @@
 import { createMurkup } from './createGalleryMarkup';
 import { refs } from '../refs';
-import { movieClass } from './movieClass';
 import { movieClass } from '../portfolio/movieClass';
 
 const watchedStoragedFilms = JSON.parse(localStorage.getItem('watched-films')) || [];

@@ -32,4 +32,17 @@ const btnModalClass = new (class BtnModal {
       }
     });
   }
+
+  isFilmIncludesLSWatched(id) {
+    const filmsArray = movieClass.getFromLS('watched');
+    if (filmsArray === null) {
+      return false;
+    }
+
+    return filmsArray.find(film => {
+      if (film.id == id) {
+        return true;
+      }
+    });
+  }
 })();
