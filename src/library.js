@@ -1,7 +1,7 @@
 import './js/registerLoginForm';
 import './js/theme-toggle';
 import './js/portfolio/createStartPortfolio';
-// import './js/portfolio/watchedBtn';
+import './js/portfolio/watchedBtn';
 import './js/portfolio/modalFilm';
 import './js/portfolio/searchByName';
 import './js/portfolio/infinite-scroll-trending';
