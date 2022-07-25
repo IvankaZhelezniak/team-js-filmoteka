@@ -3,7 +3,7 @@
 // Backdrop
 
 .backdrop-film {
-    transition: opacity 0.3s $animation-cubic;
+transition: opacity 250ms $animation-cubic;
     position: fixed;
     top: 0;
     left: 0;
@@ -22,15 +22,10 @@
     
 }
 
-
-// ::-webkit-scrollbar {
-//     width: 0px;
-// }
-
-
 // Modal window
 
 .backdrop-film .modal-film {
+    transition: opacity 250ms $animation-cubic;
     overflow: auto;
     position: relative;
     left: 50%;
@@ -51,7 +46,6 @@
     }
   
     @media screen and(max-width:767px) {
-
         padding-top: 48px;
         padding-bottom: 40px;
         padding-left: 20px;
@@ -80,7 +74,6 @@
     margin-bottom: 20px;
     margin-left: auto;
     margin-right: auto;
-    // max-height: 50px;
     min-width: 240px;
     border-radius: 5px;
     object-fit: cover;
@@ -159,7 +152,6 @@
     }
     @media screen and (min-width: 1280px) {
         width: 391px;
-        // margin-right: 12px;
     }
 }
 
@@ -168,7 +160,7 @@
     margin-bottom: 20px;
 }
 
- .modal-film__votes {
+.modal-film__votes {
     display: inline-block;
     padding: 1px 0;
     text-align: center;
