@@ -9,15 +9,15 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    padding-top: 30px;
-    padding-bottom: 30px;
+    padding-top: 20px;
+    padding-bottom: 20px;
     margin-right: auto;
     margin-left: auto;
     @media screen and (max-width: 767px) {
       display: block;
       text-align: center;
-      padding-top: 28px;
-      padding-bottom: 28px;
+      padding-top: 20px;
+      padding-bottom: 20px;
       width: 100%;
     }
   }

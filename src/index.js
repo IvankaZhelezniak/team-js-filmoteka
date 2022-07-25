@@ -12,4 +12,5 @@ import './js/refs';
 import './js/auth/authenticationFirebase';
 import './js/portfolio/cteateGalleryStickers';
 import './js/portfolio/genres';
+import './js/footer-up';
 import './js/students';
