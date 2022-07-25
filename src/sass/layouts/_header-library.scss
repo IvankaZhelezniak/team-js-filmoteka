@@ -77,61 +77,6 @@
   }
 }
 
-.icon-color {
-  fill: #ffffff;
-}
-.icon-color:hover {
-  fill: #ff6b08;
-}
-
-.header-nav {
-  position: relative;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  &-logo {
-    display: flex;
-    @media screen and (min-width: 768px) {
-      align-items: center;
-    }
-
-    &-icon {
-      @media screen and (min-width: 768px) {
-        margin-right: 10px;
-        fill: #ffffff;
-      }
-    }
-
-    &-text {
-      display: none;
-
-      @media screen and (min-width: 768px) {
-        display: flex;
-        align-items: center;
-        text-align: center;
-        font-weight: 500;
-        font-size: 30px;
-        line-height: 1.172;
-        color: #ffffff;
-        margin-right: 15px;
-
-        transition: color 250ms cubic-bezier(0.77, 0, 0.175, 1);
-
-        @media screen and (min-width: 1280px) {
-          margin-right: 35px;
-        }
-
-        &:hover,
-        &:focus {
-          color: #ff6b08;
-        }
-      }
-    }
-  }
-}
-
 .header-nav-list {
   margin-left: auto;
 
