@@ -1,4 +1,3 @@
-// var genres = [];
 export { genres };
 const genres = [
 	{

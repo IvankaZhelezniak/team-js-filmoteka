@@ -1,28 +1,4 @@
 @import '../variables';
-// .form-register__box {
-//         background-color: #fff;
-//             border-radius: 10px;
-//             // box-shadow: $shadow;
-//             position: relative;
-//             overflow: hidden;
-//             margin: auto;
-//             width: 320px;
-//             max-width: 100%;
-//             min-height: 700px;
-
-//             @media screen and (min-width: 425px) {
-//                 width: 405px;
-//             }
-
-//             @media screen and (min-width: 768px) {
-//                 width: 688px;
-//                 min-height: 480px;
-//             }
-
-//             @media screen and (min-width: 1024px) {
-//                 width: 768px;
-//             }
-// }
 
 .center-box {
   background-color: #fff;
@@ -106,3 +82,15 @@ border-radius: 20px;
         font-size: 14pt;
         color: white;
 }
+
+.display-block {
+  display: block;
+}
+
+// .btn-loginout {
+//   display: none;
+//     position: absolute;
+//               top: 50%;
+//               left: 50%;
+//               transform: translate(-50%, -50%);
+// }
