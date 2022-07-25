@@ -33,6 +33,18 @@ const movieClass = new (class Movie {
     localStorage.setItem('findFilms', JSON.stringify(films.results));
   }
 
+  addToLocalStorageFindedFilms(films) {
+    let filmArray = this.getFromLS(`findFilms`);
+
+    films.results.map(film => {filmArray.push(film)});
+
+    localStorage.setItem(`findFilms`, JSON.stringify(filmArray));
+
+  }
+
+
+
+
   saveToLibraryMovieInLS(film, actions) {
     // console.log(`фильм сохранен в LS ${actions}`);
     let filmArray = this.getFromLS(`${actions}`);
