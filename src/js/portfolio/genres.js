@@ -1,3 +1,4 @@
+var genres = [];
 export default genres = [
 	{
 		"id": 28,
