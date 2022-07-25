@@ -1,16 +1,12 @@
 .header {
   position: relative;
-
-  padding-top: 40px;
-  padding-bottom: 44px;
+  padding: 40px 20px 44px;
   background-color: rgba(0, 0, 0, 0.56);
   background-image: linear-gradient(to right, rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
     url('/src/images/header/header-mob.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  padding-right: 20px;
-  padding-left: 20px;
   max-height: 230px;
   width: 100%;
 
@@ -24,8 +20,8 @@
   @media screen and (min-width: 768px) {
     background-image: linear-gradient(to right, rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
       url('/src/images/header/header-tab.jpg');
-      padding-right: 32px;
-      padding-left: 32px;
+      // padding-right: 32px;
+      // padding-left: 32px;
       min-height: 230px;
   }
 
@@ -39,8 +35,8 @@
   @media screen and (min-width: 1280px) {
     background-image: linear-gradient(to right, rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
       url('/src/images/header/header-desk.jpg');
-      padding-right: 32px;
-      padding-left: 32px;
+      // padding-right: 32px;
+      // padding-left: 32px;
       min-height: 230px;
   }
 
@@ -53,11 +49,11 @@
 }
 
 .header-container {
-  min-width: 320px;
-  margin: 0 auto;
-
+  width: 100%;
+ 
 @media screen and (min-width: 768px) {
     max-width: 768px;
+    margin: 0 auto;
 }
 @media screen and (min-width: 1280px) {
     max-width: 1280px;
@@ -246,6 +242,15 @@
 .search-label {
 	position: relative;
 	z-index: 4;
+  
+  &:hover .search-input {   
+      border-bottom: 1px solid #ff6b08;
+      transition: border-bottom 500ms;
+  }
+  &:hover  + .search-btn {  
+    border-bottom: 1px solid #ff6b08;
+    transition: border-bottom 500ms;
+  } 
 }
 .search-input {
 	width: 280px;
@@ -260,7 +265,6 @@
 .search-input::placeholder {
 	display: flex;
 	align-items: center;
-
 	color: #ffffff;
 }
 
@@ -282,12 +286,12 @@
 	border-bottom: 0.5px solid #818181;
 }
 
-.wrapper {
-  position: relative;
+// .wrapper {
+//   position: relative;
 
-  justify-content: space-between;
-  // align-items: baseline;
-}
+//   justify-content: space-between;
+//   // align-items: baseline;
+// }
 
 
 
@@ -309,8 +313,8 @@
 }
 
 .header-login-btn {
-  width: 180px;
-  height: 60px;
+  // width: 180px;
+  // height: 60px;
   cursor: pointer;
   background: transparent;
   border-radius: 5px;
@@ -323,7 +327,7 @@
   text-align: center;
   @media screen and (min-width: 320px) {
     width: 100px;
-    height: 60px;
+    height: 44px;
 }
 }
 
@@ -351,4 +355,7 @@
   font-size: 18px;
   font-weight: 100;
 }
-
+.btn-container {
+  display: flex;
+  justify-content: space-between;
+}

@@ -1,5 +1,6 @@
 const storageKey = 'preference-theme';
 import { refs } from './refs';
+let theme = 'light';
 
 updateTheme();
 changeTheme();
@@ -60,6 +61,11 @@ function updateTheme() {
     // console.log(theme);
     if (refs.bodyHtml) {
         // console.log(refs.bodyHtml);
+        if (theme === null) {
+            theme = 'light';
+            localStorage.setItem(storageKey, theme);
+            // console.log(theme);
+        }
         if (theme === 'light') {
             refs.bodyHtml.classList.remove('dark');
             refs.themeBtnHtml.classList.add('js-light');
@@ -73,7 +79,7 @@ function updateTheme() {
             addLightIconInvisible();
                
         }
-        
+        // console.log(theme);
     } if (refs.bodyLibrary) {
         // console.log(refs.bodyLibrary);
         if (theme === 'light') {
