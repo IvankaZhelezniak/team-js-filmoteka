@@ -12,10 +12,10 @@ async function onWatchedBtn() {
   const savedWatched = await localStorage.getItem('watched');
   const parsedWatched = JSON.parse(savedWatched);
 
-  if (!parsedWatched || parsedWatched.length === 0) {
-    return (refs.watchedListRef.innerHTML =
-      "<p class = 'empty-queue-notify'>You don't have movies yet :(</p>");
-  }
+  // if (!parsedWatched || parsedWatched.length === 0) {
+  //   return (refs.watchedListRef.innerHTML =
+  //     "<p class = 'empty-queue-notify'>You don't have movies yet :(</p>");
+  // }
 
   if (!refs.watchedListRef.classList.contains('actual')) {
     refs.watchedListRef.classList.add('actual');
