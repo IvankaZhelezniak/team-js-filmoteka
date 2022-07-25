@@ -19,10 +19,8 @@ const refs = {
   searchInput: document.querySelector('input[name="search"]'),
   modalBtnWatched: document.querySelector('[data-actions="watched"]'),
   modalBtnQueue: document.querySelector('[data-actions="queue"]'),
-
   btnWatched: document.querySelector('.watched-js'),
   watchedListRef: document.querySelector('.js-library__list'),
-
   themeBtnLibrary: document.querySelector('#theme-toggle__library'),
   themeBtnHtml: document.querySelector('#theme-toggle__html'),
   lightToggleIcon: document.querySelector('.lightToggleIcon'),
@@ -37,18 +35,16 @@ const refs = {
   registerFormCreatFormSignUp: document.getElementById('creatFormSignUp'),
   divRegisterError: document.getElementById('divRegisterError'),
 
-  	// Рефи для регістрації і строрення аккаунта
-	// registerFormCreatFormSignUp: document.getElementById('creatFormSignUp'),
-	// divRegisterError: document.getElementById('divRegisterError'),
+  // Рефи для регістрації і строрення аккаунта
+  // registerFormCreatFormSignUp: document.getElementById('creatFormSignUp'),
+  // divRegisterError: document.getElementById('divRegisterError'),
 
   formaLoginCreatRegister: document.getElementById('formaLoginCreatRegister'),
-
   signinForm: document.getElementById('login-div'),
   signupForm: document.getElementById('register-div'),
-
   btnSignupForm: document.getElementById('register-btn'),
   btnSigninForm: document.getElementById('login-btn'),
-  
   btnLogin: document.getElementById('btnLogin'),
-  btnLoginout: document.getElementById('log-out-btn')
+  btnLoginout: document.getElementById('log-out-btn'),
+  btnEmptyLibraryBox: document.querySelector('#btn-empty-box'),
 };
