@@ -53,7 +53,7 @@ refs.btnSigninForm.addEventListener('click', function (e) {
     document.getElementById('result-box').style.display = "inline";
     resetFform();
     closeFormLoginRegister();
-    window.location.href ="../../library.html";
+    window.location.href ="../../team-js-filmoteka/library.html";
     // document.getElementById('result').innerHTML = "Welcome Back<br>" + loginEmail + " was login Successufully";
   })
   .catch((error) => {
