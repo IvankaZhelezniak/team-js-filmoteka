@@ -76,4 +76,4 @@ export default genres = [
 		"id": 37,
 		"name": "Western"
 	}
-]
+];
