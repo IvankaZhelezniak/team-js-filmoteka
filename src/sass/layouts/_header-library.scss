@@ -39,7 +39,7 @@
       url('/src/images/header/header-tab.jpg');
     padding-right: 32px;
     padding-left: 32px;
-    min-height: 216px;
+    min-height: 230px;
   }
 
   @media screen and (min-device-pixel-ratio: 2) and (min-width: 768px),
@@ -62,7 +62,8 @@
       url('/src/images/header/header-desk.jpg');
     padding-right: 32px;
     padding-left: 32px;
-    min-height: 216px;
+    // height: 216px;
+
   }
 
   @media screen and (min-device-pixel-ratio: 2) and (min-width: 1280px),
@@ -273,10 +274,12 @@
   border-radius: 5px;
   border: 1px solid #fff;
   outline: none;
-  transition: 1s ease-in-out;
+  // transition: 1s ease-in-out;
+  transition: 250ms $animation-cubic;
     &:hover,
     &:focus{
-      transition: 1.5s ease-in-out;
+      // transition: 1.5s ease-in-out;
+      transition: 250ms $animation-cubic;
       background: #FF6B08;
       border: 1px solid #b44a03;
     }
@@ -301,9 +304,9 @@
 }
 
 
-.header-library-btn:hover svg {
-  stroke-dashoffset: -480;
-}
+// .header-library-btn:hover svg {
+//   stroke-dashoffset: -480;
+// }
 
 .header-library-btn span {
   color: #ffffff;

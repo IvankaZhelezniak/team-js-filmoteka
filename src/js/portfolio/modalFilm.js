@@ -47,7 +47,7 @@ async function onFilmCardClick(e) {
     refs.popularityModal.textContent = `${film.popularity}`;
     refs.genreModal.textContent = `${genresList}`;
     if (!film.genres) {
-      refs.genreModal.textContent = ' ';
+      refs.genreModal.textContent = 'No info';
     }
     refs.overviewModal.textContent = `${film.overview}`;
 
