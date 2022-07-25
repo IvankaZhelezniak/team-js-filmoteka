@@ -1,5 +1,6 @@
 const storageKey = 'preference-theme';
 import { refs } from './refs';
+let theme = 'light';
 
 updateTheme();
 changeTheme();
@@ -62,6 +63,7 @@ function updateTheme() {
         // console.log(refs.bodyHtml);
         if (theme === null) {
             theme = 'light';
+            // console.log(theme);
         }
         if (theme === 'light') {
             refs.bodyHtml.classList.remove('dark');
