@@ -28,7 +28,7 @@
     font-weight: 400;
     font-size: 16px;
     line-height: 1.19;
-    color: var(--text-footer-color--);
+    color: #545454;
     @media screen and (max-width: 767px) {
       font-size: 14px;
       line-height: 1.17;
@@ -43,7 +43,7 @@
     font-weight: 400;
     font-size: 16px;
     line-height: 1.19;
-    color: var(--text-footer-color--);
+    color: #545454;
     @media screen and (max-width: 767px) {
       font-size: 14px;
       line-height: 1.17;
@@ -55,3 +55,24 @@
     margin-left: 5px;
     display: inline;
   }
+
+.scrolling > footer{ 
+  opacity:0; 
+  transition: top 0.2s ease-in-out;
+}
+
+.footer>div {
+  transform: translateX(-150%);
+  animation: ani 0.5s ease-in-out forwards;
+}
+
+@keyframes ani {
+  0% {transform: translateX(-150%);}
+  15% {transform: translateX(5%);}
+  30% {transform: translateX(-5%);}
+  45% {transform: translateX(3%);}
+  60% {transform: translateX(-3%);}
+  75% {transform: translateX(1%);}
+  85% {transform: translateX(-1%);}
+  100% {transform: translateX(0);}
+}
