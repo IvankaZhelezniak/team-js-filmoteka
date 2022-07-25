@@ -3,7 +3,8 @@
 // Backdrop
 
 .backdrop-film {
-transition: opacity 250ms $animation-cubic;
+    z-index: 100;
+    transition: opacity 250ms $animation-cubic;
     position: fixed;
     top: 0;
     left: 0;

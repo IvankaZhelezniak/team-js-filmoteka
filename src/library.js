@@ -2,7 +2,9 @@
 import './js/theme-toggle';
 // import './js/portfolio/createStartPortfolio';
 import './js/portfolio/watchedBtn';
-// import './js/portfolio/modalFilm';
+import './js/portfolio/modalFilm';
+import './js/portfolio/movieClass';
+
 // import './js/portfolio/searchByName';
 // import './js/portfolio/infinite-scroll-trending';
 
@@ -14,4 +16,3 @@ import './js/refs';
 // import './js/portfolio/cteateGalleryStickers';
 
 import './js/students';
-
