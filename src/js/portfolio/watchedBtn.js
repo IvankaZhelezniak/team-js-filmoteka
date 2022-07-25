@@ -13,12 +13,13 @@ async function onWatchedBtn() {
   const parsedWatched = JSON.parse(savedWatched);
 
   if (!parsedWatched || parsedWatched.length === 0) {
-    refs.watchedListRef.innerHTML =
-      "<p class = 'empty-queue-notify'>You don't have movies yet :(</p>";
+    return (refs.watchedListRef.innerHTML =
+      "<p class = 'empty-queue-notify'>You don't have movies yet :(</p>");
   }
 
   if (!refs.watchedListRef.classList.contains('actual')) {
     refs.watchedListRef.classList.add('actual');
+    refs.btnEmptyLibraryBox.classList.add('empty-off');
     refs.watchedListRef.insertAdjacentHTML(
       'beforeend',
       parsedWatched

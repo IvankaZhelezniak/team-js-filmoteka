@@ -29,13 +29,17 @@
 .status-btn {
     cursor:pointer;
     display: block;
-    height: 40px;
+    // height: 40px;
     text-decoration:none;
     text-transform:uppercase;
     color: #ffffff;
-    padding: 0 12px;
+    // padding: 0 12px;
     background-color:#ff6b01;
-
+    border: 1px solid black;
+    border-radius: 5px;
+    &:first-child {
+        margin-bottom: 3px;
+    }
 }
 
 .gallery_thumb{

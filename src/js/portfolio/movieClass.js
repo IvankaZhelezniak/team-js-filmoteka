@@ -178,7 +178,6 @@ const movieClass = new (class Movie {
 
   searchFilmByIdInLS(id) {
     const parsedFindedFilmsFromLS = movieClass.parseFindedFilms();
-    console.log('parsedFindedFilmsFromLS: ', parsedFindedFilmsFromLS);
     return parsedFindedFilmsFromLS.find(film => {
       if (film.id === Number(id)) {
         return film;

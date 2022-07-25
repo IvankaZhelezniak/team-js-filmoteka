@@ -1,6 +1,5 @@
 import { refs } from '../refs';
 import { movieClass } from './movieClass';
-import genres from './genres';
 import { btnModalClass } from '../modal/btnModalClass';
 import { onModalBtnClick } from '../modal/modalAddToLSWatchedQueue';
 
@@ -29,9 +28,8 @@ async function onFilmCardClick(e) {
   if (film) {
     const genresList = film.genres?.map(genre => genre.name).join(', ');
 
-    if (refs.searchForm != null) {
-      refs.searchForm.style.display = 'none';
-    }
+    checkInputOnLibary();
+
     refs.modalBtnQueue.setAttribute('data-id', `${id}`);
     refs.modalBtnWatched.setAttribute('data-id', `${id}`);
 
@@ -49,7 +47,7 @@ async function onFilmCardClick(e) {
     refs.popularityModal.textContent = `${film.popularity}`;
     refs.genreModal.textContent = `${genresList}`;
     if (!film.genres) {
-      refs.genreModal.textContent = ' ';
+      refs.genreModal.textContent = 'No info';
     }
     refs.overviewModal.textContent = `${film.overview}`;
 
@@ -60,9 +58,6 @@ async function onFilmCardClick(e) {
     }
     refs.backdrop.style.backgroundSize = 'cover';
 
-    if (refs.searchBox != null) {
-      refs.searchBox.classList.add('is-hidden');
-    }
     refs.modalFilmBox.classList.remove('is-hidden');
     refs.backdrop.classList.remove('is-hidden');
     refs.body.classList.add('backdrop-body-block-scroll');
@@ -106,15 +101,17 @@ async function onFilmCardClick(e) {
   }
   function closeModal() {
     refs.modalBtn.removeEventListener('click', onModalBtnClick);
+    refs.btnCloseModalFilm.removeEventListener('click', closeModal);
+    refs.backdrop.removeEventListener('click', onCloseBackdropClick);
+    refs.modalFilmBackBlure.removeEventListener('click', onCloseBackdropClick);
     if (refs.searchBox != null) {
       refs.searchForm.style.display = null;
+      setTimeout(function () {
+        refs.searchBox.classList.remove('is-hidden');
+      }, 130);
     }
     refs.backdrop.classList.add('is-hidden');
     refs.body.classList.remove('backdrop-body-block-scroll');
-
-    setTimeout(function () {
-      refs.searchBox.classList.remove('is-hidden');
-    }, 130);
   }
   function clearInfoModal() {
     refs.imageModal.src = ``;
@@ -133,5 +130,14 @@ async function onFilmCardClick(e) {
     } else {
       btn.textContent = `add to ${actions}`;
     }
+  }
+}
+
+function checkInputOnLibary() {
+  if (refs.searchForm != null) {
+    refs.searchForm.style.display = 'none';
+  }
+  if (refs.searchBox != null) {
+    refs.searchBox.classList.add('is-hidden');
   }
 }
