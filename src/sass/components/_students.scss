@@ -1,21 +1,19 @@
 // Students
 .team__container{
-    background-color: var(--second-bg-color);
-    background-size: 100%;
-    padding: 30px;
-  }
+  padding: 30px;
+}
   
-  .team-list{
-   justify-content: center;
-      @media screen and (min-width: 768px)  {
-        display: flex;
-        flex-wrap: wrap;
-        margin-left: -30px;
-      }
+.team-list{
+  justify-content: center;
+   @media screen and (min-width: 768px){
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -30px;
+   }
   margin-bottom: -30px;
-    }
+}
   
-  .section-title{
+.section-title{
     @media screen and(max-width: 1199px){
      font-size: 18px; 
     margin-bottom: 10px;
@@ -27,32 +25,29 @@
   letter-spacing: 0.03em;
   margin-bottom: 20px;
   color: orangered;
-  }
+}
   
 
-  .team-list__item{
-    background-color: var(--third-bg-color);
-    background: rgba(231, 211, 194, 0.2);
-    box-shadow: 0px 1px 3px rgba(198, 114, 11, 0.12), 0px 1px 1px rgba(191, 234, 50, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
-    border-bottom-right-radius: 40px;
-  width: 100%;
+.team-list__item{
+  background-color: rgba(231, 211, 194, 0.2);
+  box-shadow: 5px 5px 11px -2px #ffffff;
+  border-top-left-radius: 40%;
+  border-bottom-right-radius: 60px;
+ 
   margin-bottom: 30px;
-  @media screen and (min-width: 768px){
-            flex-basis: calc(100% / 2 - 40px);
-            margin-left: 30px;
-            display: flex;
-            flex-wrap: wrap;
-            margin-bottom: 30px;
-        }
-  @media screen and (min-width: 1200px){
-            flex-basis: calc(100% / 6 - 40px);
-        }
-      img {
-          width: 100%;
-      }
-  }
+   @media screen and (min-width: 768px){
+    flex-basis: calc(100% / 2 - 40px);
+    margin-left: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+   }
+    @media screen and (min-width: 1200px){
+      flex-basis: calc(100% / 6 - 40px);
+    }
+}
   
-  .team-list__wrap{
+.team-list__wrap{
   margin-left: auto;
   margin-right: auto;
   text-align: center;
@@ -60,65 +55,62 @@
   padding-bottom: 10px;
 }
 
-  .team-list__image{
-  max-width: 100%;
-  height: auto;
-  border-radius: 50%;
-  object-fit: cover;
-
-  }
+.team-list__image{
+width: 100%;
+border-radius: 50%;
+box-shadow: 5px 5px 11px -2px #000000;
+}
   
-  .team-list__team-name{
+.team-list__team-name{
   font-weight: 500;
   font-size: 16px;
   line-height: 1.19;
   letter-spacing: 0.03em;
   color: orangered;
-  }
+}
   
-  .team-list__team-proffesion{
-    font-weight: bold;
+.team-list__team-proffesion{
+  font-weight: bold;
   font-size: 14px;
   line-height: 1.19;
   letter-spacing: 0.03em;
   margin-top: 10px;
   margin-bottom: 16px;
   color: #000000;
-  }
+}
  
-  .social-list{
+.social-list{
 	display: flex;
 	justify-content: center;
-  }
+}
   
-  .social-list__item{
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  }
+.social-list__item{
+width: 20px;
+height: 20px;
+border-radius: 50%;
+}
   
-  .social-list__item + .social-list__item{
-	margin-left: 10px;
-  }
+.social-list__item + .social-list__item{
+margin-left: 10px;
+}
   
-  .social-list__link-grey{
-	width: 100%;
-	height: 100%;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	border-radius: 50%;
-	outline: none;
-	transition: color 250ms;
-	transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);
-	transition: background-color 250ms;
-	transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);
-	  &:hover,
+.social-list__link-grey{
+width: 100%;
+height: 100%;
+display: flex;
+align-items: center;
+justify-content: center;
+border-radius: 50%;
+outline: none;
+transition: color 250ms;
+transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);
+transition: background-color 250ms;
+transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);
+  &:hover,
 	&:focus{
 	  background-color: orangered;
-	  color:#ffffff;
-	}
-  }
+		}
+}
 
 
 //   Modalka
@@ -138,39 +130,38 @@
     transition: opacity 1000ms, visibility 1000ms;
   }
 
-  .modal-window{
-	  display: flex;
-    position: absolute;
-    top:50%;
-    left:50%;
-    width: 200px;
-    height: 95%;
-	  overflow-y: scroll;
-    margin: auto 0;
-    background-color: #332c2c;
-    box-shadow: 0px 1px 3px rgba(202, 47, 47, 0.12), 0px 1px 1px rgba(159, 150, 150, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
-    border-radius: 20px;
-    transform: translate(-50%,-50%) scale(1) rotate(0);
-    transition: transform 1000ms;
+.modal-window{
+  display: flex;
+  position: absolute;
+  top:50%;
+  left:50%;
+  width: 200px;
+  height: 95%;
+  overflow-y: scroll;
+  margin: auto 0;
+  background-color: #332c2c;
+  box-shadow: 0px 1px 3px rgba(202, 47, 47, 0.12), 0px 1px 1px rgba(159, 150, 150, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 20px;
+  transform: translate(-50%,-50%) scale(1) rotate(0);
+  transition: transform 1000ms;
     @media screen and (min-width: 768px) {
       min-width: 500px;
       overflow-y: scroll;
-    }
+      }
       @media screen and (min-width: 1200px) {
       min-width: 1000px;
       overflow-y: hidden;
     }
-	  }
-  
-  
-  .backdrop__students.is-hidden{
-    .modal{
+}
+
+.backdrop__students.is-hidden{
+.modal{
     transform: scale(1.5) rotate(180deg) translate(1000px);
     transition: transform 1000ms;
     }
-  }
+}
   
-  .modal-window__modal-close{
+.modal-window__modal-close{
   width: 30px;
   height: 30px;
   color: #332c2c;;
@@ -182,133 +173,5 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  &:hover,
-  &:focus{
-  fill: orangered;
-  }
-  }
+}
 
-  .students__icon{
-    width: 30px;
-    margin: auto 0;
-  }
-
-
-  // Animation
-//   @import url(https://fonts.googleapis.com/css?family=Droid+Sans:400,700);
-
-// * { padding: 0; margin: 0; };
-
-// .titlecontent{
-//   @media screen and (max-width: 767px){
-// 	width: 100%;
-// 	height: 100%;
-// 	font-family: "Droid Sans", arial, verdana, sans-serif;
-//   font-size: 700;
-// 	color: orangered;
-// 	overflow: hidden;
-//   }
-// }
-
-// .titles{
-//   @media screen and (max-width: 767px){
-// 	width: 90%;
-// 	height:100%;
-// 	font-family: "Droid Sans", arial, verdana, sans-serif;
-// 	color: #ffff;
-// 	overflow: hidden;}
-// }
-
-
-// @-webkit-keyframes logo {
-// 	0% { -webkit-transform: scale(1); opacity: 1; }
-// 	50% { opacity: 1; }
-// 	100% { -webkit-transform: scale(0.1); opacity: 0; }
-// }
-
-// @-moz-keyframes logo {
-// 	0% { -moz-transform: scale(1); opacity: 1; }
-// 	50% { opacity: 1; }
-// 	100% { -moz-transform: scale(0.1); opacity: 0; }
-// }
-
-// @-ms-keyframes logo {
-// 	0% { -ms-transform: scale(1); opacity: 1; }
-// 	50% { opacity: 1; }
-// 	100% { -ms-transform: scale(0.1); opacity: 0; }
-// }
-
-// @-o-keyframes logo {
-// 	0% { -o-transform: scale(1); opacity: 1; }
-// 	50% { opacity: 1; }
-// 	100% { -o-transform: scale(0.1); opacity: 0; }
-// }
-
-// @keyframes logo {
-// 	0% { transform: scale(1); opacity: 1; }
-// 	50% { opacity: 1; }
-// 	100% { transform: scale(0.1); opacity: 0; }
-// }
-
-// /* the interesting 3D scrolling stuff */
-// #titles
-// {
-//   @media screen and (max-width: 767px){
-// 	position: absolute;
-// 	width: 18em;
-// 	height: 50em;
-// 	bottom: 0;
-// 	left: 50%;
-// 	margin-left: -9em;
-// 	font-size: 350%;
-// 	text-align: justify;
-// 	overflow: hidden;
-// 	-webkit-transform-origin: 50% 100%;
-// 	-moz-transform-origin: 50% 100%;
-// 	-ms-transform-origin: 50% 100%;
-// 	-o-transform-origin: 50% 100%;
-// 	transform-origin: 50% 100%;
-// 	-webkit-transform: perspective(300px) rotateX(10deg);
-// 	-moz-transform: perspective(300px) rotateX(10deg);
-// 	-ms-transform: perspective(300px) rotateX(10deg);
-// 	-o-transform: perspective(300px) rotateX(10deg);
-// 	transform: perspective(300px) rotateX(10deg);}
-// }
-
-// #titlecontent
-// {
-//   @media screen and (max-width: 767px){
-// 	position: absolute;
-// 	top: 100%;
-// 	-webkit-animation: scroll 150s linear 4s infinite;
-// 	-moz-animation: scroll 150s linear 4s infinite;
-// 	-ms-animation: scroll 150s linear 4s infinite;
-// 	-o-animation: scroll 150s linear 4s infinite;
-// 	animation: scroll 150s linear 4s infinite;}
-// }
-
-// /* animation */
-// @-webkit-keyframes scroll {
-// 	0% { top: 100%; }
-// 	100% { top: -170%; }
-// }
-
-// @-moz-keyframes scroll {
-// 	0% { top: 100%; }
-// 	100% { top: -170%; }
-// }
-
-// @-ms-keyframes scroll {
-// 	0% { top: 100%; }
-// 	100% { top: -170%; }
-// }
-
-// @-o-keyframes scroll {
-// 	0% { top: 100%; }
-// 	100% { top: -170%; }
-// }
-
-// @keyframes scroll {
-// 	0% { top: 100%; }
-// 	100% { top: -170%; }
-// }
