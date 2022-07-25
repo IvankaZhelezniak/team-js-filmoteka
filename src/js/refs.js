@@ -32,6 +32,7 @@ const refs = {
   modalFilmBackBlure: document.querySelector('.modal-film-back'),
   modalFilmBox: document.querySelector('.modal-film'),
   searchBox: document.querySelector('.search-box'),
+  btnLibraryClickMe: document.querySelector('.btn'),
   // Рефи для регістрації і строрення аккаунта
   registerFormCreatFormSignUp: document.getElementById('creatFormSignUp'),
   divRegisterError: document.getElementById('divRegisterError'),
