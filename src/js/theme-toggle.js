@@ -63,6 +63,7 @@ function updateTheme() {
         // console.log(refs.bodyHtml);
         if (theme === null) {
             theme = 'light';
+            localStorage.setItem(storageKey, theme);
             // console.log(theme);
         }
         if (theme === 'light') {

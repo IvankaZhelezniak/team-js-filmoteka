@@ -240,11 +240,7 @@
 .button-group {
   display: flex;
   justify-content: center;
-  margin-top: 60px;
-  @media screen and (min-width: 768px) {
-    margin-top: 40px;    
-  }
-  
+  margin-top: 40px;  
 }
 
 .header-library-container {

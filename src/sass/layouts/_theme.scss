@@ -8,9 +8,10 @@
 
 .theme-library {
     justify-content: start;
+    margin-top: 10px;
     @media screen and (min-width: 768px) {
         // display: flex;
-        
+        margin-top: 0;
         position: absolute;
         top: 120px;
     }
@@ -60,6 +61,10 @@
 .dark {   
     transition: 0.3s; 
     background-color: $bg-dark-modal-color;
+    color: $text-white-color;
+}
+
+.dark .btn span {
     color: $text-white-color;
 }
 
