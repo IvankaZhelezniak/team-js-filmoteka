@@ -9,10 +9,10 @@ const options = {
 };
 // createStartPortfolio();
 const observer = new IntersectionObserver(entries => {
-  console.log('entries', entries);
+  // console.log('entries', entries);
   
   entries.forEach(entry => {
-    console.log('entry', entry);
+    // console.log('entry', entry);
     
     if (entry.isIntersecting) {
       console.log(entry.target);
