@@ -19,9 +19,9 @@ const movieClass = new (class Movie {
 
   async fetchSearchedMovies(searchQuery) {
     try {
-      page = 1;
+      this.page = 1;
       const response = await fetch(
-        `https://api.themoviedb.org/3/search/movie?api_key=5692dca6012d3660a336300872bd664c&language=en-US&page=${page}&include_adult=false&query=${searchQuery}`
+        `https://api.themoviedb.org/3/search/movie?api_key=5692dca6012d3660a336300872bd664c&language=en-US&page=${this.page}&include_adult=false&query=${searchQuery}`
       );
       return await response.json();
     } catch (error) {
