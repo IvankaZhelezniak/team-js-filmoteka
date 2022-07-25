@@ -51,22 +51,28 @@
 .header-container {
   width: 100%;
  
-@media screen and (min-width: 768px) {
-    max-width: 768px;
-    margin: 0 auto;
-}
-@media screen and (min-width: 1280px) {
-    max-width: 1280px;
-}
+  @media screen and (min-width: 768px) {
+      max-width: 768px;
+      margin: 0 auto;
+  }
+  @media screen and (min-width: 1280px) {
+      max-width: 1280px;
+  }
 }
 
+<<<<<<< Updated upstream
+=======
+.header-nav-logo-icon {
+  stroke: #818181;
+}
+
+>>>>>>> Stashed changes
 .header-nav {
   position: relative;
 
   display: flex;
   justify-content: center;
   align-items: center;
-
 
   &-logo {
     display: flex;
@@ -78,10 +84,19 @@
       transition: stroke 500ms;
     }
 
+    &:hover,
+    &:focus .header-nav-logo-text{
+      color: #FF6B08;
+      transition: color 500ms;
+    }
+
     &-icon {
       @media screen and (min-width: 768px) {
         margin-right: 10px;
+<<<<<<< Updated upstream
         stroke: #818181;
+=======
+>>>>>>> Stashed changes
       }
     }
 
@@ -103,10 +118,27 @@
         @media screen and (min-width: 1280px) {
           margin-right: 35px;
         }
+<<<<<<< Updated upstream
+=======
+
+        // &:hover,
+        // &:focus {
+        // color: #FF6B08;
+        // transition: color 500ms;
+        // }
+>>>>>>> Stashed changes
       }
     }
   }
 }
+
+.header-nav-logo:hover 
+  .header-nav-logo-icon{
+    -webkit-filter: drop-shadow(0px 0px 5px #FF6B08);
+    filter: shadow(0px 0px 0px #FF6B08);
+    stroke: #FF6B08;
+    transition: stroke 500ms;
+  }
 
 .header-nav-list {
   margin-left: auto;
@@ -235,14 +267,11 @@
 	position: relative;
 	z-index: 4;
   
-  &:hover .search-input {   
+  &:hover .search-input, 
+  &:hover + .search-btn{   
       border-bottom: 1px solid #ff6b08;
       transition: border-bottom 500ms;
   }
-  &:hover  + .search-btn {  
-    border-bottom: 1px solid #ff6b08;
-    transition: border-bottom 500ms;
-  } 
 }
 .search-input {
 	width: 280px;
