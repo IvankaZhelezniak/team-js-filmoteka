@@ -1,5 +1,6 @@
-var genres = [];
-export default genres = [
+// var genres = [];
+export { genres };
+const genres = [
 	{
 		"id": 28,
 		"name": "Action"

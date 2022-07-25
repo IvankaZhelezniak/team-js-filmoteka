@@ -1,5 +1,5 @@
 import { movieClass } from './movieClass';
-import genres from './genres';
+import {genres} from './genres';
 
 export { createMurkup };
 
