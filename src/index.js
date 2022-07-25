@@ -12,5 +12,5 @@ import './js/loader';
 import './js/refs';
 import './js/auth/authenticationFirebase';
 import './js/portfolio/cteateGalleryStickers';
-
+import './js/portfolio/genres';
 import './js/students';
