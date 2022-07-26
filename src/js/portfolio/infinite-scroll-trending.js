@@ -16,6 +16,8 @@ const observer = new IntersectionObserver(entries => {
     
     if (entry.isIntersecting) {
       console.log(entry.target);
+      console.log('подзагрузка 1й страницы', );
+      
       loadMoreCards();
 
     }
