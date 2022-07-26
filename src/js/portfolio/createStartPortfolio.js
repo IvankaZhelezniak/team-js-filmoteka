@@ -34,6 +34,7 @@ async function createStartPortfolio() {
 async function loadMoreCards(films) {
   await movieClass.fetchPopularMovies().then(films => {
    movieClass.addToLocalStorageFindedFilms(films);
+   createGalleryStickers();
 
     refs.gallery.insertAdjacentHTML(
      'beforeend',
