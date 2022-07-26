@@ -20,8 +20,8 @@
   @media screen and (min-width: 768px) {
     background-image: linear-gradient(to right, rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
       url('/src/images/header/header-tab.jpg');
-      // padding-right: 32px;
-      // padding-left: 32px;
+      padding-right: 32px;
+      padding-left: 32px;
       min-height: 230px;
   }
 
@@ -299,16 +299,6 @@
 	border: none;
 	border-bottom: 0.5px solid #818181;
 }
-
-// .wrapper {
-//   position: relative;
-
-//   justify-content: space-between;
-//   // align-items: baseline;
-// }
-
-
-
 
 .header-login-btn-container {
   // position: relative;
