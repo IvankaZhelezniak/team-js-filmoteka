@@ -34,7 +34,7 @@ const movieClass = new (class Movie {
   }
 
   addToLocalStorageFindedFilms(films) {
-    let filmArray = this.getFromLS(`findFilms`);
+    const filmArray = this.getFromLS(`findFilms`);
 
     films.results.map(film => {filmArray.push(film)});
 

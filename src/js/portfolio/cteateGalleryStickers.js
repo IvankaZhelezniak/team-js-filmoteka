@@ -5,7 +5,7 @@ export {createGalleryStickers, createFilmStickers, removeFilmStickers};
 
 
 function createGalleryStickers () {
-	filmsInGallery = movieClass.parseFindedFilms();
+	let filmsInGallery = movieClass.parseFindedFilms();
 	// console.log('filmsInGallery', filmsInGallery);
 	filmsInGallery.forEach(film => {
 		// console.log('film', film);
