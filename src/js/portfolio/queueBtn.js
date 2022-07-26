@@ -10,6 +10,8 @@ refs.btnQueue.addEventListener('click', onQueueBtn);
 function onQueueBtn () {
     refs.watchedListRef.classList.add('visually-hidden');
     refs.queueListRef.classList.remove('visually-hidden');   
+    refs.watchedListRef.classList.remove('js-gallery__list');
+    refs.queueListRef.classList.add('js-gallery__list');  
 }
 
 refs.queueListRef.insertAdjacentHTML(
