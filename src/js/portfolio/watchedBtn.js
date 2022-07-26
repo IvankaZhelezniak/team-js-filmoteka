@@ -6,7 +6,6 @@ export { onWatchedBtn };
 
 const currentPage = document.querySelector('.current');
 
-
 if (currentPage.textContent === 'My library') {
   refs.btnWatched.addEventListener('click', () => {
     refs.watchedListRef.classList.remove('visually-hidden');
@@ -35,7 +34,6 @@ async function onWatchedBtn() {
   // }
 
 
-  // ==============был конфликт===============
   if (!refs.watchedListRef.classList.contains('actual')) {
     const parsedWatched = await movieClass.getFromLS('watched');
     refs.watchedListRef.innerHTML = '';

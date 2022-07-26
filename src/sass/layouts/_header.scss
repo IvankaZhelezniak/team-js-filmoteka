@@ -324,7 +324,7 @@
   border-radius: 5px;
   border: 1px solid transparent;
   outline: none;
-  transition: 1s ease-in-out;
+  transition: 250ms $animation-cubic;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -346,13 +346,13 @@
   }
 
 .header-login-btn:hover {
-  transition: 1.5s ease-in-out;
-  background: #ec823b;
+  transition: 250ms $animation-cubic;
+  background: $accentColor;
 }
 
-.header-login-btn:hover svg {
-  stroke-dashoffset: -480;
-}
+// .header-login-btn:hover svg {
+//   stroke-dashoffset: -480;
+// }
 
 .header-login-btn span {
   color: #ffffff;
