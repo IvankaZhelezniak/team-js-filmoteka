@@ -3,7 +3,7 @@ import { movieClass } from './movieClass';
 import { btnModalClass } from '../modal/btnModalClass';
 import { onModalBtnClick } from '../modal/modalAddToLSWatchedQueue';
 
-refs.gallery.addEventListener('click', onFilmCardClick);
+refs.galleryContainer.addEventListener('click', onFilmCardClick);
 async function onFilmCardClick(e) {
   refs.modalBtn.addEventListener('click', onModalBtnClick);
   e.preventDefault();
