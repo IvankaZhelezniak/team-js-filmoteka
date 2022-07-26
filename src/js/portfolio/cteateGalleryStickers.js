@@ -32,6 +32,7 @@ function createFilmStickers(film, actions) {
 	// const card = document.querySelector(`[data-id='${film.id}']`);
 	// console.log('card', card);
 	const divWrapper = document.querySelector(`[data-status='${film.id}']`);
+	if (!divWrapper) return;
 	// console.log('divWrapper', divWrapper);
 	if(actions == 'watched') {
 		const content = 'watched';
