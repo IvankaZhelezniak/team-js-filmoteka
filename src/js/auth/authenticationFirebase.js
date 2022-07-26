@@ -33,13 +33,19 @@ const user = auth.currentUser;
 
 
 //listen for auth status changes
-// onAuthStateChanged(user => {
+// function loginLogout() {
+//   onAuthStateChanged(user => {
 //     if (user) {
-//       console.log('user logged in: ', user);
-//     } else {
-//       console.log('user logged out', user);
+//        document.getElementById('result-box').style.display = "inline";
+//     // refs.btnLogin.classList.add('is-hidden');
+//       refs.btnLoginout.style.display = "inline";
+//   } else {
+//     // refs.btnLogin.classList.add('display-block');
+      
 //     }
 // });
+// }
+
   
 
 refs.btnSigninForm.addEventListener('click', function (e) {
@@ -51,10 +57,12 @@ refs.btnSigninForm.addEventListener('click', function (e) {
   .then((userCredential) => {
     const user = userCredential.user;
     document.getElementById('result-box').style.display = "inline";
-    resetFform();
+    // resetFform();
     closeFormLoginRegister();
-    window.location.href ="../../team-js-filmoteka/library.html";
-    // document.getElementById('result').innerHTML = "Welcome Back<br>" + loginEmail + " was login Successufully";
+    // loginLogout();
+    
+    // window.location.href ="../../team-js-filmoteka/library.html";
+  document.getElementById('result').innerHTML = "Welcome Back<br>" + loginEmail + " was login Successufully";
   })
   .catch((error) => {
     const errorCode = error.code;
@@ -78,7 +86,7 @@ refs.btnSignupForm.addEventListener('click', function (e) {
     document.getElementById('result-box').style.display = "inline";
     resetFform();
     closeFormLoginRegister();
-    window.location.href ="../../library.html";
+    // window.location.href ="../../team-js-filmoteka/library.html";
     document.getElementById('result').innerHTML = "Welcome <br>" + registerEmail + " was Registered Successufully";
     
   })
@@ -109,3 +117,13 @@ refs.btnLogin.addEventListener('click', showFormLogin);
 refs.btnLoginout.addEventListener('click', logout);
 
 
+
+// document.addEventListener('DOMContentLoaded', () => {
+//    if (window.location.search === '') {
+//       return;
+//    }
+//    const searchParams = window.location.search.split('?')[1].split('&');
+//    if (searchParams[0] === 'myLibrary') {
+//       loginLogout();
+//    }
+// });

@@ -49,7 +49,8 @@ function createFilmStickers(film, actions) {
 
 function removeFilmStickers(film, actions) {
 	// console.log(`удаляю стикер ${actions} на карточке фильма ${film.id}`, );
-	const statusBtn = document.querySelector(`[data-id='${film.id}${actions}']`)
+	const statusBtn = document.querySelector(`[data-id='${film.id}${actions}']`);
     // console.log('statusBtn', statusBtn);
+	if (!statusBtn) return
 	statusBtn.remove();
 }

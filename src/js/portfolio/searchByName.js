@@ -12,9 +12,12 @@ let page = 1;
 function handleSubmit(event) {
   event.preventDefault();
   const searchQuery = refs.searchForm.search.value.trim();
+  movieClass.searchQuery = refs.searchForm.search.value.trim();
+// console.log('searchQuery', searchQuery);
+// console.log('movieClass.searchQuery', movieClass.searchQuery);
 
   if (searchQuery !== '') {
-    createSearchedPortfolio(searchQuery);
+    createSearchedPortfolio(movieClass.searchQuery);
     refs.searchForm.reset();
     }
   return searchQuery;
