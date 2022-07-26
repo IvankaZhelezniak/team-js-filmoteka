@@ -2,11 +2,13 @@ import { refs } from '../refs';
 import { movieClass } from '../portfolio/movieClass';
 import { btnModalClass } from './btnModalClass';
 import {createFilmStickers, removeFilmStickers} from '../portfolio/cteateGalleryStickers';
+import {onWatchedBtn} from '../portfolio/watchedBtn';
 export {onModalBtnClick};
 
 function onModalBtnClick(evt) {
   evt.preventDefault();
-
+  // console.log('onWatchedBtn', onWatchedBtn);
+  
   const liBtn = evt.target.closest('li');
   if (!liBtn) return;
 
@@ -15,6 +17,10 @@ function onModalBtnClick(evt) {
   const film = movieClass.searchFilmByIdInLS(id);
   // console.log('film:', film,  'actions:', actions, 'id:', id, 'liBtn', liBtn);
 
+  const currentPage = document.querySelector('.current');
+  // console.log('currentPage.textContent', currentPage.textContent);
+
+  
   // Проверка - сохранен ли фильм, внесение или удаление с локал сторидж 
   if (btnModalClass.isFilmIncludesLSLibrary(id, actions)) {
     // console.log('удаляю из хранилища', );
@@ -28,6 +34,11 @@ function onModalBtnClick(evt) {
     movieClass.saveToLibraryMovieInLS(film, actions);
 
     
+  }
+
+  if (currentPage.textContent == 'My library') {
+    // console.log('updata markup', );
+    onWatchedBtn();
   }
 
   // console.log('изменяю название кнопки', );
