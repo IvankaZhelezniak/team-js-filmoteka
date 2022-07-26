@@ -36,7 +36,7 @@ function onModalBtnClick(evt) {
     
   }
 
-  if (currentPage.textContent == 'My library') {
+  if (currentPage.textContent === 'My library') {
     // console.log('updata markup', );
     onWatchedBtn();
   }
