@@ -11,6 +11,7 @@
 
   function onOpenModal(e) {
       e.preventDefault()
+      document.body.style.overflow = 'hidden';
       refs.modal.classList.remove('is-hidden');
       refs.modal.classList.add('mount');
       refs.backdrop.addEventListener('click', modalCloseClickBackdrop);
@@ -18,7 +19,7 @@
   }
 
   function modalCloseClickBackdrop(e) {
-      if (e.target.nodeName === 'BACKDROP') {
+      if (e.target === e.currentTarget) {
           onCloseModal()
       }
   }
@@ -31,7 +32,8 @@
 
   function onCloseModal() {
       refs.modal.classList.add('is-hidden');
-      refs.modal.classList.remove('mount')
+      refs.modal.classList.remove('mount');
       document.removeEventListener('keydown', modalCloseEsc);
+      document.body.style.overflow = 'initial';  
   }
 })();
