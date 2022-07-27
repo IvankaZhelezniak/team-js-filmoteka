@@ -40,7 +40,7 @@ async function onWatchedBtn(actions) {
     if (!parsedWatched || parsedWatched.length === 0) {
       if (actions == 'watched') {
         return (refs.watchedListRef.innerHTML =
-          "<p class = 'empty-queue-notify'>You don't have added movies to your library yet :(</p>");
+          "<li class = 'empty-queue-notify'><p>You don't have added movies to your library yet :(</p></li>");
       }
     }
 
