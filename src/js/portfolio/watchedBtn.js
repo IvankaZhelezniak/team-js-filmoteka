@@ -15,45 +15,64 @@ if (currentPage.textContent === 'My library') {
   });
 }
 
-onWatchedBtn();
-async function onWatchedBtn() {
+onWatchedBtn('watched');
+async function onWatchedBtn(actions) {
   const currentPage = document.querySelector('.current');
   if (currentPage.textContent === 'Home') {
     return;
   }
 
-  // =============был конфликт===================
-
-  // async function onWatchedBtn() {
-  //   const savedWatched = await localStorage.getItem('watched');
-  //   const parsedWatched = JSON.parse(savedWatched);
-
-  // if (!parsedWatched || parsedWatched.length === 0) {
-  //   return (refs.watchedListRef.innerHTML =
-  //     "<p class = 'empty-queue-notify'>You don't have movies yet :(</p>");
-  // }
-
-
   if (!refs.watchedListRef.classList.contains('actual')) {
     const parsedWatched = await movieClass.getFromLS('watched');
-    refs.watchedListRef.innerHTML = '';
+
+    const parsedQueue = movieClass.getFromLS('queue');
+    if (actions == 'watched') {
+      refs.watchedListRef.innerHTML = '';
+    }
+
+    if (actions == 'queue') {
+      refs.queueListRef.innerHTML = '';
+    }
 
     if (!parsedWatched || parsedWatched.length === 0) {
-      return (refs.watchedListRef.innerHTML =
-        "<p class = 'empty-queue-notify'>You don't have movies yet :(</p>");
+      if (actions == 'watched') {
+        return (refs.watchedListRef.innerHTML =
+          "<p class = 'empty-queue-notify'>You don't have movies yet in watched list :(</p>");
+      }
     }
-    // console.log('parsedWatched', parsedWatched);
 
-    // refs.btnEmptyLibraryBox.classList.add('empty-off');
-    refs.watchedListRef.insertAdjacentHTML(
-      'beforeend',
-      parsedWatched
-        .map(item => {
-          return createMarkup(item);
-        })
-        .join('')
-    );
+    if (!parsedQueue || parsedQueue.length === 0) {
+      if (actions == 'queue') {
+        return (refs.queueListRef.innerHTML =
+          "<p class = 'empty-queue-notify'>You don't have movies yet :(</p>");
+      }
+    }
+
+    
+    if (actions == 'watched') {
+      refs.watchedListRef.insertAdjacentHTML(
+        'beforeend',
+        parsedWatched
+          .map(item => {
+            return createMarkup(item);
+          })
+          .join('')
+      );
+    }
+
+    if (actions == 'queue') {
+      refs.queueListRef.insertAdjacentHTML(
+        'beforeend',
+        parsedWatched
+          .map(item => {
+            return createMarkup(item);
+          })
+          .join('')
+      );
+    }
+
   } else {
     return;
   }
 }
+

@@ -2,9 +2,12 @@ import { refs } from '../refs';
 import { movieClass } from '../portfolio/movieClass';
 import { btnModalClass } from './btnModalClass';
 import {createFilmStickers, removeFilmStickers} from '../portfolio/cteateGalleryStickers';
-import {onWatchedBtn} from '../portfolio/watchedBtn';
+import { onWatchedBtn } from '../portfolio/watchedBtn';
+import {onQueueBtn} from '../portfolio/queueBtn';
 export {onModalBtnClick};
 
+  
+  
 function onModalBtnClick(evt) {
   evt.preventDefault();
   // console.log('onWatchedBtn', onWatchedBtn);
@@ -36,12 +39,13 @@ function onModalBtnClick(evt) {
     
   }
 
-  if (currentPage.textContent === 'My library') {
-    // console.log('updata markup', );
-    onWatchedBtn();
+
+  if (currentPage.textContent == 'My library' && actions == 'watched') {
+  onWatchedBtn(actions);
+} else if (currentPage.textContent == 'My library' && actions == 'queue') {
+    onQueueBtn(actions);
   }
 
-  // console.log('изменяю название кнопки', );
   
   movieClass.changeModalBtnName(liBtn, id, actions);
 }
