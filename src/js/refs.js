@@ -52,4 +52,5 @@ const refs = {
   btnLogin: document.getElementById('btnLogin'),
   btnLoginout: document.getElementById('log-out-btn'),
   btnEmptyLibraryBox: document.querySelector('#btn-empty-box'),
+  modalAboutBox: document.querySelector('.modal-film__title-about-text'),
 };

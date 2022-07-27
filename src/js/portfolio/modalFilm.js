@@ -46,11 +46,14 @@ async function onFilmCardClick(e) {
     refs.votesModal.textContent = `${film.vote_count}`;
     refs.popularityModal.textContent = `${film.popularity}`;
     refs.genreModal.textContent = `${genresList}`;
-    if (!film.genres) {
+
+    if (!film.genres || (film.genres && film.genres.length === 0)) {
       refs.genreModal.textContent = 'No info';
     }
     refs.overviewModal.textContent = `${film.overview}`;
-
+    if (!film.overview || (film.overview && film.overview.length === 0)) {
+      refs.overviewModal.textContent = 'No info';
+    }
     if (film.backdrop_path) {
       refs.backdrop.style.background = `url(${URL_IMG}${film.backdrop_path}) no-repeat center`;
     } else {
@@ -84,7 +87,6 @@ async function onFilmCardClick(e) {
       refs.modalBtnQueue.getAttribute('data-actions')
     );
   }
-
   refs.btnCloseModalFilm.addEventListener('click', closeModal);
   window.addEventListener('keydown', onEscPress);
   function onEscPress(e) {
