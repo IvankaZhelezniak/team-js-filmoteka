@@ -12,6 +12,9 @@ if (currentPage.textContent === 'My library') {
     refs.queueListRef.classList.add('visually-hidden');
     refs.watchedListRef.classList.add('js-gallery__list');
     refs.queueListRef.classList.remove('js-gallery__list');
+    refs.queueListRef.classList.remove('js-gallery__list');
+    refs.btnQueue.classList.remove('is-active');
+    refs.btnWatched.classList.add('is-active');
   });
 }
 
@@ -37,7 +40,7 @@ async function onWatchedBtn(actions) {
     if (!parsedWatched || parsedWatched.length === 0) {
       if (actions == 'watched') {
         return (refs.watchedListRef.innerHTML =
-          "<p class = 'empty-queue-notify'>You don't have movies yet in watched list :(</p>");
+          "<p class = 'empty-queue-notify'>You don't have added movies to your library yet :(<br>but you can still do it <a class= 'notify-link' href='http://localhost:1234/index.html'>here</a></p>");
       }
     }
 

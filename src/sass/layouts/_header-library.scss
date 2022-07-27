@@ -253,3 +253,8 @@
   font-weight: 100;
 }
 
+.is-active{
+  transition: 250ms $animation-cubic;
+  background: #FF6B08;
+  border: 1px solid #b44a03;
+}

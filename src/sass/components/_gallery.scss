@@ -135,4 +135,17 @@
         font-size: 20px;
         line-height: 24px;
     } 
+
+    
 }
+
+.empty-queue-notify {
+    transform: translate(105%);
+    text-align: center;
+    font-size: large;
+    line-height: 1.8;
+  }
+  
+  .notify-link{
+    color: #FF6B08;
+  }
