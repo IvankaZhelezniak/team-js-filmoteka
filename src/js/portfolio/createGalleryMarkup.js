@@ -25,17 +25,18 @@ function createMurkup({
     ? movieClass.modifyDate(release_date, first_air_date)
     : 'No info'
 
-    let src =`https://image.tmdb.org/t/p/w500${poster_path}`;
-    if (poster_path == null) {
-      src = "./src/images/modal-test-plug.jpg";
-    }
+  const imgSrc = `https://image.tmdb.org/t/p/w500`;
+  let imgLink = `${imgSrc}${poster_path}`
+  if (!poster_path) {
+    imgLink =
+      'https://i.ibb.co/BrYLsTv/default-movie-poster-min.jpg';
+  }
 
-    // https://image.tmdb.org/t/p/w500${poster_path}
   return `<li class="gallery_card__item" data-id=${id}>
   <div class="status-btn-wrapper" data-status=${id}></div>
   <a href="./" class="gallery_card__link">
       <div class="gallery_thumb">
-          <img src=${src} alt="movie cover" loading='lazy' class="gallery_card__img">
+          <img src=${imgLink} alt="movie cover" loading='lazy' class="gallery_card__img">
       </div>
       <div class="gallery_info">
           <h3 class="gallery_info__name">${original_title}</h3>
