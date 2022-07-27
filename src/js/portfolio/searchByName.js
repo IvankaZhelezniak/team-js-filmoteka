@@ -2,10 +2,10 @@ import { refs } from '../refs';
 import { createMurkup } from './createGalleryMarkup';
 import { movieClass } from './movieClass';
 
-refs.searchError.style.visibility = "hidden";
+refs.searchError.style.visibility = 'hidden';
 
-if(refs?.searchForm) {
-  refs.searchForm.addEventListener("submit", handleSubmit);
+if (refs?.searchForm) {
+  refs.searchForm.addEventListener('submit', handleSubmit);
 }
 //let page = 1;
 
@@ -18,16 +18,16 @@ function handleSubmit(event) {
   if (searchQuery !== '') {
     createSearchedPortfolio(movieClass.searchQuery);
     refs.searchForm.reset();
-    }
+  }
   return searchQuery;
 }
 
 async function createSearchedPortfolio(searchQuery) {
-    return await movieClass.fetchSearchedMovies(searchQuery).then(films => {
-    if(films.total_results !== 0) {
-      movieClass.saveToLocalStorageFindedFilms(films);  
-        refs.gallery.innerHTML = "";  
-        return refs.gallery.insertAdjacentHTML(
+  return await movieClass.fetchSearchedMovies(searchQuery).then(films => {
+    if (films.total_results !== 0) {
+      movieClass.saveToLocalStorageFindedFilms(films);
+      refs.gallery.innerHTML = '';
+      return refs.gallery.insertAdjacentHTML(
         'beforeend',
         films.results
           .map(film => {
@@ -37,11 +37,10 @@ async function createSearchedPortfolio(searchQuery) {
       );
     }
     refs.searchError.style.visibility = 'visible';
-    setTimeout(onSearchError, 2000);
+    setTimeout(onSearchError, 3000);
   });
 }
 
 const onSearchError = () => {
   refs.searchError.style.visibility = 'hidden';
 };
-
