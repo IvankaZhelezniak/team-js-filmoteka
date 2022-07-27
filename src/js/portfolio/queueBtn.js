@@ -36,7 +36,7 @@ async function onQueueBtn(actions) {
 
     if (!parsedQueue || parsedQueue.length === 0) {
         return (refs.queueListRef.innerHTML =
-          "<p class = 'empty-queue-notify'>You don't have added movies to your library yet :(<br>but you can still do it <a class= 'notify-link' href='http://localhost:1234/index.html'>here</a></p>");
+          "<p class = 'empty-queue-notify'>You don't have added movies to your library yet :(</p>");
     }
 
       refs.queueListRef.insertAdjacentHTML(
